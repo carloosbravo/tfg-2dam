@@ -1,0 +1,28 @@
+AlumnoUser:
+id
+username
+nombre
+apellido1
+apellido2
+edad
+estudios
+idioma
+biografía(sobre mí)
+disponible(libre, en practicas)
+-----------------------------------------
+CentroUser(Profesor):
+id
+nombreCentro
+nombreProfesor
+-----------------------------------------
+EmpresaUser():
+id
+nombreEmpresa
+-----------------------------------------
+Invitado():
+id
+-----------------------------------------
+Cosas que pueden hacer(algo parecido a los casos de uso)
+alumno -> puede solicitar una vacante de una empresa (practicas , curro?¿),
+
+profesor -> gestionar alumnos, añadir
