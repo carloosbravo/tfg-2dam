@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-04-2024 a las 12:44:49
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.2
+-- Tiempo de generación: 15-04-2024 a las 19:44:59
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -26,7 +25,8 @@ SET time_zone = "+00:00";
 
 --
 -- Estructura de tabla para la tabla `centro`
---
+CREATE database cooperup;
+USE cooperup;
 
 CREATE TABLE `centro` (
   `id` int(11) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `centro` (
   `direccion` varchar(255) DEFAULT NULL,
   `contraseña` varchar(255) NOT NULL,
   `telefono` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,7 @@ CREATE TABLE `empresa` (
   `biografia` text DEFAULT NULL,
   `oferta_practicas` text DEFAULT NULL,
   `oferta_trabajo` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -63,23 +63,22 @@ CREATE TABLE `empresa` (
 
 CREATE TABLE `oferta` (
   `id` int(11) NOT NULL,
-  `descripcion` varchar(100) NOT NULL,
-  `id_empresa` int(11) NOT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  `id_practica` int(11) NOT NULL,
   `id_estudiante` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `solicitud`
+-- Estructura de tabla para la tabla `practica`
 --
 
-CREATE TABLE `solicitud` (
+CREATE TABLE `practica` (
   `id` int(11) NOT NULL,
-  `usuario_id` int(11) DEFAULT NULL,
-  `empresa_id` int(11) DEFAULT NULL,
-  `tipo_oferta` enum('practica','trabajo') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `descripcion` varchar(200) NOT NULL,
+  `id_empresa` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -94,9 +93,9 @@ CREATE TABLE `usuarionormal` (
   `contraseña` varchar(255) NOT NULL,
   `cv` text DEFAULT NULL,
   `expediente_academico` text DEFAULT NULL,
-  `valoracion_profesorado` decimal(3,2) DEFAULT NULL,
+  `valoracion_profesorado` varchar(100) DEFAULT NULL,
   `centro_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tablas volcadas
@@ -120,20 +119,23 @@ ALTER TABLE `empresa`
 -- Indices de la tabla `oferta`
 --
 ALTER TABLE `oferta`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_estudiante` (`id_estudiante`),
+  ADD KEY `id_practica` (`id_practica`);
 
 --
--- Indices de la tabla `solicitud`
+-- Indices de la tabla `practica`
 --
-ALTER TABLE `solicitud`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `practica`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_empresa` (`id_empresa`);
 
 --
 -- Indices de la tabla `usuarionormal`
 --
 ALTER TABLE `usuarionormal`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD KEY `centro_id` (`centro_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -158,9 +160,9 @@ ALTER TABLE `oferta`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `solicitud`
+-- AUTO_INCREMENT de la tabla `practica`
 --
-ALTER TABLE `solicitud`
+ALTER TABLE `practica`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -168,6 +170,34 @@ ALTER TABLE `solicitud`
 --
 ALTER TABLE `usuarionormal`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `centro`
+--
+ALTER TABLE `centro`
+  ADD CONSTRAINT `centro_ibfk_1` FOREIGN KEY (`id`) REFERENCES `usuarionormal` (`centro_id`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  ADD CONSTRAINT `empresa_ibfk_1` FOREIGN KEY (`id`) REFERENCES `practica` (`id_empresa`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `practica`
+--
+ALTER TABLE `practica`
+  ADD CONSTRAINT `practica_ibfk_1` FOREIGN KEY (`id`) REFERENCES `oferta` (`id_practica`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `usuarionormal`
+--
+ALTER TABLE `usuarionormal`
+  ADD CONSTRAINT `usuarionormal_ibfk_1` FOREIGN KEY (`id`) REFERENCES `oferta` (`id_estudiante`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
