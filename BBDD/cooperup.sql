@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-04-2024 a las 19:44:59
+-- Tiempo de generación: 02-05-2024 a las 14:38:24
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,15 +18,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `coperup`
+-- Base de datos: `cooperup`
 --
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `centro`
-CREATE database cooperup;
-USE cooperup;
+--
 
 CREATE TABLE `centro` (
   `id` int(11) NOT NULL,
@@ -36,6 +35,17 @@ CREATE TABLE `centro` (
   `contraseña` varchar(255) NOT NULL,
   `telefono` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `centro`
+--
+
+INSERT INTO `centro` (`id`, `nombre`, `email`, `direccion`, `contraseña`, `telefono`) VALUES
+(1, 'Centro1', 'centro1@example.com', 'Dirección Centro 1', 'contraseña1', '123456789'),
+(2, 'Centro2', 'centro2@example.com', 'Dirección Centro 2', 'contraseña2', '987654321'),
+(3, 'Centro3', 'centro3@example.com', 'Dirección Centro 3', 'contraseña3', '111111111'),
+(4, 'Centro4', 'centro4@example.com', 'Dirección Centro 4', 'contraseña4', '222222222'),
+(5, 'Centro5', 'centro5@example.com', 'Dirección Centro 5', 'contraseña5', '333333333');
 
 -- --------------------------------------------------------
 
@@ -98,6 +108,17 @@ CREATE TABLE `usuarionormal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `usuarionormal`
+--
+
+INSERT INTO `usuarionormal` (`id`, `nombre`, `email`, `contraseña`, `cv`, `expediente_academico`, `valoracion_profesorado`, `centro_id`) VALUES
+(1, 'Usuario1', 'usuario1@example.com', 'contraseña1', 'CV Usuario 1', 'Expediente Usuario 1', 'Buena', 1),
+(2, 'Usuario2', 'usuario2@example.com', 'contraseña2', 'CV Usuario 2', 'Expediente Usuario 2', 'Excelente', 2),
+(3, 'Usuario3', 'usuario3@example.com', 'contraseña3', 'CV Usuario 3', 'Expediente Usuario 3', 'Muy Buena', 3),
+(4, 'Usuario4', 'usuario4@example.com', 'contraseña4', 'CV Usuario 4', 'Expediente Usuario 4', 'Regular', 4),
+(5, 'Usuario5', 'usuario5@example.com', 'contraseña5', 'CV Usuario 5', 'Expediente Usuario 5', 'Muy Mala', 5);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -105,23 +126,21 @@ CREATE TABLE `usuarionormal` (
 -- Indices de la tabla `centro`
 --
 ALTER TABLE `centro`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `oferta`
 --
 ALTER TABLE `oferta`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_estudiante` (`id_estudiante`),
-  ADD KEY `id_practica` (`id_practica`);
+  ADD KEY `id_practica` (`id_practica`),
+  ADD KEY `id_estudiante` (`id_estudiante`);
 
 --
 -- Indices de la tabla `practica`
@@ -138,66 +157,27 @@ ALTER TABLE `usuarionormal`
   ADD KEY `centro_id` (`centro_id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `centro`
---
-ALTER TABLE `centro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `empresa`
---
-ALTER TABLE `empresa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `oferta`
---
-ALTER TABLE `oferta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `practica`
---
-ALTER TABLE `practica`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `usuarionormal`
---
-ALTER TABLE `usuarionormal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `centro`
+-- Filtros para la tabla `oferta`
 --
-ALTER TABLE `centro`
-  ADD CONSTRAINT `centro_ibfk_1` FOREIGN KEY (`id`) REFERENCES `usuarionormal` (`centro_id`) ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `empresa`
---
-ALTER TABLE `empresa`
-  ADD CONSTRAINT `empresa_ibfk_1` FOREIGN KEY (`id`) REFERENCES `practica` (`id_empresa`) ON UPDATE CASCADE;
+ALTER TABLE `oferta`
+  ADD CONSTRAINT `oferta_ibfk_1` FOREIGN KEY (`id_estudiante`) REFERENCES `usuarionormal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `oferta_ibfk_2` FOREIGN KEY (`id_practica`) REFERENCES `practica` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `practica`
 --
 ALTER TABLE `practica`
-  ADD CONSTRAINT `practica_ibfk_1` FOREIGN KEY (`id`) REFERENCES `oferta` (`id_practica`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `practica_ibfk_1` FOREIGN KEY (`id_empresa`) REFERENCES `empresa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `usuarionormal`
 --
 ALTER TABLE `usuarionormal`
-  ADD CONSTRAINT `usuarionormal_ibfk_1` FOREIGN KEY (`id`) REFERENCES `oferta` (`id_estudiante`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `usuarionormal_ibfk_1` FOREIGN KEY (`centro_id`) REFERENCES `centro` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
