@@ -25,48 +25,48 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavView);
         frameLayout = findViewById(R.id.frameLayout);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        //bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            //@Override
+            //public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                int itemId = item.getItemId();
-
-                if (itemId == R.id.navHome) {
-
-                    loadFragment(new HomeFragment(), true);
-
-                } else if (itemId == R.id.navProfile) {
-
-                    loadFragment(new ProfileFragment(), false);
-
-                } else if (itemId == R.id.navAdd){ // nav Add
-
-                    loadFragment(new AddFragment(), false);
-
-                }
-                else {
-
-                    loadFragment(new SearchFragment(), false);
-
-                }
-
-                return true;
-            }
-        });
+                //int itemId = item.getItemId();
+//
+                //if (itemId == R.id.navHome) {
+//
+                //    loadFragment(new HomeFragment(), true);
+//
+                //} else if (itemId == R.id.navProfile) {
+//
+                //    loadFragment(new ProfileFragment(), false);
+//
+                //} else if (itemId == R.id.navAdd){ // nav Add
+//
+                //    loadFragment(new AddFragment(), false);
+//
+                //}
+                //else {
+//
+                //    loadFragment(new SearchFragment(), false);
+//
+                //}
+//
+                //return true;
+       //    }
+       //});
 
     }
 
-    private void loadFragment(Fragment fragment, boolean isAppInitialized) {
+   //private void loadFragment(Fragment fragment, boolean isAppInitialized) {
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+   //    FragmentManager fragmentManager = getSupportFragmentManager();
+   //    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        if(isAppInitialized){
-            fragmentTransaction.add(R.id.frameLayout, fragment);
-        } else {
-            fragmentTransaction.replace(R.id.frameLayout, fragment);
-        }
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit();
-    }
+   //    if(isAppInitialized){
+   //        fragmentTransaction.add(R.id.frameLayout, fragment);
+   //    } else {
+   //        fragmentTransaction.replace(R.id.frameLayout, fragment);
+   //    }
+   //    fragmentTransaction.replace(R.id.frameLayout, fragment);
+   //    fragmentTransaction.commit();
+   //}
 }
