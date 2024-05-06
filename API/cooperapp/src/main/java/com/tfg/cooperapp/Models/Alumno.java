@@ -38,7 +38,7 @@ public class Alumno {
     private String valoracion_profesorado;
 
     @Column(name="centro_id")
-    private String centro_id;
+    private Integer centro_id;
 
 
 

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RequestMapping("/usuarionormal")
 @RestController
 public class AlumnoController {
@@ -15,9 +17,13 @@ public class AlumnoController {
     @Autowired
     private AlumnoService alumnoService;
 
-    @GetMapping("/allAlumnos/{id}")
+
+    @GetMapping("/allAlumnos")
+    public List<Alumno> getAllAlumnos() { return alumnoService.getAllAlumnos();}
+
+    @GetMapping("/alumnosById/{id}")
     public Alumno getAlumnos(@PathVariable  Integer id) {
-        return alumnoService.getAllAlumnos(id);
+        return alumnoService.getAlumnosById(id);
     }
 
     @GetMapping("/logIn/{correo}")

@@ -16,7 +16,7 @@
         android:src="@drawable/background_shapes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -87,9 +87,10 @@
         app:startIconDrawable="@drawable/ic_user">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userametext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="usuario" />
+            android:hint="correo" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -106,6 +107,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contratext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="contraseña"
@@ -230,6 +232,7 @@
         android:text="Registrate ahora"
         android:textStyle="bold"
         android:textColor="@color/azulElectrico"
+        android:clickable="true"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.073"

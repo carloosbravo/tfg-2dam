@@ -5,13 +5,16 @@ import com.tfg.cooperapp.Repositories.AlumnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AlumnoService {
 
     @Autowired
     private AlumnoRepository alumnoRepository;
 
-    public Alumno getAllAlumnos(Integer id){
+    public List<Alumno> getAllAlumnos(){ return alumnoRepository.findAll();}
+    public Alumno getAlumnosById(Integer id){
         return alumnoRepository.findById(id).get();
     }
     public Alumno logIn(String correo) {
