@@ -15,9 +15,9 @@ import com.example.cooper_up.fragments.HomeFragment;
 import com.example.cooper_up.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private BottomNavigationView bottomNavigationView;
+    private BottomNavigationView navigation;
     private FrameLayout frameLayout;
 
     // Fragmentos
@@ -30,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomNavigationView = findViewById(R.id.bottomNavView);
+        navigation = findViewById(R.id.bottomNavView);
         frameLayout = findViewById(R.id.frameLayout);
+        navigation.setOnNavigationItemSelectedListener(this);
+        navigation.setSelectedItemId(R.id.navHome);
 
         // Inicializar fragmentos
         homeFragment = new HomeFragment();
@@ -41,29 +43,7 @@ public class MainActivity extends AppCompatActivity {
         // Establecer el fragmento inicial
         setFragment(homeFragment);
 
-        // Listener para el BottomNavigationView
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int itemId = item.getItemId();
 
-                if (itemId == R.id.navHome) {
-                    Toast.makeText(MainActivity.this, "home", Toast.LENGTH_SHORT).show();
-                    setFragment(homeFragment);
-                    return true;
-                } else if (itemId == R.id.navAdd) {
-                    setFragment(addFragment);
-                    return true;
-                } else if (itemId == R.id.navProfile) {
-                    Toast.makeText(MainActivity.this, "profile", Toast.LENGTH_SHORT).show();
-                    setFragment(profileFragment);
-                    return true;
-                } else {
-                    return false;
-                }
-
-            }
-        });
     }
 
     // Método para cambiar el fragmento
@@ -72,4 +52,40 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
     }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture){
+        super.onPointerCaptureChanged(hasCapture);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+
+        // Inicializar fragmentos si es necesario
+        if (homeFragment == null) {
+            homeFragment = new HomeFragment();
+        }
+        if (addFragment == null) {
+            addFragment = new AddFragment();
+        }
+        if (profileFragment == null) {
+            profileFragment = new ProfileFragment();
+        }
+
+        // Realizar transacción de fragmentos
+        if (itemId == R.id.navHome) {
+            setFragment(homeFragment);
+            return true;
+        } else if (itemId == R.id.navAdd) {
+            setFragment(addFragment);
+            return true;
+        } else if (itemId == R.id.navProfile) {
+            setFragment(profileFragment);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
