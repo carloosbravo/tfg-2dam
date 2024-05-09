@@ -4,4 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="azulFondoCLaro">#4FABFF</color>
     <color name="azulElectrico">#0057FF</color>
+    <color name="grisClarito">#edf2f4</color>
+    <color name="grisOscuro">#e5e5e5</color>
+    <color name="grisMasOscuro">#adb5bd</color>
+    <color name="rojo">#e63946</color>
+
 </resources>
