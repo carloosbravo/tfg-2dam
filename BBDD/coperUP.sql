@@ -25,9 +25,15 @@ SET time_zone = "+00:00";
 
 --
 -- Estructura de tabla para la tabla `centro`
+<<<<<<< Updated upstream:BBDD/coperUP.sql
 CREATE database cooperup;
 USE cooperup;
 
+=======
+--
+CREATE DATABASE cooperapp;
+use cooperapp;
+>>>>>>> Stashed changes:BBDD/cooperup.sql
 CREATE TABLE `centro` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
