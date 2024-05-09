@@ -1,119 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ProfileFragment"
-    android:background="@color/azulElectrico">
+    tools:context=".fragments.HomeFragment">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:background="@color/azulProfile"
+            android:orientation="vertical"
+            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/profileImageView"
-                    android:layout_width="110dp"
-                    android:layout_height="142dp"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="10dp"
-                    android:src="@color/white" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|end"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="16dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/usernameTextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Carlos Bravo"
-                        android:textColor="@color/white"
-                        android:textSize="27sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/nombreCentroTV"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="IFP INNOVACIÓN EN FORMACION PORFESIONAL"
-                        android:textColor="@color/white"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/emailTV"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="carloosbravo04@gmail.com"
-                        android:textColor="@color/white"
-                        android:textSize="11sp" />
-
-
-                    <Button
-                        android:id="@+id/editarPerfil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20sp"
-                        android:backgroundTint="@color/white"
-                        android:text="Editar perfil"
-                        android:textColor="@color/azulElectrico"
-                       />
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <View
-                android:layout_width="350sp"
-                android:layout_height="1dp"
-                android:layout_marginTop="30dp"
-                android:background="@color/white"
-                android:layout_marginLeft="32sp"/>
-            <Button
-                android:id="@+id/cvButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
-                android:backgroundTint="@color/white"
-                android:text="CV"
-                android:textColor="@color/azulElectrico" />
-            <Button
-                android:id="@+id/githubButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
-                android:backgroundTint="@color/white"
-                android:text="Enlace a github"
-                android:textColor="@color/azulElectrico"
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:padding="5dp"
+                app:strokeColor="@android:color/darker_gray"
+                app:shapeAppearanceOverlay="@style/circleImageView"
+                android:src="@drawable/foto_prueba"
                 />
-            <Button
-                android:id="@+id/notasProfesorButton"
-                android:layout_width="match_parent"
+
+            <TextView
+                android:id="@+id/nombreALumnoTituloTV"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
-                android:backgroundTint="@color/white"
-                android:text="NOtas del Alumno"
-                android:textColor="@color/azulElectrico" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:text="Gonzalo Rojas"
+                android:textStyle="bold"
+                android:textSize="25dp"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="IFP innovcaion en Formacion profesional"
+                android:layout_marginBottom="30dp"
+                android:textColor="@color/white"
+                android:textSize="15dp"/>
 
         </LinearLayout>
 
 
-    </FrameLayout>
+        <LinearLayout
+            android:id="@+id/FilaInformacionNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp" >
 
-</FrameLayout>
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_badget"
+                android:layout_marginRight="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textColor="@color/azulProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NOMBRE"
+
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/nombreALumnoTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gonzalo Rojas"
+                    android:textStyle="italic"
+                    android:textColor="@color/azulProfile"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="350sp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/grisMasOscuro"
+            android:layout_marginLeft="32sp"/>
+
+        <LinearLayout
+            android:id="@+id/FilaInformacionTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp" >
+
+            <ImageView
+                android:id="@+id/iconoTelefono"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_phone"
+                android:layout_marginRight="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nº TELEFONO"
+                    android:textColor="@color/azulProfile"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/telefonoTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+34 56374362"
+                    android:textColor="@color/azulProfile"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="350sp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/grisMasOscuro"
+            android:layout_marginLeft="32sp"/>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp" >
+
+            <ImageView
+
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_email_blue"
+                android:layout_marginRight="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CORREO"
+                    android:textStyle="bold"
+                    android:textColor="@color/azulProfile"/>
+
+                <TextView
+                    android:id="@+id/emailTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="gonzrf@gmail.com"
+                    android:textColor="@color/azulProfile"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="350sp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/grisMasOscuro"
+            android:layout_marginLeft="32sp"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp" >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_cv"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CV"
+                    android:textColor="@color/azulProfile"
+                    android:textStyle="bold"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="350sp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/grisMasOscuro"
+            android:layout_marginLeft="32sp"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
