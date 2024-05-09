@@ -15,6 +15,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cooper_up"
         tools:targetApi="31">
+
+        <!-- Actividad MainActivity como la actividad de inicio -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"> <!-- Cambia "false" a "true" si necesitas que la actividad sea accesible desde fuera de tu aplicación -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Otras actividades -->
         <activity
             android:name=".SelectorUsuario"
             android:exported="false" />
@@ -23,17 +35,8 @@
             android:exported="false" />
         <activity
             android:name=".LoginAlumno"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false" >
+            <!-- Quitamos el intent-filter de LoginAlumno para que no sea la actividad de inicio -->
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"/>
-
     </application>
-
 </manifest>
