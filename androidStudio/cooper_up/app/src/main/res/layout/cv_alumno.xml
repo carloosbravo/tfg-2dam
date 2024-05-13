@@ -8,27 +8,78 @@
     <androidx.cardview.widget.CardView
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:background="@color/grisClarito">
 
-            <TextView
-                android:id="@+id/nameAlumnoTV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Alvaro Chaparro" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/foto_prueba"
+                android:padding="5dp"
+                app:shapeAppearanceOverlay="@style/circleImageView"
+                app:strokeColor="@android:color/darker_gray"
+                android:layout_marginRight="10dp"/>
 
-            <TextView
-                android:id="@+id/textView3"
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Desarrollo aplicaciones" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/nameAlumnoCardTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Alvaro Chaparro"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5sp"/>
+
+                <View
+                    android:layout_width="150sp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/grisMasOscuro" />
+
+                <TextView
+                    android:id="@+id/gradoAlumnoCardTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Desarrollo aplicaciones"
+                    android:textStyle="italic"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/correoAlumnoCardTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="correosd@gmail.com"
+                    />
+
+                <Button
+                    android:id="@+id/verPerfilButton"
+                    android:layout_width="150sp"
+                    android:layout_height="42sp"
+                    android:text="Ver Perfil"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+
+                    android:backgroundTint="@color/azulFondoCLaro"/>
+
+
+            </LinearLayout>
         </LinearLayout>
+
+
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

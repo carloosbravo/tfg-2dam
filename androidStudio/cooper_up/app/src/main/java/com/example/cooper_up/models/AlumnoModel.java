@@ -11,6 +11,7 @@ public class AlumnoModel {
     private String expediente_academico;
     private String valoracion_profesorado;
 
+
     public AlumnoModel() {
     }
 
