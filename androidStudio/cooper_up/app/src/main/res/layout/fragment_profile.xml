@@ -29,7 +29,7 @@
                 android:padding="5dp"
                 app:strokeColor="@android:color/darker_gray"
                 app:shapeAppearanceOverlay="@style/circleImageView"
-                android:src="@drawable/foto_prueba"
+                android:background="@drawable/foto_prueba"
                 />
 
             <TextView

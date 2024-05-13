@@ -1,6 +1,6 @@
 package com.example.cooper_up.retrofit;
 
-import com.example.cooper_up.AlumnoModel;
+import com.example.cooper_up.models.AlumnoModel;
 
 import java.util.List;
 

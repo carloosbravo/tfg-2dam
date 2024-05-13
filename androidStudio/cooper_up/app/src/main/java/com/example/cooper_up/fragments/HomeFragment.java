@@ -13,15 +13,10 @@ import com.example.cooper_up.R;
 
 public class HomeFragment extends Fragment {
 
-   public HomeFragment(){
-
-   }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-
-        // Verifica si la lista de explotaciones está vacía antes de configurar el adaptador
 
         return rootView;
     }

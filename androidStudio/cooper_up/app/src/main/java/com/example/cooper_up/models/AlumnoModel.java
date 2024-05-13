@@ -1,4 +1,4 @@
-package com.example.cooper_up;
+package com.example.cooper_up.models;
 
 public class AlumnoModel {
 

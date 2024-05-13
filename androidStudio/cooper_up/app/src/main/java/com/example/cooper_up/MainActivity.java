@@ -8,9 +8,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
-import com.example.cooper_up.fragments.AddFragment;
+import com.example.cooper_up.fragments.PracticasSolicitadasFragment;
 import com.example.cooper_up.fragments.HomeFragment;
 import com.example.cooper_up.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     // Fragmentos
     private HomeFragment homeFragment;
-    private AddFragment addFragment;
+    private PracticasSolicitadasFragment practicasSolicitadasFragment;
     private ProfileFragment profileFragment;
 
     @Override
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         // Inicializar fragmentos
         homeFragment = new HomeFragment();
-        addFragment = new AddFragment();
+        practicasSolicitadasFragment = new PracticasSolicitadasFragment();
         profileFragment = new ProfileFragment();
 
         // Establecer el fragmento inicial
@@ -66,8 +65,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (homeFragment == null) {
             homeFragment = new HomeFragment();
         }
-        if (addFragment == null) {
-            addFragment = new AddFragment();
+        if (practicasSolicitadasFragment == null) {
+            practicasSolicitadasFragment = new PracticasSolicitadasFragment();
         }
         if (profileFragment == null) {
             profileFragment = new ProfileFragment();
@@ -78,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             setFragment(homeFragment);
             return true;
         } else if (itemId == R.id.navAdd) {
-            setFragment(addFragment);
+            setFragment(practicasSolicitadasFragment);
             return true;
         } else if (itemId == R.id.navProfile) {
             setFragment(profileFragment);

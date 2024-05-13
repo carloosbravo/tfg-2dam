@@ -9,10 +9,10 @@
     <item
         android:id="@+id/navAdd"
         android:title="tus practicas"
-        android:icon="@drawable/ic_home"/>
+        android:icon="@drawable/ic_badget"/>
 
     <item
         android:id="@+id/navProfile"
         android:title="Profile"
-        android:icon="@drawable/ic_userbox"/>
+        android:icon="@drawable/ic_user"/>
 </menu>
