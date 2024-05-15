@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-05-2024 a las 14:38:24
+-- Tiempo de generación: 15-05-2024 a las 13:29:53
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -45,7 +45,8 @@ INSERT INTO `centro` (`id`, `nombre`, `email`, `direccion`, `contraseña`, `tele
 (2, 'Centro2', 'centro2@example.com', 'Dirección Centro 2', 'contraseña2', '987654321'),
 (3, 'Centro3', 'centro3@example.com', 'Dirección Centro 3', 'contraseña3', '111111111'),
 (4, 'Centro4', 'centro4@example.com', 'Dirección Centro 4', 'contraseña4', '222222222'),
-(5, 'Centro5', 'centro5@example.com', 'Dirección Centro 5', 'contraseña5', '333333333');
+(5, 'Centro5', 'centro5@example.com', 'Dirección Centro 5', 'contraseña5', '333333333'),
+(6, 'IFP', 'ifp@ifp.com', 'Calle Alcalá', 'contraseñaIFP', '111111111');
 
 -- --------------------------------------------------------
 
@@ -60,10 +61,19 @@ CREATE TABLE `empresa` (
   `contraseña` varchar(255) NOT NULL,
   `direccion` varchar(255) DEFAULT NULL,
   `telefono` varchar(20) DEFAULT NULL,
-  `biografia` text DEFAULT NULL,
-  `oferta_practicas` text DEFAULT NULL,
-  `oferta_trabajo` text DEFAULT NULL
+  `biografia` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`id`, `nombre`, `email`, `contraseña`, `direccion`, `telefono`, `biografia`) VALUES
+(1, 'Empresa1', 'empresa1@example.com', 'contraseña1', 'Dirección Empresa 1', '123456789', 'Biografía Empresa 1'),
+(2, 'Empresa2', 'empresa2@example.com', 'contraseña2', 'Dirección Empresa 2', '987654321', 'Biografía Empresa 2'),
+(3, 'Empresa3', 'empresa3@example.com', 'contraseña3', 'Dirección Empresa 3', '555555555', 'Biografía Empresa 3'),
+(4, 'Empresa4', 'empresa4@example.com', 'contraseña4', 'Dirección Empresa 4', '111111111', 'Biografía Empresa 4'),
+(5, 'Empresa5', 'empresa5@example.com', 'contraseña5', 'Dirección Empresa 5', '999999999', 'Biografía Empresa 5');
 
 -- --------------------------------------------------------
 
@@ -104,19 +114,21 @@ CREATE TABLE `usuarionormal` (
   `cv` text DEFAULT NULL,
   `expediente_academico` text DEFAULT NULL,
   `valoracion_profesorado` varchar(100) DEFAULT NULL,
-  `centro_id` int(11) DEFAULT NULL
+  `centro_id` int(11) DEFAULT NULL,
+  `telefono` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarionormal`
 --
 
-INSERT INTO `usuarionormal` (`id`, `nombre`, `email`, `contraseña`, `cv`, `expediente_academico`, `valoracion_profesorado`, `centro_id`) VALUES
-(1, 'Usuario1', 'usuario1@example.com', 'contraseña1', 'CV Usuario 1', 'Expediente Usuario 1', 'Buena', 1),
-(2, 'Usuario2', 'usuario2@example.com', 'contraseña2', 'CV Usuario 2', 'Expediente Usuario 2', 'Excelente', 2),
-(3, 'Usuario3', 'usuario3@example.com', 'contraseña3', 'CV Usuario 3', 'Expediente Usuario 3', 'Muy Buena', 3),
-(4, 'Usuario4', 'usuario4@example.com', 'contraseña4', 'CV Usuario 4', 'Expediente Usuario 4', 'Regular', 4),
-(5, 'Usuario5', 'usuario5@example.com', 'contraseña5', 'CV Usuario 5', 'Expediente Usuario 5', 'Muy Mala', 5);
+INSERT INTO `usuarionormal` (`id`, `nombre`, `email`, `contraseña`, `cv`, `expediente_academico`, `valoracion_profesorado`, `centro_id`, `telefono`) VALUES
+(1, 'Usuario1', 'usuario1@example.com', 'contrasena1', 'CV Usuario 1', 'Expediente Usuario 1', 'Buena', 1, NULL),
+(2, 'Usuario2', 'usuario2@example.com', 'contraseña2', 'CV Usuario 2', 'Expediente Usuario 2', 'Excelente', 2, NULL),
+(3, 'Usuario3', 'usuario3@example.com', 'contraseña3', 'CV Usuario 3', 'Expediente Usuario 3', 'Muy Buena', 3, NULL),
+(4, 'Usuario4', 'usuario4@example.com', 'contraseña4', 'CV Usuario 4', 'Expediente Usuario 4', 'Regular', 4, NULL),
+(5, 'Usuario5', 'usuario5@example.com', 'contraseña5', 'CV Usuario 5', 'Expediente Usuario 5', 'Muy Mala', 5, NULL),
+(6, 'gonzalito', 'gonzalo@example.com', 'contrasena98', 'CV gonza', 'Expediente gonza', 'Malisimo', 2, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -155,6 +167,34 @@ ALTER TABLE `practica`
 ALTER TABLE `usuarionormal`
   ADD PRIMARY KEY (`id`),
   ADD KEY `centro_id` (`centro_id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `centro`
+--
+ALTER TABLE `centro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `practica`
+--
+ALTER TABLE `practica`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarionormal`
+--
+ALTER TABLE `usuarionormal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
