@@ -84,7 +84,7 @@ public class LoginAlumno extends AppCompatActivity {
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginAlumno.this, SignUp.class);
+                Intent intent = new Intent(LoginAlumno.this, EditarUsuario.class);
                 startActivity(intent);
             }
         });

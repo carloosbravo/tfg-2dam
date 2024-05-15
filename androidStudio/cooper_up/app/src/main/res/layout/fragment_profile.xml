@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBOton2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineBoton" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBoton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="395dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBOton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="253dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +42,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="50dp"
-            android:background="@color/azulProfile"
+            android:background="@drawable/diagonal_gradient"
             android:orientation="vertical"
             android:gravity="center">
 
@@ -49,9 +72,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="IFP innovcaion en Formacion profesional"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="40dp"
                 android:textColor="@color/white"
-                android:textSize="15dp"/>
+                android:textSize="18dp"/>
 
         </LinearLayout>
 
@@ -227,5 +250,47 @@
             android:background="@color/grisMasOscuro"
             android:layout_marginLeft="32sp"/>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_dialog"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Valoraciones"
+                    android:textColor="@color/azulProfile"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/valoracionesProfileTV"
+                    android:layout_width="260dp"
+                    android:layout_height="30dp"
+                    android:text="Buen alumno pero muy rebelde, un dia le pego a uno"
+                    android:textColor="@color/azulProfile"
+
+                    />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

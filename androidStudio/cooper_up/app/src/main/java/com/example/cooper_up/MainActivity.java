@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (itemId == R.id.navHome) {
             setFragment(homeFragment);
             return true;
-        } else if (itemId == R.id.navAdd) {
+        } else if (itemId == R.id.navPracticas) {
             setFragment(practicasSolicitadasFragment);
             return true;
         } else if (itemId == R.id.navProfile) {
