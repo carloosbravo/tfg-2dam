@@ -37,7 +37,8 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -254,8 +255,9 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:orientation="horizontal"
+            android:layout_marginBottom="30dp"
             android:layout_marginLeft="30dp"
             >
 
@@ -283,11 +285,12 @@
                 <TextView
                     android:id="@+id/valoracionesProfileTV"
                     android:layout_width="260dp"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:text="Buen alumno pero muy rebelde, un dia le pego a uno"
                     android:textColor="@color/azulProfile"
 
                     />
+
 
 
             </LinearLayout>
