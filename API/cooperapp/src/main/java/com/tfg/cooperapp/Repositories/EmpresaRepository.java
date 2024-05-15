@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.Query;
 public interface EmpresaRepository extends JpaRepository<Empresa, Integer> {
 
     @Query("SELECT a FROM Empresa a WHERE a.email =?1")
-    Empresa obtenerEmporesaCorreo(String correo);
+    Empresa obtenerEmpresaCorreo(String correo);
 }

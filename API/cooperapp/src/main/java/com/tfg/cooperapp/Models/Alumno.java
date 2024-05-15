@@ -39,7 +39,4 @@ public class Alumno {
 
     @Column(name="centro_id")
     private Integer centro_id;
-
-
-
 }

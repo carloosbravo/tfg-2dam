@@ -13,11 +13,13 @@ public class AlumnoService {
     @Autowired
     private AlumnoRepository alumnoRepository;
 
+    // Solo para hacer pruebas
     public List<Alumno> getAllAlumnos(){ return alumnoRepository.findAll();}
     public Alumno getAlumnosById(Integer id){
         return alumnoRepository.findById(id).get();
     }
     public Alumno logIn(String correo) {
         return alumnoRepository.obtenerAlumnoCorreo(correo);
-    };
+    }
+    public Alumno register(Alumno alumno){ return alumnoRepository.save(alumno);}
 }
