@@ -3,22 +3,16 @@
 
     <item
         android:id="@+id/navHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:title="Home"
         android:icon="@drawable/ic_home"/>
 
     <item
-        android:id="@+id/navAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:title="Add"
-        android:icon="@drawable/ic_home"/>
+        android:id="@+id/navPracticas"
+        android:title="tus practicas"
+        android:icon="@drawable/ic_badget"/>
 
     <item
-        android:id="@+id/navSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:title="Search"
-        android:icon="@drawable/ic_home"/>
+        android:id="@+id/navProfile"
+        android:title="Profile"
+        android:icon="@drawable/ic_user"/>
 </menu>

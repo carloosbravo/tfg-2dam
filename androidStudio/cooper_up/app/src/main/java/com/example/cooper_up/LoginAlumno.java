@@ -11,9 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cooper_up.models.AlumnoModel;
 import com.example.cooper_up.retrofit.ApiAdapter;
+import com.example.cooper_up.retrofit.ApiService;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,6 +35,10 @@ public class LoginAlumno extends AppCompatActivity {
 
         TextView registrarse = findViewById(R.id.registrateTVLogin);
 
+        ApiAdapter apiAdapter = ApiAdapter.getInstance();
+
+        ApiService apiService = apiAdapter.getApiService();
+
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,7 +47,7 @@ public class LoginAlumno extends AppCompatActivity {
 
                 String contraIntro = contra.getText().toString();
 
-                Call<AlumnoModel> call= ApiAdapter.getApiService().logIn(correoIntro);
+                Call<AlumnoModel> call= apiService.logIn(correoIntro);
 
                 call.enqueue(new Callback<AlumnoModel>() {
                     @Override
@@ -84,7 +89,7 @@ public class LoginAlumno extends AppCompatActivity {
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginAlumno.this, SignUp.class);
+                Intent intent = new Intent(LoginAlumno.this, EditarUsuario.class);
                 startActivity(intent);
             }
         });

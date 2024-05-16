@@ -3,10 +3,7 @@ package com.tfg.cooperapp.Controllers;
 import com.tfg.cooperapp.Models.Alumno;
 import com.tfg.cooperapp.Services.AlumnoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,7 +13,6 @@ public class AlumnoController {
 
     @Autowired
     private AlumnoService alumnoService;
-
 
     @GetMapping("/allAlumnos")
     public List<Alumno> getAllAlumnos() { return alumnoService.getAllAlumnos();}
@@ -30,4 +26,9 @@ public class AlumnoController {
     public Alumno logIn(@PathVariable String correo){
         return alumnoService.logIn(correo);
     }
+
+    // Se usa el mismo método post para registrar un nuevo alumno y para actualizar los datos de un alumno ya existente
+    @PostMapping("/register-update")
+    public Alumno register(@RequestBody Alumno alumno) { return alumnoService.register(alumno);}
+
 }

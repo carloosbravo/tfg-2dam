@@ -1,4 +1,4 @@
-package com.example.cooper_up;
+package com.example.cooper_up.models;
 
 public class AlumnoModel {
 
@@ -10,6 +10,7 @@ public class AlumnoModel {
     private String cv;
     private String expediente_academico;
     private String valoracion_profesorado;
+
 
     public AlumnoModel() {
     }

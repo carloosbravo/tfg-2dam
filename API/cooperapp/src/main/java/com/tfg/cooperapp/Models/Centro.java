@@ -7,12 +7,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name= "usuarionormal")
+@Table(name= "centro")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-public class Alumno {
+public class Centro {
 
     @Column(name = "id")
     @Id
@@ -25,18 +25,12 @@ public class Alumno {
     @Column(name="email")
     private String email;
 
+    @Column(name="direccion")
+    private String direccion;
+
     @Column(name="contraseña")
     private String contraseña;
 
-    @Column(name="cv")
-    private String cv;
-
-    @Column(name="expediente_academico")
-    private String expediente_academico;
-
-    @Column(name="valoracion_profesorado")
-    private String valoracion_profesorado;
-
-    @Column(name="centro_id")
-    private Integer centro_id;
+    @Column(name="telefono")
+    private String telefono;
 }
