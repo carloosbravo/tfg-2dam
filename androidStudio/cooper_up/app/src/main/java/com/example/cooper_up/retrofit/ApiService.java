@@ -1,7 +1,5 @@
 package com.example.cooper_up.retrofit;
 
-import com.example.cooper_up.AlumnoModel;
-
 import java.util.List;
 
 import retrofit2.Call;
