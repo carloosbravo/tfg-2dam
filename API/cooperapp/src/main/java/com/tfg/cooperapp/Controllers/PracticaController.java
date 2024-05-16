@@ -22,4 +22,7 @@ public class PracticaController {
 
     @GetMapping("/byIdEmpresa/{id_empresa}")
     public List<Practica> getByIdEmpresa(@PathVariable Integer id_empresa) { return practicaService.getPracticasIdEmpresa(id_empresa);}
+
+    @GetMapping("/byIdEstudiante/{id_estudiante}")
+    public List<Practica> getByIdEstdudiante(@PathVariable Integer id_estudiante) { return practicaService.getPracticasEstdiante(id_estudiante);}
 }

@@ -23,8 +23,8 @@ public class Oferta {
     @Column(name="id_practica")
     private Integer id_practica;
 
-    @Column(name="id_alumno")
-    private Integer id_alumno;
+    @Column(name="id_estudiante")
+    private Integer id_estudiante;
 
     @Column(name="estado")
     private Integer estado;

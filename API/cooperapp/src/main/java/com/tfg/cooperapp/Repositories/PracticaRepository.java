@@ -10,4 +10,7 @@ public interface PracticaRepository extends JpaRepository<Practica, Integer> {
 
     @Query("SELECT p FROM Practica p WHERE id_empresa = ?1")
     List<Practica> getPracticasIdEmpresa(Integer id_empresa);
+
+    @Query("SELECT p FROM Practica p JOIN Oferta o ON p.id = o.id_practica WHERE o.id_estudiante = ?1")
+    List<Practica> getPracticasEstudiante(Integer idEstudiante);
 }

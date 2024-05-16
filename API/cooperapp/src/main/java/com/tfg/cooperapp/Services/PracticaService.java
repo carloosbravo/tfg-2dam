@@ -16,4 +16,6 @@ public class PracticaService {
     public List<Practica> getAll() { return practicaRepository.findAll();}
 
     public List<Practica> getPracticasIdEmpresa(Integer id_empresa) {return practicaRepository.getPracticasIdEmpresa(id_empresa);}
+
+    public List<Practica> getPracticasEstdiante(Integer id_estudiante) {return practicaRepository.getPracticasEstudiante(id_estudiante);}
 }
