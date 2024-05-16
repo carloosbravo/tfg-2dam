@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class PracticaModel implements Serializable {
+public class PracticaModel {
 
     @SerializedName("id")
     private Integer id;
@@ -21,15 +21,31 @@ public class PracticaModel implements Serializable {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getTitulo_practica() {
         return titulo_practica;
+    }
+
+    public void setTitulo_practica(String titulo_practica) {
+        this.titulo_practica = titulo_practica;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     public Integer getId_empresa() {
         return id_empresa;
+    }
+
+    public void setId_empresa(Integer id_empresa) {
+        this.id_empresa = id_empresa;
     }
 }
