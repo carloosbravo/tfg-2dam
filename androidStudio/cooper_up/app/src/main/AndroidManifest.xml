@@ -32,12 +32,20 @@
             android:exported="false" />
         <activity
             android:name=".LoginAlumno"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false" >
             <!-- Quitamos el intent-filter de LoginAlumno para que no sea la actividad de inicio -->
         </activity>
+
+        <activity
+        android:name=".SplashScreen"
+        android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
