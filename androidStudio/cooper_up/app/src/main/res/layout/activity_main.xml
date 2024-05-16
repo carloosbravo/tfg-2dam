@@ -29,7 +29,7 @@
         app:itemIconTint="@color/white"
         app:itemIconSize="30dp"
         app:itemActiveIndicatorStyle="@color/white"
-        app:labelVisibilityMode="unlabeled"
+        app:itemTextColor="@color/white"
 
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

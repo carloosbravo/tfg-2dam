@@ -28,7 +28,8 @@
             android:text="OFERTAS DE PRACTICAS"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@color/azulElectrico"
             />
         <View
             android:layout_width="300sp"
@@ -38,6 +39,7 @@
             android:layout_marginLeft="32sp"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
