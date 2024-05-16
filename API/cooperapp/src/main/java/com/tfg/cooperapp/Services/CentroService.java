@@ -21,4 +21,6 @@ public class CentroService {
     public Centro logIn(String correo) {
         return centroRepository.obtenerCentroCorreo(correo);
     };
+    public Centro register(Centro centro){ return centroRepository.save(centro);}
+
 }
