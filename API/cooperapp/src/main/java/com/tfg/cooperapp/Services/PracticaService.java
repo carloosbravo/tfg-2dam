@@ -14,4 +14,6 @@ public class PracticaService {
     private PracticaRepository practicaRepository;
 
     public List<Practica> getAll() { return practicaRepository.findAll();}
+
+    public List<Practica> getPracticasIdEmpresa(Integer id_empresa) {return practicaRepository.getPracticasIdEmpresa(id_empresa);}
 }
