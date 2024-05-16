@@ -1,6 +1,7 @@
 package com.example.cooper_up.retrofit;
 
 import com.example.cooper_up.models.AlumnoModel;
+import com.example.cooper_up.models.PracticaModel;
 
 import java.util.List;
 
@@ -18,5 +19,8 @@ public interface ApiService {
 
     @GET("usuarionormal/logIn/{correo}")
     Call <AlumnoModel> logIn(@Path("correo") String correo);
+
+    @GET("practica/getAll")
+    Call <List<PracticaModel>> getAllPracticas();
 
 }

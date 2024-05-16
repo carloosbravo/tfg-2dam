@@ -9,8 +9,8 @@ public class PracticaModel implements Serializable {
     @SerializedName("id")
     private Integer id;
 
-    @SerializedName("nombre_practica")
-    private String nombre_practica;
+    @SerializedName("titulo")
+    private String titulo_practica;
     @SerializedName("descripcion")
     private String descripcion;
 
@@ -21,8 +21,8 @@ public class PracticaModel implements Serializable {
         return id;
     }
 
-    public String getNombre_practica() {
-        return nombre_practica;
+    public String getTitulo_practica() {
+        return titulo_practica;
     }
 
     public String getDescripcion() {

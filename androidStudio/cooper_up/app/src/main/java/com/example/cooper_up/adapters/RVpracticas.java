@@ -36,7 +36,7 @@ public class RVpracticas extends RecyclerView.Adapter<RVpracticas.MyViewHolder> 
     public void onBindViewHolder(@NonNull RVpracticas.MyViewHolder holder, int position) {
 
         PracticaModel practica = practicas.get(position);
-        holder.nombrePractica.setText(practica.getNombre_practica());
+        holder.tituloPractica.setText(practica.getTitulo_practica());
         holder.descripcionPractica.setText(practica.getDescripcion());
 
         //aqui iria el cambio de intent para cuando pulse en la practica
@@ -50,11 +50,11 @@ public class RVpracticas extends RecyclerView.Adapter<RVpracticas.MyViewHolder> 
 
     public class MyViewHolder  extends RecyclerView.ViewHolder{
 
-        TextView nombrePractica;
+        TextView tituloPractica;
         TextView descripcionPractica;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.nombrePractica = itemView.findViewById(R.id.nombrePracticasTV);
+            this.tituloPractica = itemView.findViewById(R.id.nombrePracticasTV);
             this.descripcionPractica = itemView.findViewById(R.id.descripcionPracticaTV);
         }
     }
