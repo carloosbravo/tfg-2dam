@@ -13,6 +13,7 @@ import com.example.cooper_up.R;
 import com.example.cooper_up.models.PracticaModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RVpracticas extends RecyclerView.Adapter<RVpracticas.MyViewHolder> {
 
@@ -41,11 +42,21 @@ public class RVpracticas extends RecyclerView.Adapter<RVpracticas.MyViewHolder> 
 
         //aqui iria el cambio de intent para cuando pulse en la practica
     }
+    public void setFilteredList(ArrayList<PracticaModel> filteredList){
+        this.practicas = filteredList;
+        notifyDataSetChanged();
+    }
 
     @Override
     public int getItemCount() {
 
         return practicas.size();
+    }
+
+    public void actualizarLista(List<PracticaModel> nuevaLista){
+        practicas.clear();
+        practicas.addAll(nuevaLista);
+        notifyDataSetChanged();
     }
 
     public class MyViewHolder  extends RecyclerView.ViewHolder{
