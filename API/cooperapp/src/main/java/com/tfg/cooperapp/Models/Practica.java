@@ -22,6 +22,9 @@ public class Practica {
     @Column(name="descripcion")
     private String descripcion;
 
+    @Column(name="titulo")
+    private String titulo;
+
     @Column(name="id_empresa")
     private Integer id_empresa;
 }
