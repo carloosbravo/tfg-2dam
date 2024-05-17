@@ -78,3 +78,21 @@ El logo incluye la imagen de un búho, que representa la sabiduría, simbolizand
 
 ![image](https://github.com/carloosbravo/tfg-2dam/assets/132547490/e546f86b-bb96-4b4a-9f39-1d4acf1536bf)
 
+- Centros Educativos: Gestión de información de estudiantes y conexión con empresas.
+- Estudiantes: Modificación de información personal, búsqueda y aplicación a ofertas de prácticas.
+- Empresas: Publicación de ofertas y gestión de aplicaciones, comunicación con estudiantes.
+
+#Bibliografía:
+
+• Infojobs. https://www.infojobs.netJobrapido. 
+• Jobrapido. https://www.jobrapido.comLinkedIn Jobs Search. 
+• LinkedIn Jobs Search.  https://www.linkedin.com/jobs
+• LinkedIn. https://www.linkedin.com/jobsTalentoteca. 
+• Talentoteca. Recuperado de https://www.talentoteca.esbeWanted. 
+• beWanted. https://www.bewanted.comStudentJob. 
+• StudentJob. https://www.studentjob.esPrimerEmpleo. 
+• PrimerEmpleo. https://www.primerempleo.comCornerJob.  
+• CornerJob. https://www.cornerjob.comTrovit.  
+• Trovit. https://www.trovit.esJob Today. 
+• Job Today. https://www.jobtoday.comJob and Talent. 
+• Job and Talent. https://www.jobandtalent.com
