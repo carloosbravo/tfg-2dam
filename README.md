@@ -55,3 +55,22 @@ Hemos diseñado Cooper-Up con un enfoque intuitivo y fácil de usar, pensando en
 ![output](https://github.com/carloosbravo/tfg-2dam/assets/132547490/7f1372e3-7989-4c43-9612-a6d95fd28122)
 
 El logo incluye la imagen de un búho, que representa la sabiduría, simbolizando la conexión entre el conocimiento académico y las oportunidades profesionales.
+
+### COLORES
+
+![image](https://github.com/carloosbravo/tfg-2dam/assets/132547490/318686d8-86be-46ff-aa56-4b1405fa4ec7)
+
+
+- Color #4FABFF Lo utilizamos para dejarlo como fondo claro de la aplicación.
+- Color #0057FF Lo utilizamos como color secunadario para destacar contenido importante de la aplicación y que haga contraste con el fondo y su contenido.
+- Color #edf2f4 Lo utilizamos como fondo de los Cardview.Este color aparace en distintas opacidades. 
+-Color #4FABFF Lo utilizamos para el texto del logo
+- Color #000000 Lo utilizamos para el texto y el contorno de los iconos.
+- Color #FCFCFC Este lo utilizamos para el contraste de texto y contornos de iconos.
+
+### TIPOGRAIFA
+
+- Rounded Mplus Bolt 1c: esta tipografia la utilizamos para los titulos
+- Istok Web: la utilizamos para el texto de la aplicación 
+- Inder: la utilizamos para subtitulos
+
