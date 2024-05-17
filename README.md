@@ -74,6 +74,21 @@ El logo incluye la imagen de un búho, que representa la sabiduría, simbolizand
 - Istok Web: la utilizamos para el texto de la aplicación 
 - Inder: la utilizamos para subtitulos
 
+# Iconos
+  Utilizamos iconos específicos para facilitar la navegación y la comprensión de las funcionalidades de la aplicación:
+  
+  - Historial de Movimientos: Representado por un icono de notas.
+  - Perfil del Usuario: Representado por un icono específico de usuario.
+  - Otras Funcionalidades: Diversos iconos para indicar diferentes acciones y secciones dentro de la aplicación.
+
+# Elementos de Diseño
+  Hemos implementado un diseño centrado en la experiencia del usuario:
+  
+  - Bottom Navigation Bar: Para facilitar la navegación entre diferentes secciones.
+  - RecyclerView: Para mostrar listas de información de manera  organizada y accesible.
+  - SearchView: Permite a los usuarios filtrar resultados de manera eficiente.
+  - FloatingButton: Despliega submenús para acciones rápidas y específicas.
+
 # CASOS DE USO :
 
 ![image](https://github.com/carloosbravo/tfg-2dam/assets/132547490/e546f86b-bb96-4b4a-9f39-1d4acf1536bf)
@@ -82,7 +97,7 @@ El logo incluye la imagen de un búho, que representa la sabiduría, simbolizand
 - Estudiantes: Modificación de información personal, búsqueda y aplicación a ofertas de prácticas.
 - Empresas: Publicación de ofertas y gestión de aplicaciones, comunicación con estudiantes.
 
-#Bibliografía:
+# Bibliografía:
 
 • Infojobs. https://www.infojobs.netJobrapido. 
 
