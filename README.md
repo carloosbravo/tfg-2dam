@@ -1,8 +1,8 @@
-# Bienvenido a Cooper-Up!
+# Bienvenido a Cooper-App!
 
 Cooper-App es una aplicación diseñada para agilizar el proceso de prácticas entre alumnos, centros educativos y empresas, proporcionando una plataforma eficiente y fácil de usar para la gestión de estas actividades.
 
-# Funcionalidades Clave de Cooper-Up
+# Funcionalidades Clave de Cooper-App
 
  
 1. **Registro y Gestión de Centros Educativos**
@@ -40,9 +40,10 @@ Nuestra aplicación, Cooper-App, está dirigida específicamente a estudiantes, 
     - **Mejora en el Proceso de Selección:** Simplifica el proceso de selección, permitiendo a las empresas encontrar candidatos adecuados rápidamente y de manera organizada.
 
 En resumen, Cooper-App está diseñada para ser una herramienta práctica y especializada que aborda los desafíos específicos de la gestión de prácticas profesionales y oportunidades laborales. Su objetivo es mejorar la eficiencia, la trazabilidad y la gestión general de las conexiones entre estudiantes, centros educativos y empresas.
+
 # DISEÑO DE LA APP
 
-Hemos diseñado Cooper-Up con un enfoque intuitivo y fácil de usar, pensando en la comodidad de todos los usuarios:
+Hemos diseñado Cooper-App con un enfoque intuitivo y fácil de usar, pensando en la comodidad de todos los usuarios:
 
 •	Centros Educativos: Pueden gestionar la información de sus estudiantes y facilitarles la búsqueda de prácticas.
 
@@ -64,7 +65,7 @@ El logo incluye la imagen de un búho, que representa la sabiduría, simbolizand
 - Color #4FABFF Lo utilizamos para dejarlo como fondo claro de la aplicación.
 - Color #0057FF Lo utilizamos como color secunadario para destacar contenido importante de la aplicación y que haga contraste con el fondo y su contenido.
 - Color #edf2f4 Lo utilizamos como fondo de los Cardview.Este color aparace en distintas opacidades. 
--Color #4FABFF Lo utilizamos para el texto del logo
+- Color #4FABFF Lo utilizamos para el texto del logo
 - Color #000000 Lo utilizamos para el texto y el contorno de los iconos.
 - Color #FCFCFC Este lo utilizamos para el contraste de texto y contornos de iconos.
 
