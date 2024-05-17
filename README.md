@@ -85,14 +85,25 @@ El logo incluye la imagen de un búho, que representa la sabiduría, simbolizand
 #Bibliografía:
 
 • Infojobs. https://www.infojobs.netJobrapido. 
+
 • Jobrapido. https://www.jobrapido.comLinkedIn Jobs Search. 
+
 • LinkedIn Jobs Search.  https://www.linkedin.com/jobs
+
 • LinkedIn. https://www.linkedin.com/jobsTalentoteca. 
-• Talentoteca. Recuperado de https://www.talentoteca.esbeWanted. 
+
+• Talentoteca.https://www.talentoteca.esbeWanted. 
+
 • beWanted. https://www.bewanted.comStudentJob. 
+
 • StudentJob. https://www.studentjob.esPrimerEmpleo. 
+
 • PrimerEmpleo. https://www.primerempleo.comCornerJob.  
+
 • CornerJob. https://www.cornerjob.comTrovit.  
+
 • Trovit. https://www.trovit.esJob Today. 
+
 • Job Today. https://www.jobtoday.comJob and Talent. 
+
 • Job and Talent. https://www.jobandtalent.com
