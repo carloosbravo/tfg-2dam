@@ -74,3 +74,7 @@ El logo incluye la imagen de un búho, que representa la sabiduría, simbolizand
 - Istok Web: la utilizamos para el texto de la aplicación 
 - Inder: la utilizamos para subtitulos
 
+# CASOS DE USO :
+
+![image](https://github.com/carloosbravo/tfg-2dam/assets/132547490/e546f86b-bb96-4b4a-9f39-1d4acf1536bf)
+
