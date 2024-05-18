@@ -19,17 +19,20 @@
         <!-- Actividad MainActivity como la actividad de inicio -->
         <activity
             android:name=".MainActivity"
-            android:exported="false"> <!-- Cambia "false" a "true" si necesitas que la actividad sea accesible desde fuera de tu aplicación -->
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <!-- Otras actividades -->
-        <activity
-            android:name=".SelectorUsuario"
-            android:exported="false" />
+
         <activity
             android:name=".RegistrarAlumno"
             android:exported="false" />
+
         <activity
             android:name=".LoginAlumno"
             android:exported="false" >
@@ -38,13 +41,11 @@
 
         <activity
         android:name=".SplashScreen"
-        android:exported="true" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        android:exported="false" >
+        </activity>
+        <activity
+            android:name=".EditarUsuario"
+            android:exported="false" >
         </activity>
 
     </application>
