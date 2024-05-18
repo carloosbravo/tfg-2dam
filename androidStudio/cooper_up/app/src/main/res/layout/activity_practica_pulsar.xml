@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/nombrePracticaPulsarTV"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:background="@color/azulFondoCLaro"
@@ -40,6 +40,7 @@
                         android:text="NOMBRE PRACTICA"
                         android:textSize="24dp"
                         android:textStyle="bold" />
+
                 </FrameLayout>
 
                 <TextView
@@ -47,6 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Empresa "
+                    android:layout_marginTop="15dp"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -63,7 +65,7 @@
                     android:layout_width="350sp"
                     android:layout_height="1dp"
                     android:layout_marginLeft="10sp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@color/grisMasOscuro" />
 
                 <TextView
@@ -79,7 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10sp"
-                    android:layout_marginBottom="200dp"
+                    android:layout_marginBottom="170dp"
                     android:text="Esta posición ofrece una oportunidad emocionante para aprender y contribuir en un entorno de desarrollo ágil mientras trabajas en proyectos reales que impactan directamente a nuestros clientes." />
 
                 <Button
@@ -95,6 +97,7 @@
                     android:id="@+id/volverHomeTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     app:srcCompat="@drawable/ic_flecha_atras" />
 
             </LinearLayout>

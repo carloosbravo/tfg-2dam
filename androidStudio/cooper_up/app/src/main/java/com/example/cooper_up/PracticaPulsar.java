@@ -1,18 +1,42 @@
 package com.example.cooper_up;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class PracticaPulsar extends AppCompatActivity {
+
+    // Declarar los TextViews y el Button
+    private TextView nombrePracticaPulsarTV;
+    private TextView nombreEmpresaPulsarTV;
+    private TextView descripcionPracticaPulsarTV;
+    private Button aplicarPracticaButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practica_pulsar);
 
-        //pulsar para volver al home
+        // Inicializar los TextViews y el Button
+        nombrePracticaPulsarTV = findViewById(R.id.nombrePracticaPulsarTV);
+        nombreEmpresaPulsarTV = findViewById(R.id.nombreEmpresaPulsarTV);
+        descripcionPracticaPulsarTV = findViewById(R.id.descripcionPracticaPulsarTV);
+        aplicarPracticaButton = findViewById(R.id.aplicarPracticaButton);
+
+        // Inicializar el ImageButton
         ImageButton volverHomeButton = findViewById(R.id.volverHomeTV);
-    }
+
+        // Aquí puedes añadir los listeners y cualquier otra lógica que necesites
+        volverHomeButton.setOnClickListener(v -> {
+            // Lógica para volver al Home (puede ser finish() para cerrar la actividad actual)
+            finish();
+        });
+
+        aplicarPracticaButton.setOnClickListener(v -> {
+            // Lógica para aplicar a la práctica (puede ser abrir una nueva actividad, enviar datos, etc.)
+        });
+
+        }
 }
