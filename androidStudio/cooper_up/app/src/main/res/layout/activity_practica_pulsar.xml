@@ -4,34 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PracticaPulsar">
+    tools:context=".PracticaPulsar"
+    android:background="@drawable/background_editar">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView6"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/layoutPractica"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NOMBRE PRACTICA"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:background="@color/azulFondoCLaro"/>
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/white">
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="INFORMACION " />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@color/azulFondoCLaro"
+                        android:padding="30dp"
+                        android:text="NOMBRE PRACTICA"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </FrameLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Empresa "
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nombreEmpresaPulsarTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="ATOS IT SOLUTIONS  "
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="350sp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/grisMasOscuro" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:text="Descripcion "
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descripcionPracticaPulsarTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginBottom="200dp"
+                    android:text="Esta posición ofrece una oportunidad emocionante para aprender y contribuir en un entorno de desarrollo ágil mientras trabajas en proyectos reales que impactan directamente a nuestros clientes." />
+
+                <Button
+                    android:id="@+id/aplicarPracticaButton"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/azulFondoCLaro"
+                    android:text="Aplicar a la practica" />
+
+                <ImageButton
+                    android:id="@+id/volverHomeTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_flecha_atras" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
