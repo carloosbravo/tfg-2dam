@@ -29,8 +29,8 @@ public class CV {
     @Column(name="lenguajes")
     private String lenguajes;
 
-    @Column(name="id_alumno")
-    private Integer id_alumno;
+    @Column(name="id_estudiante")
+    private Integer id_estudiante;
 
 
 
