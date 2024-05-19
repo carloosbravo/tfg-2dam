@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/background_shapes"
+        android:background="@drawable/backgrnd_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,10 +42,10 @@
     <!-- Línea separadora -->
 
     <TextView
-        android:id="@+id/loginTV"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login Alumno"
+        android:text="Login Centro"
         android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
@@ -90,7 +90,7 @@
             android:id="@+id/userametext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="correo electronico" />
+            android:hint="correo" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
