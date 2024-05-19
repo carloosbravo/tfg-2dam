@@ -139,16 +139,19 @@
         android:text="Registrar Alumno"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/guideline33"
-        app:layout_constraintTop_toTopOf="@+id/guideline39" />
+        app:layout_constraintTop_toTopOf="@+id/guideline23"
+        app:layout_constraintVertical_bias="0.527" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_width="344dp"
+        android:layout_height="73dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"
         app:layout_constraintStart_toStartOf="@+id/guideline33"
-        app:layout_constraintTop_toTopOf="@+id/guideline37">
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
+        app:layout_constraintVertical_bias="0.209">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_valoracion"
@@ -162,6 +165,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="478dp" />
+        app:layout_constraintGuide_begin="466dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="571dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="334dp"
+        android:layout_height="74dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline23"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toStartOf="@+id/guideline33"
+        app:layout_constraintTop_toTopOf="@+id/guideline39">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_expediente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="expediente academico" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

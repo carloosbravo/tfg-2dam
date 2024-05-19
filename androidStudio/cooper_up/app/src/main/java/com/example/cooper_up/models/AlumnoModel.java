@@ -1,6 +1,8 @@
 package com.example.cooper_up.models;
 
-public class AlumnoModel {
+import java.io.Serializable;
+
+public class AlumnoModel implements Serializable {
 
     private int id;
 

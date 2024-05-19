@@ -53,6 +53,9 @@ public class LoginAlumno extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<AlumnoModel> call, Response<AlumnoModel> response) {
 
+                        //recibe y guarda el objeto alumno en la variable despues de la llamada
+                        AlumnoModel alumno = response.body();
+
                         String contraAlumno = response.body().getContraseña();
                         Toast.makeText(LoginAlumno.this, contraIntro, Toast.LENGTH_SHORT).show();
                         Toast.makeText(LoginAlumno.this, contraAlumno, Toast.LENGTH_SHORT).show();
@@ -64,6 +67,7 @@ public class LoginAlumno extends AppCompatActivity {
                                 editor.putInt("idAlumno", response.body().getId());
                                 editor.commit();
                                 Intent intent = new Intent(LoginAlumno.this, MainActivity.class);
+                                intent.putExtra("alumno", alumno);
                                 startActivity(intent);
                             }else if(!contraAlumno.equals(contraIntro)){
 

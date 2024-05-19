@@ -70,7 +70,7 @@
                 android:textSize="25dp"/>
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/centroAlumnoTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

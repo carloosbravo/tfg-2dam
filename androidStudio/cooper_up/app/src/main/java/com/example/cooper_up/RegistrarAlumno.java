@@ -17,7 +17,7 @@ import retrofit2.Response;
 
 public class RegistrarAlumno extends AppCompatActivity {
 
-    private EditText etNombre, etContrasena, etTelefono, etEmail, etValoracion;
+    private EditText etNombre, etContrasena, etTelefono, etEmail, etValoracion, etExpediente;
     private Button buttonRegistrar;
     private ApiService apiService;
 
@@ -31,10 +31,12 @@ public class RegistrarAlumno extends AppCompatActivity {
         etTelefono = findViewById(R.id.et_telefono);
         etEmail = findViewById(R.id.et_email);
         etValoracion = findViewById(R.id.et_valoracion);
+        etExpediente = findViewById(R.id.et_expediente);
         buttonRegistrar = findViewById(R.id.button);
 
         apiService = ApiAdapter.getInstance().getApiService();
 
+        // Accion cuando se presione el boton
         buttonRegistrar.setOnClickListener(v -> registrarAlumno());
     }
 
@@ -44,6 +46,12 @@ public class RegistrarAlumno extends AppCompatActivity {
         String telefono = etTelefono.getText().toString();
         String email = etEmail.getText().toString();
         String valoracion = etValoracion.getText().toString();
+        String expediente = etExpediente.getText().toString();
+
+        if (nombre.isEmpty() || contrasena.isEmpty() || telefono.isEmpty() || email.isEmpty() || valoracion.isEmpty()) {
+            Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         AlumnoModel nuevoAlumno = new AlumnoModel();
         nuevoAlumno.setNombre(nombre);
@@ -51,7 +59,7 @@ public class RegistrarAlumno extends AppCompatActivity {
         nuevoAlumno.setTelefono(telefono);
         nuevoAlumno.setEmail(email);
         nuevoAlumno.setValoracion_profesorado(valoracion);
-
+        nuevoAlumno.setExpediente_academico(expediente);
         Call<AlumnoModel> call = apiService.register(nuevoAlumno);
         call.enqueue(new Callback<AlumnoModel>() {
             @Override

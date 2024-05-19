@@ -29,7 +29,7 @@
         </activity> <!-- Otras actividades -->
         <activity
             android:name=".RegistrarAlumno"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LoginAlumno"
             android:exported="false">
