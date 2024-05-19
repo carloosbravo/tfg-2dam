@@ -36,4 +36,7 @@ public class Alumno {
 
     @Column(name="centro_id")
     private Integer centro_id;
+
+    @Column(name="telefono")
+    private String telefono;
 }

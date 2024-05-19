@@ -56,10 +56,16 @@ public class ProfileFragment extends Fragment {
             TextView nombreAlumno = view.findViewById(R.id.nombreALumnoTV);
             TextView correo = view.findViewById(R.id.emailTV);
             TextView nombreAlumnoTitulo = view.findViewById(R.id.nombreALumnoTituloTV);
-            
+            TextView valoraciones = view.findViewById(R.id.valoracionesProfileTV);
+            TextView telefono = view.findViewById(R.id.telefonoTV);
+
 
             nombreAlumno.setText(alumno.getNombre());
+            nombreAlumnoTitulo.setText(alumno.getNombre());
+            telefono.setText(alumno.getTelefono());
             correo.setText(alumno.getEmail());
+            valoraciones.setText(alumno.getValoracion_profesorado());
+
         }
 
 
