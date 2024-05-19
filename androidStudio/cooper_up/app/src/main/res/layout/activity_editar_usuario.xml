@@ -52,6 +52,7 @@
         app:startIconDrawable="@drawable/ic_user">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nombreEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="usuario" />
@@ -71,6 +72,7 @@
         app:startIconDrawable="@drawable/ic_candado">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contrasenaEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="contraseña" />
@@ -164,7 +166,6 @@
         app:layout_constraintGuide_percent="0.8759124" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/repetirContraseñaInput"
         android:layout_width="278dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
@@ -174,13 +175,14 @@
         app:startIconDrawable="@drawable/ic_candado">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/repetirContrasenaEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Repetir contraseña" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+
         android:layout_width="275dp"
         android:layout_height="60dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline20"
@@ -190,6 +192,7 @@
         app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="example01@cooperup.com" />
@@ -223,7 +226,7 @@
         app:layout_constraintGuide_percent="0.62" />
 
     <Button
-        android:id="@+id/singUp_btn"
+        android:id="@+id/actualizarUsuarioBoton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Actualizar Datos"
@@ -272,6 +275,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/telefonoEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="telefono"
