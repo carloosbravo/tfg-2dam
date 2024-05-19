@@ -53,7 +53,7 @@ public class LoginAlumno extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<AlumnoModel> call, Response<AlumnoModel> response) {
 
-                        String contraAlumno = response.body().getContra();
+                        String contraAlumno = response.body().getContraseña();
                         Toast.makeText(LoginAlumno.this, contraIntro, Toast.LENGTH_SHORT).show();
                         Toast.makeText(LoginAlumno.this, contraAlumno, Toast.LENGTH_SHORT).show();
 

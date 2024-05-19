@@ -28,9 +28,6 @@ public class Alumno {
     @Column(name="contraseña")
     private String contraseña;
 
-    @Column(name="cv")
-    private String cv;
-
     @Column(name="expediente_academico")
     private String expediente_academico;
 

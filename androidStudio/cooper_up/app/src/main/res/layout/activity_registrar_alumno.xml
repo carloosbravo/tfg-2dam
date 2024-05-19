@@ -34,6 +34,7 @@
         app:startIconDrawable="@drawable/ic_user">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre " />
@@ -45,13 +46,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.28" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.77" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline33"
@@ -84,6 +78,7 @@
         app:startIconDrawable="@drawable/ic_candado">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_contrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña" />
@@ -106,6 +101,7 @@
         app:startIconDrawable="@drawable/ic_phone">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_telefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Telefono" />
@@ -129,6 +125,7 @@
         app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email" />
@@ -138,13 +135,12 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
-        android:text="Registrar Alumno"
-
         android:backgroundTint="@color/azulFondoCLaro"
+        android:text="Registrar Alumno"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"
         app:layout_constraintStart_toStartOf="@+id/guideline33"
-        app:layout_constraintTop_toTopOf="@+id/guideline32" />
+        app:layout_constraintTop_toTopOf="@+id/guideline39" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="350dp"
@@ -155,6 +151,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline37">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_valoracion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Valoracion Profesorado" />
@@ -166,19 +163,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="478dp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline32"
-        app:layout_constraintEnd_toStartOf="@+id/guideline34"
-        app:layout_constraintStart_toStartOf="@+id/guideline33"
-        app:layout_constraintTop_toTopOf="@+id/guideline39">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="hint" />
-    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

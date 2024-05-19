@@ -6,7 +6,9 @@ import com.example.cooper_up.models.PracticaModel;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface ApiService {
@@ -22,5 +24,12 @@ public interface ApiService {
 
     @GET("practica/getAll")
     Call <List<PracticaModel>> getAllPracticas();
+
+
+    //registrar un Alumno
+    @POST("register-update")
+    Call<AlumnoModel> register(@Body AlumnoModel alumno);
+
+
 
 }
