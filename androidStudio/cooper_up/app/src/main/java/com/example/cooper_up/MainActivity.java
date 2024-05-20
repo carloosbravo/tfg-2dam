@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         homeFragment = new HomeFragment();
         practicasSolicitadasFragment = new PracticasSolicitadasFragment();
         profileFragment = ProfileFragment.newInstance(alumno); // Pasar el objeto AlumnoModel al crear el ProfileFragment
+        practicasSolicitadasFragment = practicasSolicitadasFragment.newInstance(alumno);
 
         // Establecer el fragmento inicial
         setFragment(homeFragment);
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             homeFragment = new HomeFragment();
         }
         if (practicasSolicitadasFragment == null) {
-            practicasSolicitadasFragment = new PracticasSolicitadasFragment();
+            practicasSolicitadasFragment = PracticasSolicitadasFragment.newInstance(alumno);
         }
         if (profileFragment == null) {
             profileFragment = ProfileFragment.newInstance(alumno); // Pasar el objeto AlumnoModel si el fragmento es nulo

@@ -27,9 +27,13 @@ public interface ApiService {
     Call <AlumnoModel> logInAlumno(@Path("correo") String correo);
 
 
+    //obtener todas las practicas de la base de datos
     @GET("practica/getAll")
     Call <List<PracticaModel>> getAllPracticas();
 
+    //obtener practicas por id de usuario
+    @GET("practica/byIdEstudiante/{id_estudiante}")
+    Call <List<PracticaModel>> getPracticasByIdAlumno(@Path("id_estudiante")Integer id);
 
     //registrar un Alumno
     @POST("register-update")
