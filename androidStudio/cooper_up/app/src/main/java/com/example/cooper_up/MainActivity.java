@@ -9,9 +9,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import com.example.cooper_up.fragments.PracticasSolicitadasFragment;
-import com.example.cooper_up.fragments.HomeFragment;
-import com.example.cooper_up.fragments.ProfileFragment;
+import com.example.cooper_up.fragmentsAlumno.PracticasSolicitadasFragment;
+import com.example.cooper_up.fragmentsAlumno.HomeFragment;
+import com.example.cooper_up.fragmentsAlumno.ProfileFragment;
 import com.example.cooper_up.models.AlumnoModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

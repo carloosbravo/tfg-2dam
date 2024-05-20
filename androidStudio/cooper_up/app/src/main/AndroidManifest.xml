@@ -17,19 +17,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".LoginCentro"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivityEmpresa"
-            android:exported="false" />
-        <activity
-            android:name=".LoginEmpresa"
+            android:name=".logins.LoginCentro"
             android:exported="true" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivityEmpresa"
+            android:exported="false" />
+        <activity
+            android:name=".logins.LoginEmpresa"
+            android:exported="false" >
+
         </activity>
         <activity
             android:name=".Curriculum"
@@ -44,7 +46,7 @@
             android:name=".RegistrarAlumno"
             android:exported="false" />
         <activity
-            android:name=".LoginAlumno"
+            android:name=".logins.LoginAlumno"
             android:exported="false">
 
             <!-- Quitamos el intent-filter de LoginAlumno para que no sea la actividad de inicio -->

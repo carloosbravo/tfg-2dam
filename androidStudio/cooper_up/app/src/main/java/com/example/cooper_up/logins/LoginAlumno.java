@@ -1,4 +1,4 @@
-package com.example.cooper_up;
+package com.example.cooper_up.logins;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cooper_up.EditarUsuario;
+import com.example.cooper_up.MainActivity;
+import com.example.cooper_up.R;
 import com.example.cooper_up.models.AlumnoModel;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;

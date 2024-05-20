@@ -1,8 +1,9 @@
-package com.example.cooper_up;
+package com.example.cooper_up.logins;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,24 +12,30 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.cooper_up.MainActivityEmpresa;
+import com.example.cooper_up.R;
+import com.example.cooper_up.RegistrarAlumno;
+import com.example.cooper_up.models.CentroModelo;
 import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
 import com.google.android.material.textfield.TextInputEditText;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginEmpresa extends AppCompatActivity {
+public class LoginCentro extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_empresa);
+        setContentView(R.layout.activity_login_centro);
 
-        TextInputEditText correo = findViewById(R.id.userametextEmpresa);
-        TextInputEditText contra = findViewById(R.id.contratextEmpresa);
-        Button login_btn = findViewById(R.id.loginbtnEmpresa);
+        TextInputEditText correo = findViewById(R.id.userametextCentro);
+        TextInputEditText contra = findViewById(R.id.contratextCentro);
+        Button login_btn = findViewById(R.id.loginbtnCentro);
 
         ApiAdapter apiAdapter = ApiAdapter.getInstance();
         ApiService apiService = apiAdapter.getApiService();
@@ -40,43 +47,44 @@ public class LoginEmpresa extends AppCompatActivity {
                 String contraIntro = contra.getText().toString();
 
                 if (correoIntro.isEmpty() || contraIntro.isEmpty()) {
-                    Toast.makeText(LoginEmpresa.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginCentro.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                Call<EmpresaModelo> call = apiService.logInEmpresa(correoIntro);
+                Call<CentroModelo> call = apiService.logInCentro(correoIntro);
 
-                call.enqueue(new Callback<EmpresaModelo>() {
+                call.enqueue(new Callback<CentroModelo>() {
                     @Override
-                    public void onResponse(Call<EmpresaModelo> call, Response<EmpresaModelo> response) {
+                    public void onResponse(Call<CentroModelo> call, Response<CentroModelo> response) {
                         if (response.isSuccessful() && response.body() != null) {
-                            EmpresaModelo empresa = response.body();
-                            String contraEmpresa = empresa.getContraseña();
+                            CentroModelo centro = response.body();
+                            String contraEmpresa = centro.getContraseña();
 
                             if (contraEmpresa != null && contraEmpresa.equals(contraIntro)) {
                                 SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
-                                editor.putInt("idEmpresa", empresa.getId());
+                                editor.putInt("idEmpresa", centro.getId());
                                 editor.apply();
-                                Intent intent = new Intent(LoginEmpresa.this, MainActivityEmpresa.class);
-                                intent.putExtra("empresa", empresa);
+                                Intent intent = new Intent(LoginCentro.this, RegistrarAlumno.class);
+                                intent.putExtra("empresa", centro);
                                 startActivity(intent);
                             } else {
-                                Toast.makeText(LoginEmpresa.this, "Incorrect password", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginCentro.this, "Incorrect password", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(LoginEmpresa.this, "Invalid response from server: " + response.message(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginCentro.this, "Invalid response from server: " + response.message(), Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<EmpresaModelo> call, Throwable t) {
+                    public void onFailure(Call<CentroModelo> call, Throwable t) {
                         Log.e(TAG, "Server error: " + t.getMessage(), t);
 
-                        Toast.makeText(LoginEmpresa.this, "Server error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginCentro.this, "Server error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
         });
+
     }
 }

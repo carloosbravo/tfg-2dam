@@ -1,6 +1,7 @@
 package com.example.cooper_up.retrofit;
 
 import com.example.cooper_up.models.AlumnoModel;
+import com.example.cooper_up.models.CentroModelo;
 import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.models.PracticaModel;
 
@@ -40,6 +41,9 @@ public interface ApiService {
 
     @GET("empresa/logIn/{correo}")
     Call<EmpresaModelo> logInEmpresa(@Path("correo") String correo);
+
+    @GET("centro/logIn/{correo}")
+    Call<CentroModelo> logInCentro(@Path("correo") String correo);
 
 
 
