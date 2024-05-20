@@ -3,6 +3,7 @@ package com.example.cooper_up.retrofit;
 import com.example.cooper_up.models.AlumnoModel;
 import com.example.cooper_up.models.CentroModelo;
 import com.example.cooper_up.models.EmpresaModelo;
+import com.example.cooper_up.models.OfertaModel;
 import com.example.cooper_up.models.PracticaModel;
 
 import java.util.List;
@@ -39,8 +40,6 @@ public interface ApiService {
     @POST("register-update")
     Call<AlumnoModel> register(@Body AlumnoModel alumno);
 
-
-
     //login empresa
 
     @GET("empresa/logIn/{correo}")
@@ -48,6 +47,11 @@ public interface ApiService {
 
     @GET("centro/logIn/{correo}")
     Call<CentroModelo> logInCentro(@Path("correo") String correo);
+
+
+    //Solicitar una practica
+    @POST("oferta/addOferta")
+    Call <OfertaModel> solicitarPractica(@Body OfertaModel oferta);
 
 
 
