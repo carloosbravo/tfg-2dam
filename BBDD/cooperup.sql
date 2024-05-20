@@ -26,7 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `centro`
 --
-
+create database cooperup;
+use cooperup;
 CREATE TABLE `centro` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
@@ -41,12 +42,12 @@ CREATE TABLE `centro` (
 --
 
 INSERT INTO `centro` (`id`, `nombre`, `email`, `direccion`, `contraseña`, `telefono`) VALUES
-(1, 'Centro1', 'centro1@example.com', 'Dirección Centro 1', 'contraseña1', '123456789'),
-(2, 'Centro2', 'centro2@example.com', 'Dirección Centro 2', 'contraseña2', '987654321'),
-(3, 'Centro3', 'centro3@example.com', 'Dirección Centro 3', 'contraseña3', '111111111'),
-(4, 'Centro4', 'centro4@example.com', 'Dirección Centro 4', 'contraseña4', '222222222'),
-(5, 'Centro5', 'centro5@example.com', 'Dirección Centro 5', 'contraseña5', '333333333'),
-(6, 'IFP', 'ifp@ifp.com', 'Calle Alcalá', 'contraseñaIFP', '111111111');
+(1, 'Centro1', 'centro1@example.com', 'Dirección Centro 1', 'contrasena1', '123456789'),
+(2, 'Centro2', 'centro2@example.com', 'Dirección Centro 2', 'contrasena2', '987654321'),
+(3, 'Centro3', 'centro3@example.com', 'Dirección Centro 3', 'contrasena3', '111111111'),
+(4, 'Centro4', 'centro4@example.com', 'Dirección Centro 4', 'contrasena4', '222222222'),
+(5, 'Centro5', 'centro5@example.com', 'Dirección Centro 5', 'contrasena5', '333333333'),
+(6, 'IFP', 'ifp@ifp.com', 'Calle Alcalá', 'contrasenaIFP', '111111111');
 
 -- --------------------------------------------------------
 
@@ -94,12 +95,12 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id`, `nombre`, `email`, `contraseña`, `direccion`, `telefono`, `biografia`) VALUES
-(1, 'Empresa1', 'empresa1@example.com', 'contraseña1', 'Dirección Empresa 1', '123456789', 'Biografía Empresa 1'),
-(2, 'Empresa2', 'empresa2@example.com', 'contraseña2', 'Dirección Empresa 2', '987654321', 'Biografía Empresa 2'),
-(3, 'Empresa3', 'empresa3@example.com', 'contraseña3', 'Dirección Empresa 3', '555555555', 'Biografía Empresa 3'),
-(4, 'Empresa4', 'empresa4@example.com', 'contraseña4', 'Dirección Empresa 4', '111111111', 'Biografía Empresa 4'),
-(5, 'Empresa5', 'empresa5@example.com', 'contraseña5', 'Dirección Empresa 5', '999999999', 'Biografía Empresa 5'),
-(6, 'EVIDEN', 'eviden@example.com', 'contraseñaEviden', 'Dirección Eviden 4', '989898989898', 'Biografía Eviden 4');
+(1, 'Empresa1', 'empresa1@example.com', 'contrasena1', 'Dirección Empresa 1', '123456789', 'Biografía Empresa 1'),
+(2, 'Empresa2', 'empresa2@example.com', 'contrasena2', 'Dirección Empresa 2', '987654321', 'Biografía Empresa 2'),
+(3, 'Empresa3', 'empresa3@example.com', 'contrasena3', 'Dirección Empresa 3', '555555555', 'Biografía Empresa 3'),
+(4, 'Empresa4', 'empresa4@example.com', 'contrasena4', 'Dirección Empresa 4', '111111111', 'Biografía Empresa 4'),
+(5, 'Empresa5', 'empresa5@example.com', 'contrasena5', 'Dirección Empresa 5', '999999999', 'Biografía Empresa 5'),
+(6, 'EVIDEN', 'eviden@example.com', 'contrasenaEviden', 'Dirección Eviden 4', '989898989898', 'Biografía Eviden 4');
 
 -- --------------------------------------------------------
 
@@ -172,10 +173,10 @@ CREATE TABLE `usuarionormal` (
 
 INSERT INTO `usuarionormal` (`id`, `nombre`, `email`, `contraseña`, `expediente_academico`, `valoracion_profesorado`, `centro_id`, `telefono`) VALUES
 (1, 'Usuario1', 'usuario1@example.com', 'contrasena1', 'Expediente Usuario 1', 'Buena', 1, NULL),
-(2, 'Usuario2', 'usuario2@example.com', 'contraseña2', 'Expediente Usuario 2', 'Excelente', 2, NULL),
-(3, 'Usuario3', 'usuario3@example.com', 'contraseña3', 'Expediente Usuario 3', 'Muy Buena', 3, NULL),
-(4, 'Usuario4', 'usuario4@example.com', 'contraseña4', 'Expediente Usuario 4', 'Regular', 4, NULL),
-(5, 'Usuario5', 'usuario5@example.com', 'contraseña5', 'Expediente Usuario 5', 'Muy Mala', 5, NULL),
+(2, 'Usuario2', 'usuario2@example.com', 'contrasena2', 'Expediente Usuario 2', 'Excelente', 2, NULL),
+(3, 'Usuario3', 'usuario3@example.com', 'contrasena3', 'Expediente Usuario 3', 'Muy Buena', 3, NULL),
+(4, 'Usuario4', 'usuario4@example.com', 'contrasena4', 'Expediente Usuario 4', 'Regular', 4, NULL),
+(5, 'Usuario5', 'usuario5@example.com', 'contrasena5', 'Expediente Usuario 5', 'Muy Mala', 5, NULL),
 (6, 'gonzalito', 'gonzalo@example.com', 'contrasena98', 'Expediente gonza', 'Malisimo', 2, NULL);
 
 --
