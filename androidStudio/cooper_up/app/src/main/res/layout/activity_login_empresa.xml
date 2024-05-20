@@ -45,7 +45,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login Centro"
+        android:text="Login Empresa"
         android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
@@ -87,7 +87,7 @@
         app:startIconDrawable="@drawable/ic_user">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userametext"
+            android:id="@+id/userametextEmpresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="correo" />
@@ -107,7 +107,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/contratext"
+            android:id="@+id/contratextEmpresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="contraseña"
@@ -210,7 +210,7 @@
         android:id="@+id/NotienesCuentaTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No tienes cuenta?"
+        android:text="No estas registrado?"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintHorizontal_bias="0.213"
@@ -227,12 +227,12 @@
 
     <TextView
         android:id="@+id/registrateTVLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrate ahora"
-        android:textStyle="bold"
-        android:textColor="@color/azulElectrico"
+        android:layout_width="110dp"
+        android:layout_height="20dp"
         android:clickable="true"
+        android:text="Contactanos"
+        android:textColor="@color/azulElectrico"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.073"
@@ -241,7 +241,7 @@
         app:layout_constraintVertical_bias="0.483" />
 
     <Button
-        android:id="@+id/loginbtn"
+        android:id="@+id/loginbtnEmpresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"

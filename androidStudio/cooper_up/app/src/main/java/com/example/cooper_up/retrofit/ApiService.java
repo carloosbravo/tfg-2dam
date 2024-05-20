@@ -1,6 +1,7 @@
 package com.example.cooper_up.retrofit;
 
 import com.example.cooper_up.models.AlumnoModel;
+import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.models.PracticaModel;
 
 import java.util.List;
@@ -19,8 +20,11 @@ public interface ApiService {
     @GET("usuarionormal/alumnosById/{id}")
     Call <AlumnoModel> getAlumnos(@Path("id") Integer id);
 
+    //login ALumno
+
     @GET("usuarionormal/logIn/{correo}")
-    Call <AlumnoModel> logIn(@Path("correo") String correo);
+    Call <AlumnoModel> logInAlumno(@Path("correo") String correo);
+
 
     @GET("practica/getAll")
     Call <List<PracticaModel>> getAllPracticas();
@@ -29,6 +33,13 @@ public interface ApiService {
     //registrar un Alumno
     @POST("register-update")
     Call<AlumnoModel> register(@Body AlumnoModel alumno);
+
+
+
+    //login empresa
+
+    @GET("empresa/logIn/{correo}")
+    Call<EmpresaModelo> logInEmpresa(@Path("correo") String correo);
 
 
 

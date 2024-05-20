@@ -17,8 +17,20 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".LoginEmpresa"
+            android:name=".LoginCentro"
             android:exported="false" />
+        <activity
+            android:name=".MainActivityEmpresa"
+            android:exported="false" />
+        <activity
+            android:name=".LoginEmpresa"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".Curriculum"
             android:exported="false" />
@@ -27,10 +39,10 @@
             android:exported="false" /> <!-- Actividad MainActivity como la actividad de inicio -->
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity> <!-- Otras actividades -->
+            android:exported="false" /> <!-- Otras actividades -->
         <activity
             android:name=".RegistrarAlumno"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".LoginAlumno"
             android:exported="false">
@@ -39,12 +51,8 @@
         </activity>
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".EditarUsuario"

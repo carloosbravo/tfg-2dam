@@ -47,7 +47,7 @@ public class LoginAlumno extends AppCompatActivity {
 
                 String contraIntro = contra.getText().toString();
 
-                Call<AlumnoModel> call= apiService.logIn(correoIntro);
+                Call<AlumnoModel> call= apiService.logInAlumno(correoIntro);
 
                 call.enqueue(new Callback<AlumnoModel>() {
                     @Override

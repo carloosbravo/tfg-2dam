@@ -18,24 +18,76 @@ public class EmpresaModelo implements Serializable {
     @SerializedName("contraseña")
     private String contraseña;
 
-    @SerializedName("cv")
-    private String cv;
-
     @SerializedName("direccion")
     private String direccion;
 
     @SerializedName("telefono")
     private String telefono;
 
-    @SerializedName("valoracion_profesorado")
-    private String valoracion_profesorado;
-
     @SerializedName("biografia")
-    private Integer biografia;
+    private String biografia;
 
-    @SerializedName("oferta_practicas")
-    private Integer oferta_practicas;
 
-    @SerializedName("oferta_trabajo")
-    private Integer oferta_trabajo;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+
+    public void setBiografia(String biografia) {
+        this.biografia = biografia;
+    }
+
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getBiografia() {
+        return biografia;
+    }
+
+
 }
