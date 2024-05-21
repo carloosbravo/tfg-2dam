@@ -66,7 +66,7 @@ public class LoginCentro extends AppCompatActivity {
                                 editor.putInt("idEmpresa", centro.getId());
                                 editor.apply();
                                 Intent intent = new Intent(LoginCentro.this, RegistrarAlumno.class);
-                                intent.putExtra("empresa", centro);
+                                intent.putExtra("centro", centro);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(LoginCentro.this, "Incorrect password", Toast.LENGTH_SHORT).show();
