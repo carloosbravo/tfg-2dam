@@ -48,6 +48,9 @@ public interface ApiService {
     @GET("centro/logIn/{correo}")
     Call<CentroModelo> logInCentro(@Path("correo") String correo);
 
+    @GET("/centrosById/{id}")
+    Call<CentroModelo> getCentroId(@Path("id") Integer id);
+
 
     //Solicitar una practica
     @POST("oferta/addOferta")
