@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-05-2024 a las 13:33:40
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.2
+-- Tiempo de generación: 18-05-2024 a las 19:43:08
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -27,7 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `centro`
 --
-
+create database cooperup;
+use cooperup;
 CREATE TABLE `centro` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `centro` (
   `direccion` varchar(255) DEFAULT NULL,
   `contraseña` varchar(255) NOT NULL,
   `telefono` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `centro`
@@ -61,7 +61,7 @@ CREATE TABLE `cv` (
   `lenguajes` varchar(1000) NOT NULL,
   `id_estudiante` int(11) NOT NULL,
   `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `cv`
@@ -88,7 +88,7 @@ CREATE TABLE `empresa` (
   `direccion` varchar(255) DEFAULT NULL,
   `telefono` varchar(20) DEFAULT NULL,
   `biografia` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `empresa`
@@ -113,7 +113,7 @@ CREATE TABLE `oferta` (
   `estado` tinyint(1) DEFAULT NULL,
   `id_practica` int(11) NOT NULL,
   `id_estudiante` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `oferta`
@@ -137,7 +137,7 @@ CREATE TABLE `practica` (
   `descripcion` varchar(200) NOT NULL,
   `id_empresa` int(11) NOT NULL,
   `titulo` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `practica`
@@ -161,23 +161,23 @@ CREATE TABLE `usuarionormal` (
   `nombre` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `contraseña` varchar(255) NOT NULL,
-  `expediente_academico` text DEFAULT NULL,
-  `valoracion_profesorado` varchar(100) DEFAULT NULL,
+  `dni` text DEFAULT NULL,
+  `grado` varchar(100) DEFAULT NULL,
   `centro_id` int(11) DEFAULT NULL,
-  `telefono` varchar(11) DEFAULT '""'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `telefono` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarionormal`
 --
 
-INSERT INTO `usuarionormal` (`id`, `nombre`, `email`, `contraseña`, `expediente_academico`, `valoracion_profesorado`, `centro_id`, `telefono`) VALUES
-(1, 'diego', 'u', 'u', 'Expediente gonza', 'Malisimo', NULL, 'u'),
-(2, 'Usuario2', 'usuario2@example.com', 'contrasena2', 'Expediente Usuario 2', 'Excelente', 2, '75375373'),
-(3, 'Usuario3', 'usuario3@example.com', 'contrasena3', 'Expediente Usuario 3', 'Muy Buena', 3, '783783'),
-(4, 'Usuario4', 'usuario4@example.com', 'contrasena4', 'Expediente Usuario 4', 'Regular', 4, '3783783'),
-(5, 'Usuario5', 'usuario5@example.com', 'contrasena5', 'Expediente Usuario 5', 'Muy Mala', 5, '37837837'),
-(6, 'gonzalito', 'gonzalo@example.com', 'contrasena98', 'Expediente gonza', 'Malisimo', 2, '783783783');
+INSERT INTO `usuarionormal` (`id`, `nombre`, `email`, `contraseña`, `dni`, `grado`, `centro_id`, `telefono`) VALUES
+(1, 'Juan Perez', 'juan.perez@example.com', 'contrasena1', '12345678A', 'Desarrollo de Aplicaciones Multiplataforma', 1, 600123456),
+(2, 'Maria Lopez', 'maria.lopez@example.com', 'password456', '87654321B', 'Administración de Sistemas Informáticos en Red', 2, 600654321),
+(3, 'Carlos Garcia', 'carlos.garcia@example.com', 'pass789', '11223344C', 'Desarrollo de Aplicaciones Web', 3, 600789123),
+(4, 'Ana Fernandez', 'ana.fernandez@example.com', 'mypass321', '44332211D', 'Sistemas Microinformáticos y Redes', 4, 600321789),
+(5, 'Luis Martinez', 'luis.martinez@example.com', 'securepass654', '55667788E', 'Ciberseguridad', 5, 600987654);
+
 
 --
 -- Índices para tablas volcadas
