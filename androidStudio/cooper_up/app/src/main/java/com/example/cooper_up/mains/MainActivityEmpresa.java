@@ -1,4 +1,4 @@
-package com.example.cooper_up;
+package com.example.cooper_up.mains;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.cooper_up.R;
 import com.example.cooper_up.fragmentsEmpresa.AlumnosInteresadosFragment;
 import com.example.cooper_up.fragmentsEmpresa.HomeEmpresaFragment;
 import com.example.cooper_up.fragmentsEmpresa.ProfileEmpresaFragment;

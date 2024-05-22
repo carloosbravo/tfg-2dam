@@ -1,4 +1,4 @@
-package com.example.cooper_up;
+package com.example.cooper_up.mains;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.example.cooper_up.R;
 import com.example.cooper_up.fragmentsAlumno.PracticasSolicitadasFragment;
 import com.example.cooper_up.fragmentsAlumno.HomeFragment;
 import com.example.cooper_up.fragmentsAlumno.ProfileFragment;

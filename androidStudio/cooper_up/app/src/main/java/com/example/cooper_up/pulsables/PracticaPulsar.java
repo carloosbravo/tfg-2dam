@@ -1,4 +1,4 @@
-package com.example.cooper_up;
+package com.example.cooper_up.pulsables;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -7,13 +7,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.cooper_up.R;
+import com.example.cooper_up.mains.MainActivity;
 import com.example.cooper_up.models.AlumnoModel;
 import com.example.cooper_up.models.OfertaModel;
 import com.example.cooper_up.models.PracticaModel;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
-
-import retrofit2.Call;
 
 public class PracticaPulsar extends AppCompatActivity {
 

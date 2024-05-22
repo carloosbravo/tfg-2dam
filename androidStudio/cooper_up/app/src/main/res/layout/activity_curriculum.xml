@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PracticaPulsar"
+    tools:context=".pulsables.PracticaPulsar"
     android:background="@drawable/background_editar">
 
     <LinearLayout
@@ -12,6 +12,8 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
+
 
         <androidx.cardview.widget.CardView
             android:id="@+id/layoutPractica"
@@ -35,10 +37,11 @@
                         android:id="@+id/nombreAlumnoCurriculumTV"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:background="@color/azulFondoCLaro"
+                        android:background="@color/azulProfile"
                         android:padding="30dp"
                         android:text="Carlos Bravo"
-                        android:textSize="24dp"
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
                         android:textStyle="bold" />
 
                 </FrameLayout>
@@ -72,7 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10sp"
-                    android:text="Descripcion "
+                    android:text="Tecnologias "
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -105,6 +108,28 @@
                     android:layout_marginLeft="10sp"
                     android:layout_marginBottom="20dp"
                     android:text="JavaScript, HTML, CSS, Python"/>
+
+                <View
+                    android:layout_width="350sp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/grisMasOscuro" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:text="Lenguajes "
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/idiomasCurriculumTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Ingles C1, Español Nativo"/>
 
 
                 <ImageButton

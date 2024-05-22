@@ -1,4 +1,4 @@
-package com.example.cooper_up;
+package com.example.cooper_up.mains;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,16 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.cooper_up.models.AlumnoModel;
+import com.example.cooper_up.R;
+import com.example.cooper_up.RegistrarAlumno;
+import com.example.cooper_up.VerAlumnos;
 import com.example.cooper_up.models.CentroModelo;
-import com.example.cooper_up.retrofit.ApiAdapter;
-import com.example.cooper_up.retrofit.ApiService;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivityCentro extends AppCompatActivity {
 

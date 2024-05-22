@@ -1,14 +1,15 @@
-package com.example.cooper_up;
+package com.example.cooper_up.pulsables;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.cooper_up.R;
+import com.example.cooper_up.VerAlumnos;
 import com.example.cooper_up.models.AlumnoModel;
 
 public class AlumnoPulsar extends AppCompatActivity {

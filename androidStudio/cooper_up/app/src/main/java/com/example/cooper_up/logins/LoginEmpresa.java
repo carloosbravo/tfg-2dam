@@ -12,8 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.cooper_up.MainActivityCentro;
-import com.example.cooper_up.MainActivityEmpresa;
+import com.example.cooper_up.mains.MainActivityEmpresa;
 import com.example.cooper_up.R;
 import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.retrofit.ApiAdapter;

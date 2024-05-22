@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cooper_up.EditarUsuario;
-import com.example.cooper_up.MainActivity;
+import com.example.cooper_up.mains.MainActivity;
 import com.example.cooper_up.R;
 import com.example.cooper_up.models.AlumnoModel;
 import com.example.cooper_up.retrofit.ApiAdapter;

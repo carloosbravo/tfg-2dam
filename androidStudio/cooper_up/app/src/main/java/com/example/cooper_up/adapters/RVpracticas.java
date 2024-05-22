@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cooper_up.PracticaPulsar;
+import com.example.cooper_up.pulsables.PracticaPulsar;
 import com.example.cooper_up.R;
 import com.example.cooper_up.models.PracticaModel;
 

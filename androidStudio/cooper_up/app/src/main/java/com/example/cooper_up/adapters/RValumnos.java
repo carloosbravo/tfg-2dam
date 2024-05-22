@@ -10,10 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cooper_up.AlumnoPulsar;
+import com.example.cooper_up.pulsables.AlumnoPulsar;
 import com.example.cooper_up.R;
 import com.example.cooper_up.models.AlumnoModel;
-import com.example.cooper_up.models.PracticaModel;
 
 import java.util.ArrayList;
 import java.util.List;
