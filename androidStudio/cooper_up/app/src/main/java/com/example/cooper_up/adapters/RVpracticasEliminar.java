@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cooper_up.EliminarPractica;
 import com.example.cooper_up.R;
+import com.example.cooper_up.mains.MainActivityEmpresa;
 import com.example.cooper_up.models.PracticaModel;
 
 import java.util.ArrayList;
@@ -46,7 +47,8 @@ public class RVpracticasEliminar extends RecyclerView.Adapter<RVpracticasElimina
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, EliminarPractica.class);
+
+                Intent intent = new Intent(context, MainActivityEmpresa.class);
                 intent.putExtra("practica", practica);
                 context.startActivity(intent);
             }

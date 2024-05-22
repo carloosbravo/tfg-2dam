@@ -45,9 +45,9 @@ public class AlumnosInteresadosFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_alumnos_interesados, container, false);
 
         // Recuperar el objeto EmpresaModelo del argumento
-        if (getArguments() != null) {
+
             empresa = (EmpresaModelo) getArguments().getSerializable("empresa");
-        }
+
 
         recyclerView = view.findViewById(R.id.recyclerViewEmpresaPracticas);
         itemList = new ArrayList<>();
@@ -85,6 +85,8 @@ public class AlumnosInteresadosFragment extends Fragment {
             public void onClick(View v) {
                 // Iniciar la actividad EliminarPractica
                 Intent intent = new Intent(getContext(), EliminarPractica.class);
+                // Pasar el objeto empresa
+                intent.putExtra("empresa", empresa);
                 startActivity(intent);
             }
         });
