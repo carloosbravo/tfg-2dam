@@ -36,6 +36,10 @@ public interface ApiService {
     @GET("practica/byIdEstudiante/{id_estudiante}")
     Call <List<PracticaModel>> getPracticasByIdAlumno(@Path("id_estudiante")Integer id);
 
+    //practicas por id de empresa
+    @GET("practica/byIdEmpresa/{id_empresa}")
+    Call <List<PracticaModel>>getPracticasByIdEmpresa(@Path("id_empresa")Integer idEmpresa);
+
     //registrar un Alumno
     @POST("usuarionormal/register-update")
     Call<AlumnoModel> register(@Body AlumnoModel alumno);

@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/navHome"
-        android:title="Home"
+        android:title="Alumnos"
         android:icon="@drawable/ic_home"/>
 
     <item
@@ -13,6 +13,6 @@
 
     <item
         android:id="@+id/navProfile"
-        android:title="Profile"
+        android:title="Perfil"
         android:icon="@drawable/ic_user"/>
 </menu>
