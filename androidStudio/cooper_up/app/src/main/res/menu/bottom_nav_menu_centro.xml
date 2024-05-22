@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_home"/>
 
     <item
-        android:id="@+id/navSolicitudes"
+        android:id="@+id/navAlumnos"
         android:title="tus practicas"
         android:icon="@drawable/ic_badget"/>
 
