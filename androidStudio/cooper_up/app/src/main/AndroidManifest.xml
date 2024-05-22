@@ -30,7 +30,13 @@
 
         <activity
             android:name=".logins.LoginEmpresa"
-            android:exported="false" />
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".Curriculum"
             android:exported="false" />
@@ -41,16 +47,15 @@
             android:name=".MainActivity"
             android:exported="false" /> <!-- Otras actividades -->
         <activity
+            android:name=".MainActivityEmpresa"
+            android:exported="false" />
+        <activity
             android:name=".RegistrarAlumno"
             android:exported="false" />
         <activity
             android:name=".logins.LoginAlumno"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <!-- Quitamos el intent-filter de LoginAlumno para que no sea la actividad de inicio -->
         </activity>
         <activity

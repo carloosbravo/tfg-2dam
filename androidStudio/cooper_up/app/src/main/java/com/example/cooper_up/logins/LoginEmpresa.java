@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.cooper_up.MainActivityCentro;
+import com.example.cooper_up.MainActivityEmpresa;
 import com.example.cooper_up.R;
 import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.retrofit.ApiAdapter;
@@ -61,7 +62,7 @@ public class LoginEmpresa extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sharedPref.edit();
                                 editor.putInt("idEmpresa", empresa.getId());
                                 editor.apply();
-                                Intent intent = new Intent(LoginEmpresa.this, MainActivityCentro.class);
+                                Intent intent = new Intent(LoginEmpresa.this, MainActivityEmpresa.class);
                                 intent.putExtra("empresa", empresa);
                                 startActivity(intent);
                             } else {
