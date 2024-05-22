@@ -22,7 +22,43 @@ public class CurriculumModel implements Serializable {
         private Integer id_estudiante;
 
 
+        public void setId(Integer id) {
+                this.id = id;
+        }
 
+        public void setDescripcion(String descripcion) {
+                this.descripcion = descripcion;
+        }
 
+        public void setEstudios(String estudios) {
+                this.estudios = estudios;
+        }
 
+        public void setLenguajes(String lenguajes) {
+                this.lenguajes = lenguajes;
+        }
+
+        public void setId_estudiante(Integer id_estudiante) {
+                this.id_estudiante = id_estudiante;
+        }
+
+        public Integer getId() {
+                return id;
+        }
+
+        public String getDescripcion() {
+                return descripcion;
+        }
+
+        public String getEstudios() {
+                return estudios;
+        }
+
+        public String getLenguajes() {
+                return lenguajes;
+        }
+
+        public Integer getId_estudiante() {
+                return id_estudiante;
+        }
 }

@@ -19,6 +19,7 @@
         <activity
             android:name=".pulsables.AlumnosPracticaPulsar"
             android:exported="false" />
+
         <activity
             android:name=".VerAlumnos"
             android:exported="false" />
@@ -52,6 +53,7 @@
         <activity
             android:name=".RegistrarAlumno"
             android:exported="false" />
+
         <activity
             android:name=".logins.LoginAlumno"
             android:exported="false">
@@ -60,6 +62,9 @@
         </activity>
         <activity
             android:name=".SplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".EliminarPractica"
             android:exported="false" />
         <activity
             android:name=".EditarUsuario"

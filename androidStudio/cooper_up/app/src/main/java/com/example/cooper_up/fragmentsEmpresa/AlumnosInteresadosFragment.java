@@ -1,6 +1,7 @@
 package com.example.cooper_up.fragmentsEmpresa;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,7 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.cooper_up.Curriculum;
+import com.example.cooper_up.EliminarPractica;
 import com.example.cooper_up.R;
 import com.example.cooper_up.adapters.RValumnos;
 import com.example.cooper_up.adapters.RVpracticasEmpresa;
@@ -72,8 +76,18 @@ public class AlumnosInteresadosFragment extends Fragment {
 
             }
         });
-        // Usa el objeto empresa según sea necesario
 
+
+        // Configurar el TextView y el click listener
+        TextView eliminarPracticaTV = view.findViewById(R.id.eliminarPracticaTV);
+        eliminarPracticaTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Iniciar la actividad EliminarPractica
+                Intent intent = new Intent(getContext(), EliminarPractica.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 }
