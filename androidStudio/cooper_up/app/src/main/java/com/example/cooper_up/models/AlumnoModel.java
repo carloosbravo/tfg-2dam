@@ -11,8 +11,8 @@ public class AlumnoModel implements Serializable {
     private String contraseña;
 
     private String telefono;
-    private String expediente_academico;
-    private String valoracion_profesorado;
+    private String expediente_academico; //DNI
+    private String valoracion_profesorado; //grado cursado
 
 
     public AlumnoModel() {

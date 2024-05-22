@@ -17,17 +17,25 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".logins.LoginCentro"
-            android:exported="false" >
-        </activity>
-        <activity
-            android:name=".MainActivityEmpresa"
+            android:name=".VerAlumnos"
             android:exported="false" />
         <activity
-            android:name=".logins.LoginEmpresa"
-            android:exported="false" >
+            android:name=".logins.LoginCentro"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityCentro"
+            android:exported="true" >
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
+        <activity
+            android:name=".logins.LoginEmpresa"
+            android:exported="false" />
         <activity
             android:name=".Curriculum"
             android:exported="false" />
@@ -42,19 +50,12 @@
             android:exported="false" />
         <activity
             android:name=".logins.LoginAlumno"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
             <!-- Quitamos el intent-filter de LoginAlumno para que no sea la actividad de inicio -->
         </activity>
         <activity
             android:name=".SplashScreen"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".EditarUsuario"
             android:exported="false" />

@@ -1,33 +1,29 @@
 package com.example.cooper_up;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cooper_up.models.CentroModelo;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivityEmpresa extends AppCompatActivity {
+public class MainActivityCentro extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_empresa);
+        setContentView(R.layout.activity_main_centro);
 
         TextView nombreCentro = findViewById(R.id.TVnombreEmpresa);
         TextView correoCentro = findViewById(R.id.correoCentro);
@@ -41,7 +37,7 @@ public class MainActivityEmpresa extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivityEmpresa.this, RegistrarAlumno.class);
+                Intent intent = new Intent(MainActivityCentro.this, RegistrarAlumno.class);
                 startActivity(intent);
 
             }
@@ -71,7 +67,7 @@ public class MainActivityEmpresa extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<CentroModelo> call, Throwable t) {
-                Toast.makeText(MainActivityEmpresa.this, "SERVER ERROR", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivityCentro.this, "SERVER ERROR", Toast.LENGTH_SHORT).show();
             }
         });
 

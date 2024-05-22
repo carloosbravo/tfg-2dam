@@ -63,18 +63,19 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
-                    android:text="Empresa "
+                    android:text="GRADO CURSADO "
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/nombreEmpresaPulsarTV"
+                    android:id="@+id/gradoPulsarTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="20dp"
-                    android:text="ATOS IT SOLUTIONS  "
+                    android:text="DAM"
                     android:textSize="16sp" />
 
                 <View
@@ -93,26 +94,42 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/descripcionPracticaPulsarTV"
+                    android:id="@+id/correoAlumnoPulsarTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10sp"
+                    android:text="correo@example.com" />
+
+                <View
+                    android:layout_width="350sp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/grisMasOscuro" />
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10sp"
-                    android:layout_marginBottom="200dp"
-                    android:text="Esta posición ofrece una oportunidad emocionante para aprender y contribuir en un entorno de desarrollo ágil mientras trabajas en proyectos reales que impactan directamente a nuestros clientes." />
+                    android:text="Teléfono"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/aplicarPracticaButton"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
+                <TextView
+                    android:id="@+id/telefonoAlumnoPulsarTV"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:backgroundTint="@color/azulFondoCLaro"
-                    android:text="Aplicar a la practica" />
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10sp"
+                    android:text="correo@example.com" />
+
 
                 <ImageButton
                     android:id="@+id/volverHomeTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
                     app:srcCompat="@drawable/ic_flecha_atras" />
 
             </LinearLayout>

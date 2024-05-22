@@ -13,11 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.cooper_up.MainActivityEmpresa;
+import com.example.cooper_up.MainActivityCentro;
 import com.example.cooper_up.R;
-import com.example.cooper_up.RegistrarAlumno;
+import com.example.cooper_up.VerAlumnos;
 import com.example.cooper_up.models.CentroModelo;
-import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
 import com.google.android.material.textfield.TextInputEditText;
@@ -65,7 +64,7 @@ public class LoginCentro extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sharedPref.edit();
                                 editor.putInt("idEmpresa", centro.getId());
                                 editor.apply();
-                                Intent intent = new Intent(LoginCentro.this, RegistrarAlumno.class);
+                                Intent intent = new Intent(LoginCentro.this, MainActivityCentro.class);
                                 intent.putExtra("empresa", centro);
                                 startActivity(intent);
                             } else {
