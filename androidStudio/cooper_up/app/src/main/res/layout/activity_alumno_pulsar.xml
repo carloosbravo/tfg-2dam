@@ -126,7 +126,7 @@
 
 
                 <ImageButton
-                    android:id="@+id/volverHomeTV"
+                    android:id="@+id/volverHomeAlumnoPulsar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/white"

@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.cooper_up.models.AlumnoModel;
@@ -29,6 +32,18 @@ public class AlumnoPulsar extends AppCompatActivity {
         nombreAlumno.setText(alumno.getNombre().toString());
         correoAlumno.setText(alumno.getEmail().toString());
         telefonoAlumno.setText(alumno.getTelefono().toString());
+
+        ImageButton btnVolver = findViewById(R.id.volverHomeAlumnoPulsar);
+
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AlumnoPulsar.this, VerAlumnos.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }

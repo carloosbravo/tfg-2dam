@@ -37,7 +37,7 @@ public interface ApiService {
     Call <List<PracticaModel>> getPracticasByIdAlumno(@Path("id_estudiante")Integer id);
 
     //registrar un Alumno
-    @POST("register-update")
+    @POST("usuarionormal/register-update")
     Call<AlumnoModel> register(@Body AlumnoModel alumno);
 
     //login empresa

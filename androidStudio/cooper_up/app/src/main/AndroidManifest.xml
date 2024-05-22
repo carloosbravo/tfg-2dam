@@ -21,16 +21,11 @@
             android:exported="false" />
         <activity
             android:name=".logins.LoginCentro"
-            android:exported="false" />
+            android:exported="false" >
+        </activity>
         <activity
             android:name=".MainActivityCentro"
-            android:exported="true" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false" >
         </activity>
 
         <activity
@@ -50,7 +45,14 @@
             android:exported="false" />
         <activity
             android:name=".logins.LoginAlumno"
-            android:exported="false">
+            android:exported="true">
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <!-- Quitamos el intent-filter de LoginAlumno para que no sea la actividad de inicio -->
         </activity>
         <activity

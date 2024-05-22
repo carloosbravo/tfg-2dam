@@ -21,5 +21,5 @@ public class AlumnoService {
     public Alumno logIn(String correo) {
         return alumnoRepository.obtenerAlumnoCorreo(correo);
     }
-    public void register(Alumno alumno){  alumnoRepository.save(alumno);}
+    public Alumno register(Alumno alumno){ return alumnoRepository.save(alumno);}
 }

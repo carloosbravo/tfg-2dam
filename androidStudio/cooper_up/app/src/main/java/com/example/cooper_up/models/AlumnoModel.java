@@ -18,11 +18,12 @@ public class AlumnoModel implements Serializable {
     public AlumnoModel() {
     }
 
-    public AlumnoModel(int id, String nombre, String email, String contra,String telefono , String expediente_academico, String valoracion_profesorado) {
+    public AlumnoModel(int id, String nombre, String email, String contraseña,String telefono , String expediente_academico, String valoracion_profesorado) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
         this.telefono = telefono;
+        this.contraseña = contraseña;
         this.expediente_academico = expediente_academico;
         this.valoracion_profesorado = valoracion_profesorado;
     }

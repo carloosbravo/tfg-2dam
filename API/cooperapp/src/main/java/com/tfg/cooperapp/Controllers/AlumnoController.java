@@ -29,7 +29,7 @@ public class AlumnoController {
 
     // Se usa el mismo método post para registrar un nuevo alumno y para actualizar los datos de un alumno ya existente
     @PostMapping("/register-update")
-    public void registrarAlumno (@RequestBody Alumno alumno) {
-        alumnoService.register(alumno);}
+    public Alumno registrarAlumno (@RequestBody Alumno alumno) {
+        return alumnoService.register(alumno);}
 
 }

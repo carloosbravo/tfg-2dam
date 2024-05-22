@@ -3,6 +3,7 @@ package com.example.cooper_up;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -48,9 +49,9 @@ public class EditarUsuario extends AppCompatActivity {
 
         // Rellenar los campos con los datos del alumno si no es nulo
         if (alumno != null) {
-            nombreEditarInput.setText(alumno.getNombre());
-            emailEditarInput.setText(alumno.getEmail());
-            telefonoEditarInput.setText(alumno.getTelefono());
+            nombreEditarInput.setText(alumno.getNombre().toString());
+            emailEditarInput.setText(alumno.getEmail().toString());
+            telefonoEditarInput.setText(alumno.getTelefono().toString());
         }
 
         // Configurar el botón para volver al perfil
@@ -80,6 +81,8 @@ public class EditarUsuario extends AppCompatActivity {
                     alumno.setEmail(nuevoEmail);
                     alumno.setTelefono(nuevoTelefono);
                     alumno.setContraseña(nuevaContrasena);
+
+                    Log.d("Alumno",alumno.getId() +"");
 
                     // Llamada a la API para actualizar los datos
                     ApiService apiService = ApiAdapter.getInstance().getApiService();

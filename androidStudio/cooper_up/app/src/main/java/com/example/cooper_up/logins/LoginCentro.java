@@ -62,10 +62,10 @@ public class LoginCentro extends AppCompatActivity {
                             if (contraEmpresa != null && contraEmpresa.equals(contraIntro)) {
                                 SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
-                                editor.putInt("idEmpresa", centro.getId());
+                                editor.putInt("idCentro", centro.getId());
                                 editor.apply();
                                 Intent intent = new Intent(LoginCentro.this, MainActivityCentro.class);
-                                intent.putExtra("empresa", centro);
+                                intent.putExtra("centro", centro);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(LoginCentro.this, "Incorrect password", Toast.LENGTH_SHORT).show();

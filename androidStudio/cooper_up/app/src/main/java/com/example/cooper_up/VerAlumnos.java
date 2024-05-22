@@ -43,9 +43,6 @@ public class VerAlumnos extends AppCompatActivity {
         ApiAdapter apiAdapter = ApiAdapter.getInstance();
         ApiService apiService = apiAdapter.getApiService();
 
-
-
-
         Call<List<AlumnoModel>> call = apiService.getAllAlumnos();
 
         call.enqueue(new Callback<List<AlumnoModel>>() {

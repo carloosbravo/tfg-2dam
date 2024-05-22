@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cooper_up.models.AlumnoModel;
 import com.example.cooper_up.models.CentroModelo;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
@@ -25,6 +26,14 @@ public class MainActivityCentro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_centro);
 
+
+
+        CentroModelo centro = new CentroModelo();
+
+        if (getIntent() != null && getIntent().hasExtra("centro")) {
+            centro = (CentroModelo) getIntent().getSerializableExtra("centro");
+        }
+
         TextView nombreCentro = findViewById(R.id.TVnombreEmpresa);
         TextView correoCentro = findViewById(R.id.correoCentro);
         TextView direccionCentro = findViewById(R.id.direccionCentro);
@@ -33,6 +42,8 @@ public class MainActivityCentro extends AppCompatActivity {
 
         Button btnAdd = findViewById(R.id.btnAddAlumno);
         Button btnShow = findViewById(R.id.btnVerAlumnos);
+
+
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,29 +58,18 @@ public class MainActivityCentro extends AppCompatActivity {
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Moverse a la actividad con todos los alumnos de ese centro
+                Intent intent = new Intent(MainActivityCentro.this, VerAlumnos.class);
+                startActivity(intent);
             }
         });
 
-        //Llamada para cargar todos los datos del centro que acaba de entrar
+        nombreCentro.setText(centro.getNombre().toString());
+        correoCentro.setText(centro.getEmail().toString());
+        direccionCentro.setText(centro.getDireccion().toString());
+        telefonoCentro.setText(centro.getTelefono().toString());
+        contrasenaCentro.setText(centro.getContraseña().toString());
 
-        ApiService apiService = ApiAdapter.getInstance().getApiService();
-        Call<CentroModelo> call = apiService.getCentroId(1);
-        call.enqueue(new Callback<CentroModelo>() {
-            @Override
-            public void onResponse(Call<CentroModelo> call, Response<CentroModelo> response) {
-                nombreCentro.setText(response.body().getNombre().toString());
-                correoCentro.setText(response.body().getEmail().toString());
-                direccionCentro.setText(response.body().getDireccion().toString());
-                telefonoCentro.setText(response.body().getTelefono().toString());
-                contrasenaCentro.setText(response.body().getContraseña().toString());
-            }
 
-            @Override
-            public void onFailure(Call<CentroModelo> call, Throwable t) {
-                Toast.makeText(MainActivityCentro.this, "SERVER ERROR", Toast.LENGTH_SHORT).show();
-            }
-        });
 
 
     }

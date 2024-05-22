@@ -80,7 +80,7 @@ public class RValumnos extends RecyclerView.Adapter<RValumnos.MyViewHolder>{
             super(itemView);
             this.nombreAlumno = itemView.findViewById(R.id.nameAlumnoCardTV);
             this.correoAlumno = itemView.findViewById(R.id.correoAlumnoCardTV);
-            this.correoAlumno = itemView.findViewById(R.id.gradoAlumnoCardTV);
+            this.gradoAlumno = itemView.findViewById(R.id.gradoAlumnoCardTV);
 
         }
     }
