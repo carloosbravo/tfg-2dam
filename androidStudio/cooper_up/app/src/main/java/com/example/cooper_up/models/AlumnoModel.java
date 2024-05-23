@@ -11,8 +11,8 @@ public class AlumnoModel implements Serializable {
     private String contraseña;
 
     private String telefono;
-    private String expediente_academico; //DNI
-    private String valoracion_profesorado; //grado cursado
+    private String dni; //DNI
+    private String grado; //grado cursado
 
 
     public AlumnoModel() {
@@ -24,8 +24,24 @@ public class AlumnoModel implements Serializable {
         this.email = email;
         this.telefono = telefono;
         this.contraseña = contraseña;
-        this.expediente_academico = expediente_academico;
-        this.valoracion_profesorado = valoracion_profesorado;
+        this.dni = expediente_academico;
+        this.grado = valoracion_profesorado;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getGrado() {
+        return grado;
+    }
+
+    public void setGrado(String grado) {
+        this.grado = grado;
     }
 
     public int getId() {
@@ -48,13 +64,6 @@ public class AlumnoModel implements Serializable {
         return telefono;
     }
 
-    public String getExpediente_academico() {
-        return expediente_academico;
-    }
-
-    public String getValoracion_profesorado() {
-        return valoracion_profesorado;
-    }
 
     public void setId(int id) {
         this.id = id;
@@ -76,11 +85,5 @@ public class AlumnoModel implements Serializable {
         this.telefono = telefono;
     }
 
-    public void setExpediente_academico(String expediente_academico) {
-        this.expediente_academico = expediente_academico;
-    }
 
-    public void setValoracion_profesorado(String valoracion_profesorado) {
-        this.valoracion_profesorado = valoracion_profesorado;
-    }
 }

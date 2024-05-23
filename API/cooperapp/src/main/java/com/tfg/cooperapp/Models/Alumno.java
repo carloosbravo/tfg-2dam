@@ -28,11 +28,11 @@ public class Alumno {
     @Column(name="contraseña")
     private String contraseña;
 
-    @Column(name="expediente_academico")
-    private String expediente_academico;
+    @Column(name="dni")
+    private String dni;
 
-    @Column(name="valoracion_profesorado")
-    private String valoracion_profesorado;
+    @Column(name="grado")
+    private String grado;
 
     @Column(name="centro_id")
     private Integer centro_id;
