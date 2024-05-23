@@ -32,7 +32,7 @@ public class Cuenta extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Cuenta.this, LoginCentro(falta).class);
+                Intent intent = new Intent(Cuenta.this, LoginCentro.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class Cuenta extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Acción al hacer clic en Empresa
-                Intent intent = new Intent(Cuenta.this, LoginEmpresa(falta).class);
+                Intent intent = new Intent(Cuenta.this, LoginEmpresa.class);
                 startActivity(intent);
             }
         });
