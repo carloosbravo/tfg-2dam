@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cooper_up.Cuenta;
 import com.example.cooper_up.EditarUsuario;
 import com.example.cooper_up.mains.MainActivity;
 import com.example.cooper_up.R;
@@ -96,7 +97,7 @@ public class LoginAlumno extends AppCompatActivity {
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginAlumno.this, EditarUsuario.class);
+                Intent intent = new Intent(LoginAlumno.this, Cuenta.class);
                 startActivity(intent);
             }
         });

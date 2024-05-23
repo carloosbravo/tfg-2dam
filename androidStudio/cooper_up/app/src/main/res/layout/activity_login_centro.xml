@@ -5,18 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".logins.LoginAlumno"
-    android:background="@color/white"
+    android:background="@drawable/background_blue_menu"
     >
-    <!-- Fondo de pantalla -->
-    <ImageView
-        android:id="@+id/backgroundImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:background="@drawable/backgrnd_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -30,14 +21,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.18" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.84" />
+        app:layout_constraintGuide_percent="0.82" />
 
     <!-- Línea separadora -->
 
@@ -204,34 +195,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="520dp" />
+        app:layout_constraintGuide_begin="482dp" />
 
     <TextView
         android:id="@+id/NotienesCuentaTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No estas registrado?"
+        android:text="No eres un Centro?"
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
-        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toTopOf="@+id/guideline13"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintVertical_bias="0.517" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="564dp" />
+        app:layout_constraintGuide_begin="547dp" />
 
     <TextView
         android:id="@+id/registrateTVLogin"
-        android:layout_width="110dp"
-        android:layout_height="20dp"
+        android:layout_width="137dp"
+        android:layout_height="21dp"
         android:clickable="true"
-        android:text="Contactanos"
+        android:text="Volver al menu"
         android:textColor="@color/azulElectrico"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -245,7 +238,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-
+        android:textSize="18dp"
         android:text="Iniciar Sesión"
         android:textColor="@color/black"
         android:textColorHighlight="#FFFFFF"

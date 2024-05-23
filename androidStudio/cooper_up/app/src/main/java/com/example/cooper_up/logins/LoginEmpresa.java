@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cooper_up.Cuenta;
 import com.example.cooper_up.mains.MainActivityEmpresa;
 import com.example.cooper_up.R;
 import com.example.cooper_up.models.EmpresaModelo;
@@ -32,6 +34,7 @@ public class LoginEmpresa extends AppCompatActivity {
         TextInputEditText correo = findViewById(R.id.userametextEmpresa);
         TextInputEditText contra = findViewById(R.id.contratextEmpresa);
         Button login_btn = findViewById(R.id.loginbtnEmpresa);
+        TextView volverMenu = findViewById(R.id.registrateTVLogin);
 
         ApiAdapter apiAdapter = ApiAdapter.getInstance();
         ApiService apiService = apiAdapter.getApiService();
@@ -79,6 +82,14 @@ public class LoginEmpresa extends AppCompatActivity {
                         Toast.makeText(LoginEmpresa.this, "Server error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+
+        volverMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginEmpresa.this, Cuenta.class);
+                startActivity(intent);
             }
         });
     }
