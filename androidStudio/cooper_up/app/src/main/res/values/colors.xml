@@ -9,6 +9,8 @@
     <color name="grisMasOscuro">#adb5bd</color>
     <color name="rojo">#e63946</color>
     <color name="azulProfile">#284B63</color>
-
+    <color name="empresa">#f3de2c</color>
+    <color name="centro">#7cb518</color>
+    <color name="alumno">#008bf8</color>
     <color name="azulletras">#4FABFF</color>
 </resources>
