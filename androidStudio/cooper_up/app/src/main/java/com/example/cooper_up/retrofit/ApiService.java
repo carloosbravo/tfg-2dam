@@ -80,6 +80,15 @@ public interface ApiService {
     @DELETE("oferta/deleteOferta/{id_practica}/{id_estudiante}")
     Call<Void> deleteOferta(@Path("id_practica") Integer id_practica, @Path("id_estudiante") Integer id_estudiante);
 
+    @GET("empresa/empresaById/{id}")
+    Call<EmpresaModelo> getEmpresaId(@Path("id")Integer id);
+
+    @POST("empresa/register-update")
+    Call<EmpresaModelo> register(@Body EmpresaModelo empresa);
+
+    @POST("practica/publicarPractica")
+    Call<PracticaModel> publicar(@Body PracticaModel practica);
+
 
 
 }

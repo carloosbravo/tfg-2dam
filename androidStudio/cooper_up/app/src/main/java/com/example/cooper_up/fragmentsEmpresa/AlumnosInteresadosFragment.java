@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.cooper_up.AnadirPractica;
 import com.example.cooper_up.Curriculum;
 import com.example.cooper_up.EliminarPractica;
 import com.example.cooper_up.R;
@@ -96,6 +97,16 @@ public class AlumnosInteresadosFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        TextView addPracticaTV = view.findViewById(R.id.anadirPractica);
+        addPracticaTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AnadirPractica.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 }
