@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.cooper_up.EditarUsuario;
+import com.example.cooper_up.ModificarEditar;
 import com.example.cooper_up.R;
 import com.example.cooper_up.models.EmpresaModelo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -18,8 +19,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class ProfileEmpresaFragment extends Fragment {
 
     private EmpresaModelo empresa;
-
-    private FloatingActionButton btnEditar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,6 +53,14 @@ public class ProfileEmpresaFragment extends Fragment {
             biografiaEmpresa2.setText(empresa.getBiografia());
 
         }
+
+        editarPerfilButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ModificarEditar.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
 
