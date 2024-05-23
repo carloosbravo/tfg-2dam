@@ -19,9 +19,10 @@ public class ProfileEmpresaFragment extends Fragment {
 
     private EmpresaModelo empresa;
 
+    private FloatingActionButton btnEditar;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile_empresa, container, false);
 
         FloatingActionButton editarPerfilButton = view.findViewById(R.id.editarPerfilEmpresaButton);
@@ -30,7 +31,6 @@ public class ProfileEmpresaFragment extends Fragment {
         if (getArguments() != null) {
             empresa = (EmpresaModelo) getArguments().getSerializable("empresa");
         }
-
         // Configurar el click listener del botón para abrir EditarUsuario con el objeto AlumnoModel
 
 
