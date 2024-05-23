@@ -25,8 +25,8 @@ SET time_zone = "+00:00";
 
 --
 -- Estructura de tabla para la tabla `centro`
---
-create database cooperup;
+-- drop database cooperup;
+-- create database cooperup;
 use cooperup;
 CREATE TABLE `centro` (
   `id` int(11) NOT NULL,
@@ -59,6 +59,7 @@ CREATE TABLE `cv` (
   `descripcion` varchar(100) NOT NULL,
   `estudios` varchar(100) NOT NULL,
   `lenguajes` varchar(1000) NOT NULL,
+`idiomas` varchar(300) NOT NULL,
   `id_estudiante` int(11) NOT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -67,12 +68,13 @@ CREATE TABLE `cv` (
 -- Volcado de datos para la tabla `cv`
 --
 
-INSERT INTO `cv` (`descripcion`, `estudios`, `lenguajes`, `id_estudiante`, `id`) VALUES
-('Desarrollador con experiencia en aplicaciones web', 'Ingeniería Informática', 'JavaScript, HTML, CSS, Python', 1, 1),
-('Analista de datos con habilidades en big data', 'Estadística', 'R, Python, SQL', 2, 2),
-('Especialista en marketing digital', 'Marketing', 'SEO, SEM, Google Analytics', 3, 3),
-('Diseñador gráfico con un ojo para los detalles', 'Diseño Gráfico', 'Photoshop, Illustrator, InDesign', 4, 4),
-('Experto en ciberseguridad con conocimientos avanzados', 'Ciberseguridad', 'Penetration Testing, Firewalls, Network Security', 5, 5);
+INSERT INTO `cv` (`descripcion`, `estudios`, `lenguajes`, `idiomas`, `id_estudiante`, `id`) VALUES
+('Desarrollador con experiencia en aplicaciones web', 'Ingeniería Informática', 'JavaScript, HTML, CSS, Python', 'Inglés, Español', 1, 1),
+('Analista de datos con habilidades en big data', 'Estadística', 'R, Python, SQL', 'Inglés, Francés', 2, 2),
+('Especialista en marketing digital', 'Marketing', 'SEO, SEM, Google Analytics', 'Inglés, Alemán', 3, 3),
+('Diseñador gráfico con un ojo para los detalles', 'Diseño Gráfico', 'Photoshop, Illustrator, InDesign', 'Inglés, Italiano', 4, 4),
+('Experto en ciberseguridad con conocimientos avanzados', 'Ciberseguridad', 'Penetration Testing, Firewalls, Network Security', 'Inglés, Chino', 5, 5);
+
 
 -- --------------------------------------------------------
 
@@ -172,7 +174,7 @@ CREATE TABLE `usuarionormal` (
 --
 
 INSERT INTO `usuarionormal` (`id`, `nombre`, `email`, `contraseña`, `dni`, `grado`, `centro_id`, `telefono`) VALUES
-(1, 'Juan Perez', 'juan.perez@example.com', 'contrasena1', '12345678A', 'Desarrollo de Aplicaciones Multiplataforma', 1, 600123456),
+(1, 'Juan Perez', 'u', 'u', '12345678A', 'Desarrollo de Aplicaciones Multiplataforma', 1, 600123456),
 (2, 'Maria Lopez', 'maria.lopez@example.com', 'password456', '87654321B', 'Administración de Sistemas Informáticos en Red', 2, 600654321),
 (3, 'Carlos Garcia', 'carlos.garcia@example.com', 'pass789', '11223344C', 'Desarrollo de Aplicaciones Web', 3, 600789123),
 (4, 'Ana Fernandez', 'ana.fernandez@example.com', 'mypass321', '44332211D', 'Sistemas Microinformáticos y Redes', 4, 600321789),
@@ -232,6 +234,9 @@ ALTER TABLE `usuarionormal`
 -- AUTO_INCREMENT de la tabla `centro`
 --
 ALTER TABLE `centro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  
+  ALTER TABLE `oferta`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
