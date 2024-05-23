@@ -32,6 +32,9 @@ public interface ApiService {
     @GET("usuarionormal/alumnoCentro/{id}")
     Call <List<AlumnoModel>> alumnoCentro(@Path("id") Integer integer);
 
+    //obtener alumnos que han solicitado una practica
+    @GET("/usuarionormal/alumnosPractica/{idPractica}")
+    Call <List<AlumnoModel>> alumnosPractica(@Path("idPractica") Integer integer);
 
     //obtener todas las practicas de la base de datos
     @GET("practica/getAll")
