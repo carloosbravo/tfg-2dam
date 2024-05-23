@@ -15,15 +15,14 @@ import com.example.cooper_up.models.CentroModelo;
 
 public class MainActivityCentro extends AppCompatActivity {
 
+    private CentroModelo centro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_centro);
 
-
-
-        CentroModelo centro = new CentroModelo();
+        centro = new CentroModelo();
 
         if (getIntent() != null && getIntent().hasExtra("centro")) {
             centro = (CentroModelo) getIntent().getSerializableExtra("centro");
@@ -38,35 +37,29 @@ public class MainActivityCentro extends AppCompatActivity {
         Button btnAdd = findViewById(R.id.btnAddAlumno);
         Button btnShow = findViewById(R.id.btnVerAlumnos);
 
-
+        // Set the text for TextViews
+        nombreCentro.setText(centro.getNombre());
+        correoCentro.setText(centro.getEmail());
+        direccionCentro.setText(centro.getDireccion());
+        telefonoCentro.setText(centro.getTelefono());
+        contrasenaCentro.setText(centro.getContraseña());
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivityCentro.this, RegistrarAlumno.class);
+                intent.putExtra("centro", centro); // Add the CentroModelo object to the Intent
                 startActivity(intent);
-
             }
         });
-
 
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivityCentro.this, VerAlumnos.class);
+                intent.putExtra("centro", centro); // Add the CentroModelo object to the Intent
                 startActivity(intent);
             }
         });
-
-        nombreCentro.setText(centro.getNombre().toString());
-        correoCentro.setText(centro.getEmail().toString());
-        direccionCentro.setText(centro.getDireccion().toString());
-        telefonoCentro.setText(centro.getTelefono().toString());
-        contrasenaCentro.setText(centro.getContraseña().toString());
-
-
-
-
     }
-
 }

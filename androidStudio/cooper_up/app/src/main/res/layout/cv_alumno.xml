@@ -64,17 +64,16 @@
                     android:id="@+id/correoAlumnoCardTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
                     android:text="correosd@gmail.com" />
 
-                <Button
-                    android:id="@+id/verPerfilButton"
-                    android:layout_width="150sp"
-                    android:layout_height="42sp"
-                    android:backgroundTint="@color/azulFondoCLaro"
-                    android:text="Ver Perfil"
-                    android:textSize="13sp"
+                <TextView
+                    android:id="@+id/telefonoAlumnoCardTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+34 687584932" />
 
-                    android:textStyle="bold" />
+
 
 
             </LinearLayout>

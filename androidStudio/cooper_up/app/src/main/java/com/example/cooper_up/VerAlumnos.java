@@ -7,10 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageButton;
 
 import com.example.cooper_up.adapters.RValumnos;
 import com.example.cooper_up.adapters.RVpracticas;
+import com.example.cooper_up.mains.MainActivityCentro;
 import com.example.cooper_up.models.AlumnoModel;
+import com.example.cooper_up.models.CentroModelo;
 import com.example.cooper_up.models.PracticaModel;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
@@ -29,6 +32,7 @@ public class VerAlumnos extends AppCompatActivity {
     RValumnos adapter;
 
     AlumnoModel alumno;
+    CentroModelo centro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +44,16 @@ public class VerAlumnos extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        ImageButton volverBoton = findViewById(R.id.volverButtonVerAlumnos);
+
+        if (getIntent() != null && getIntent().hasExtra("centro")) {
+            centro = (CentroModelo) getIntent().getSerializableExtra("centro");
+        }
+
         ApiAdapter apiAdapter = ApiAdapter.getInstance();
         ApiService apiService = apiAdapter.getApiService();
 
-        Call<List<AlumnoModel>> call = apiService.getAllAlumnos();
+        Call<List<AlumnoModel>> call = apiService.alumnoCentro(centro.getId());
 
         call.enqueue(new Callback<List<AlumnoModel>>() {
             @Override
@@ -60,6 +70,12 @@ public class VerAlumnos extends AppCompatActivity {
                 Log.e("Error", "Error al obtener los alumnos: " + t.getMessage());
 
             }
+        });
+
+        volverBoton.setOnClickListener(v -> {
+            Intent intent = new Intent(VerAlumnos.this, MainActivityCentro.class);
+            intent.putExtra("centro", centro); // Pasar el objeto CentroModelo a la actividad MainActivityCentro
+            startActivity(intent);
         });
     }
 }
