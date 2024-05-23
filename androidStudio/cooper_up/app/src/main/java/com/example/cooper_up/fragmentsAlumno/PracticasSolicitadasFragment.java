@@ -1,5 +1,7 @@
 package com.example.cooper_up.fragmentsAlumno;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -59,11 +61,14 @@ public class PracticasSolicitadasFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        SharedPreferences sharedPref = requireActivity().getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
+        int idAlumno = sharedPref.getInt("idAlumno", 1);
+
         //declaracion del retrofit para realizar la llamada
         ApiAdapter apiAdapter = ApiAdapter.getInstance();
         ApiService apiService = apiAdapter.getApiService();
 
-        Call<List<PracticaModel>> call = apiService.getPracticasByIdAlumno(alumno.getId());
+        Call<List<PracticaModel>> call = apiService.getPracticasByIdAlumno(idAlumno);
 
         call.enqueue(new Callback<List<PracticaModel>>() {
             @Override

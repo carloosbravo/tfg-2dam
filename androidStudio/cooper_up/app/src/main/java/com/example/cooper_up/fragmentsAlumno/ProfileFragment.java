@@ -1,6 +1,8 @@
 package com.example.cooper_up.fragmentsAlumno;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -80,22 +82,40 @@ public class ProfileFragment extends Fragment {
 
         TextView nombreCentro = view.findViewById(R.id.centroAlumnoTV);
 
-        Call<CentroModelo> call = apiService.getCentroId(alumno.getCentro_id());
+        SharedPreferences sharedPref = requireActivity().getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
+        int idAlumno = sharedPref.getInt("idAlumno", 1);
 
-        call.enqueue(new Callback<CentroModelo>() {
+        Call<AlumnoModel> callalumno = apiService.getAlumnos(idAlumno);
+        callalumno.enqueue(new Callback<AlumnoModel>() {
             @Override
-            public void onResponse(Call<CentroModelo> call, Response<CentroModelo> response) {
-                if (response.isSuccessful()){
-                    nombreCentro.setText(response.body().getNombre());
-                }
+            public void onResponse(Call<AlumnoModel> call, Response<AlumnoModel> response) {
+                alumno = response.body();
 
+                Call<CentroModelo> callcentro = apiService.getCentroId(alumno.getCentro_id());
+
+                callcentro.enqueue(new Callback<CentroModelo>() {
+                    @Override
+                    public void onResponse(Call<CentroModelo> call, Response<CentroModelo> response) {
+                        if (response.isSuccessful()){
+                            nombreCentro.setText(response.body().getNombre());
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<CentroModelo> call, Throwable t) {
+
+                    }
+                });
             }
 
             @Override
-            public void onFailure(Call<CentroModelo> call, Throwable t) {
+            public void onFailure(Call<AlumnoModel> call, Throwable t) {
 
             }
         });
+
+
 
         if(alumno != null){
             TextView nombreAlumno = view.findViewById(R.id.nombreALumnoTV);

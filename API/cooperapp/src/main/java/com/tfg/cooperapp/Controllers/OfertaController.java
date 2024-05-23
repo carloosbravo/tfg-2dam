@@ -22,4 +22,14 @@ public class OfertaController {
     @PostMapping("/addOferta")
     public Oferta addOferta(@RequestBody Oferta oferta){ return ofertaService.postOferta(oferta);}
 
+    @DeleteMapping("deleteOferta/{id_practica}/{id_estudiante}")
+    public void getOferta(@PathVariable Integer id_practica, @PathVariable Integer id_estudiante){
+        System.out.println(id_practica + " -" + id_estudiante);
+        Oferta oferta = ofertaService.getOferta(id_practica, id_estudiante);
+        System.out.println(oferta);
+        ofertaService.deleteOferta(oferta.getId());
+    }
+
+
+
 }

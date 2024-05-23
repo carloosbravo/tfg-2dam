@@ -11,6 +11,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -72,6 +73,9 @@ public interface ApiService {
 
     @GET("centro/centrosById/{id}")
     Call <CentroModelo> getCentro(@Path("id") Integer id);
+
+    @DELETE("oferta/deleteOferta/{id_practica}/{id_estudiante}")
+    Call<Void> deleteOferta(@Path("id_practica") Integer id_practica, @Path("id_estudiante") Integer id_estudiante);
 
 
 
