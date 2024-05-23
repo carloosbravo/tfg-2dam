@@ -38,16 +38,20 @@ public class ProfileEmpresaFragment extends Fragment {
 
         if(empresa != null){
             TextView nombreEmpresa = view.findViewById(R.id.nombreEmpresaPerfilTV);
+            TextView nombreEmpresa2 = view.findViewById(R.id.nombreEmpresaPerfillTV);
             TextView telefonoEmpresa = view.findViewById(R.id.telefonoEmpresaPerfilTV);
             TextView emailEmpresa = view.findViewById(R.id.emailEmpresaPerfilTV);
             TextView direccionEmpresa = view.findViewById(R.id.direccionEmpresaTV);
             TextView biografiaEmpresa = view.findViewById(R.id.biografiEmpresaTV);
+            TextView biografiaEmpresa2 = view.findViewById(R.id.biografiaEpresaTV);
 
             nombreEmpresa.setText(empresa.getNombre());
+            nombreEmpresa2.setText(empresa.getNombre());
             telefonoEmpresa.setText(empresa.getTelefono());
             emailEmpresa.setText(empresa.getEmail());
             direccionEmpresa.setText(empresa.getDireccion());
             biografiaEmpresa.setText(empresa.getBiografia());
+            biografiaEmpresa2.setText(empresa.getBiografia());
 
         }
 

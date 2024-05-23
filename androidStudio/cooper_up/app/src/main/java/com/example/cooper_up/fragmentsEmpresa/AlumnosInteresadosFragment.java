@@ -1,7 +1,9 @@
 package com.example.cooper_up.fragmentsEmpresa;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -63,10 +65,13 @@ public class AlumnosInteresadosFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        SharedPreferences sharedPref = requireActivity().getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
+        int idEmpresa = sharedPref.getInt("idEmpresa", 1);
+
         ApiAdapter apiAdapter = ApiAdapter.getInstance();
         ApiService apiService = apiAdapter.getApiService();
 
-        Call<List<PracticaModel>> call = apiService.getPracticasByIdEmpresa(empresa.getId());
+        Call<List<PracticaModel>> call = apiService.getPracticasByIdEmpresa(idEmpresa);
 
         call.enqueue(new Callback<List<PracticaModel>>() {
             @Override
