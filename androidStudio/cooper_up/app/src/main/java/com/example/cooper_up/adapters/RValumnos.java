@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.pulsables.AlumnoPulsar;
 import com.example.cooper_up.R;
 import com.example.cooper_up.models.AlumnoModel;
@@ -21,10 +22,12 @@ public class RValumnos extends RecyclerView.Adapter<RValumnos.MyViewHolder>{
 
     Context context;
     ArrayList<AlumnoModel> alumnos;
+    EmpresaModelo empresa;
 
-    public RValumnos(Context context,ArrayList<AlumnoModel> alumnos){
+    public RValumnos(Context context,ArrayList<AlumnoModel> alumnos,EmpresaModelo empresa){
         this.context = context;
         this.alumnos = alumnos;
+        this.empresa = empresa;
     }
 
     @NonNull
@@ -47,6 +50,7 @@ public class RValumnos extends RecyclerView.Adapter<RValumnos.MyViewHolder>{
             public void onClick(View v) {
                 Intent intent = new Intent(context, AlumnoPulsar.class);
                 intent.putExtra("alumno", alumno);
+                intent.putExtra("empresa", empresa);
                 context.startActivity(intent);
             }
         });

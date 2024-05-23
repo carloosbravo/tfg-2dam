@@ -41,6 +41,7 @@ public class AlumnoPulsarCentro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AlumnoPulsarCentro.this, VerAlumnos.class);
+                intent.putExtra("alumno",alumno);
                 startActivity(intent);
             }
         });

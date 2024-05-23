@@ -48,7 +48,7 @@ public class AlumnosPracticaPulsar extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerViewAlumnosPractica);
         itemList = new ArrayList<>();
-        adapter = new RValumnos(this, itemList);
+        adapter = new RValumnos(this, itemList,empresa);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
