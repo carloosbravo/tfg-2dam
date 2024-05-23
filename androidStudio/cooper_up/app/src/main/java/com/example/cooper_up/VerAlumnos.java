@@ -14,6 +14,7 @@ import com.example.cooper_up.adapters.RVpracticas;
 import com.example.cooper_up.mains.MainActivityCentro;
 import com.example.cooper_up.models.AlumnoModel;
 import com.example.cooper_up.models.CentroModelo;
+import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.models.PracticaModel;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
@@ -33,6 +34,7 @@ public class VerAlumnos extends AppCompatActivity {
 
     AlumnoModel alumno;
     CentroModelo centro;
+    EmpresaModelo empresa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class VerAlumnos extends AppCompatActivity {
         setContentView(R.layout.activity_ver_alumnos);
 
         recyclerView = findViewById(R.id.recyclerAlumno);
-        adapter = new RValumnos(this, itemList);
+        adapter = new RValumnos(this, itemList,empresa);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

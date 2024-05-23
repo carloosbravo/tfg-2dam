@@ -48,7 +48,7 @@ public class HomeEmpresaFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recyclerViewalumnosHomeEmpresa);
         itemList = new ArrayList<>();
-        adapter = new RValumnos(getContext(), itemList);
+        adapter = new RValumnos(getContext(), itemList,empresa);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
