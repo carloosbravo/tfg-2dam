@@ -40,7 +40,7 @@ public class RValumnos extends RecyclerView.Adapter<RValumnos.MyViewHolder>{
         AlumnoModel alumno = alumnos.get(position);
         holder.nombreAlumno.setText(alumno.getNombre());
         holder.correoAlumno.setText(alumno.getEmail());
-        holder.gradoAlumno.setText(alumno.getValoracion_profesorado());
+        holder.gradoAlumno.setText(alumno.getGrado());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

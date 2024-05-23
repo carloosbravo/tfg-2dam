@@ -14,4 +14,5 @@ public class CvService {
     private CvRepository cvRepository;
 
     public CV getCvAlumno(Integer id_alumno) { return cvRepository.findByStudentId(id_alumno);}
+    public CV actualizar(CV cv) { return cvRepository.save(cv);}
 }

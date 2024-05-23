@@ -2,6 +2,7 @@ package com.example.cooper_up.retrofit;
 
 import com.example.cooper_up.models.AlumnoModel;
 import com.example.cooper_up.models.CentroModelo;
+import com.example.cooper_up.models.CurriculumModel;
 import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.models.OfertaModel;
 import com.example.cooper_up.models.PracticaModel;
@@ -62,6 +63,15 @@ public interface ApiService {
     //Solicitar una practica
     @POST("oferta/addOferta")
     Call <OfertaModel> solicitarPractica(@Body OfertaModel oferta);
+
+    @GET("cv/getCV/{id_alumno}")
+    Call <CurriculumModel> getCurriculum(@Path("id_alumno") Integer id_alumno);
+
+    @POST("cv/actualizar")
+    Call <CurriculumModel> actualizarCV(@Body CurriculumModel cv);
+
+    @GET("centro/centrosById/{id}")
+    Call <CentroModelo> getCentro(@Path("id") Integer id);
 
 
 

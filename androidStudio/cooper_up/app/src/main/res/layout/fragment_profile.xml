@@ -231,6 +231,8 @@
                 />
 
             <TextView
+                android:id="@+id/cvTV"
+                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CURRICULUM"

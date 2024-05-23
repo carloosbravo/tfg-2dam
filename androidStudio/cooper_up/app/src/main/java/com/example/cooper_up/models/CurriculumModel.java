@@ -18,9 +18,19 @@ public class CurriculumModel implements Serializable {
         @SerializedName("lenguajes")
         private String lenguajes;
 
+        @SerializedName("idiomas")
+        private String idiomas;
+
         @SerializedName("id_estudiante")
         private Integer id_estudiante;
 
+        public String getIdiomas() {
+                return idiomas;
+        }
+
+        public void setIdiomas(String idiomas) {
+                this.idiomas = idiomas;
+        }
 
         public void setId(Integer id) {
                 this.id = id;

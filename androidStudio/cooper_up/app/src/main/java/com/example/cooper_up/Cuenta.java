@@ -9,6 +9,10 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cooper_up.logins.LoginAlumno;
+import com.example.cooper_up.logins.LoginCentro;
+import com.example.cooper_up.logins.LoginEmpresa;
+
 public class Cuenta extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

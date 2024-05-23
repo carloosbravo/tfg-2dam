@@ -16,10 +16,21 @@
         android:theme="@style/Theme.Cooper_up"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <activity android:name=".Cuenta"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".pulsables.AlumnoPulsarCentro"
+            android:exported="false" />
         <activity
             android:name=".pulsables.AlumnosPracticaPulsar"
             android:exported="false" />
-
         <activity
             android:name=".VerAlumnos"
             android:exported="false" />
@@ -31,12 +42,7 @@
             android:exported="false" />
         <activity
             android:name=".logins.LoginEmpresa"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
             android:name=".Curriculum"
@@ -53,12 +59,9 @@
         <activity
             android:name=".RegistrarAlumno"
             android:exported="false" />
-
         <activity
             android:name=".logins.LoginAlumno"
             android:exported="false">
-
-            <!-- Quitamos el intent-filter de LoginAlumno para que no sea la actividad de inicio -->
         </activity>
         <activity
             android:name=".SplashScreen"

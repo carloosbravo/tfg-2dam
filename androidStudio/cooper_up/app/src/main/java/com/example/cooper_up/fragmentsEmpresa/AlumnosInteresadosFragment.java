@@ -46,7 +46,15 @@ public class AlumnosInteresadosFragment extends Fragment {
 
         // Recuperar el objeto EmpresaModelo del argumento
 
+        if (getArguments() != null) {
             empresa = (EmpresaModelo) getArguments().getSerializable("empresa");
+        }
+
+        if (empresa == null) {
+            // Manejar el caso en que empresa es nulo
+            Log.e("Error", "El objeto empresa es nulo");
+            return view;
+        }
 
 
         recyclerView = view.findViewById(R.id.recyclerViewEmpresaPracticas);

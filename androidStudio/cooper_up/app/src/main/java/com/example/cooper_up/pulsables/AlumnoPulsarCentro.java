@@ -13,7 +13,7 @@ import com.example.cooper_up.VerAlumnos;
 import com.example.cooper_up.mains.MainActivityEmpresa;
 import com.example.cooper_up.models.AlumnoModel;
 
-public class AlumnoPulsar extends AppCompatActivity {
+public class AlumnoPulsarCentro extends AppCompatActivity {
 
     AlumnoModel alumno;
 
@@ -40,7 +40,7 @@ public class AlumnoPulsar extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AlumnoPulsar.this, MainActivityEmpresa.class);
+                Intent intent = new Intent(AlumnoPulsarCentro.this, VerAlumnos.class);
                 startActivity(intent);
             }
         });

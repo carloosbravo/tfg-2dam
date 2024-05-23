@@ -5,15 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pulsables.PracticaPulsar"
-    android:background="@drawable/background_editar">
+    android:background="@drawable/background_shapes">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
-
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/layoutPractica"
@@ -29,40 +27,63 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <FrameLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/azulProfile">
 
-                    <TextView
-                        android:id="@+id/nombreAlumnoCurriculumTV"
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        app:strokeColor="@android:color/darker_gray"
+                        app:shapeAppearanceOverlay="@style/circleImageView"
+                        android:background="@drawable/foto_prueba"
+                        />
+
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:background="@color/azulProfile"
-                        android:padding="30dp"
-                        android:text="Carlos Bravo"
-                        android:textColor="@color/white"
-                        android:textSize="30dp"
-                        android:textStyle="bold" />
+                        android:layout_height="wrap_content">
 
-                </FrameLayout>
+                        <TextView
+                            android:id="@+id/nombreAlumnoPulsarTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:padding="20dp"
+                            android:text="Lin Xun Yeng"
+                            android:textAlignment="center"
+                            android:textSize="24dp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
-                    android:text="Estudios Realizados "
-                    android:layout_marginTop="15dp"
+                    android:text="GRADO CURSADO "
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/estudiosCurriculumTV"
+                <TextView
+                    android:id="@+id/gradoPulsarTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="20dp"
-                    android:text="Desarrollador de aplicaciones en Multiplataforma  "
+                    android:text="DAM"
                     android:textSize="16sp" />
+
+                <View
+                    android:layout_width="350sp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/grisMasOscuro" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -72,66 +93,44 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/descripcionCurriculumTV"
+                <TextView
+                    android:id="@+id/correoAlumnoPulsarTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10sp"
+                    android:text="correo@example.com" />
+
+                <View
+                    android:layout_width="350sp"
+                    android:layout_height="1dp"
                     android:layout_marginLeft="10sp"
                     android:layout_marginBottom="20dp"
-                    android:text="Desarrollador con experiencia en aplicaciones web." />
+                    android:background="@color/grisMasOscuro" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10sp"
-                    android:text="Lenguajes "
+                    android:text="Teléfono"
                     android:textSize="16sp"
                     android:textStyle="bold" />
-                <EditText
-                    android:id="@+id/lenguajesCurriculumTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10sp"
-                    android:layout_marginBottom="20dp"
-                    android:text="JavaScript, HTML, CSS, Python"/>
 
                 <TextView
+                    android:id="@+id/telefonoAlumnoPulsarTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10sp"
-                    android:text="Idiomas"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-                <EditText
-                    android:id="@+id/idiomasCurriculumTV"
-                    android:layout_width="match_parent"
+                    android:text="correo@example.com" />
+
+
+                <ImageButton
+                    android:id="@+id/volverHomeAlumnoPulsar"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10sp"
-                    android:layout_marginBottom="20dp"
-                    android:text="Ingles C1, Español Nativo"/>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/volverHomeTV"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:backgroundTint="@color/white"
-                        app:srcCompat="@drawable/ic_flecha_atras" />
-
-                    <Button
-                        android:id="@+id/btnActualizarCv"
-                        android:text="APLICAR CAMBIOS"
-                        android:backgroundTint="@color/azulProfile"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="100dp"/>
-                </LinearLayout>
+                    android:backgroundTint="@color/white"
+                    app:srcCompat="@drawable/ic_flecha_atras" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

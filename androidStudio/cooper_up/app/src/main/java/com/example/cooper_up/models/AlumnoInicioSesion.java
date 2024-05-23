@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class AlumnoModel implements Serializable {
+public class AlumnoInicioSesion implements Serializable {
 
     @SerializedName("id")
     private int id;
@@ -35,10 +35,10 @@ public class AlumnoModel implements Serializable {
         this.centro_id = centro_id;
     }
 
-    public AlumnoModel() {
+    public AlumnoInicioSesion() {
     }
 
-    public AlumnoModel(int id, String nombre, String email, String contraseña,String telefono , String expediente_academico, String valoracion_profesorado) {
+    public AlumnoInicioSesion(int id, String nombre, String email, String contraseña,String telefono , String expediente_academico, String valoracion_profesorado) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;

@@ -58,8 +58,8 @@ public class RegistrarAlumno extends AppCompatActivity {
         nuevoAlumno.setContraseña(contrasena);
         nuevoAlumno.setTelefono(telefono);
         nuevoAlumno.setEmail(email);
-        nuevoAlumno.setValoracion_profesorado(valoracion);
-        nuevoAlumno.setExpediente_academico(expediente);
+        nuevoAlumno.setDni(valoracion);
+        nuevoAlumno.setGrado(expediente);
         Call<AlumnoModel> call = apiService.register(nuevoAlumno);
         call.enqueue(new Callback<AlumnoModel>() {
             @Override
