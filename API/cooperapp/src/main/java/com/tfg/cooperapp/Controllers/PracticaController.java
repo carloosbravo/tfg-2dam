@@ -23,5 +23,8 @@ public class PracticaController {
     @GetMapping("/byIdEstudiante/{id_estudiante}")
     public List<Practica> getByIdEstdudiante(@PathVariable Integer id_estudiante) { return practicaService.getPracticasEstdiante(id_estudiante);}
 
+    @PostMapping("/publicarPractica")
+    public Practica publicarPrcatica(@RequestBody Practica practica){ return practicaService.publicarPrcatica(practica);}
+
 
 }

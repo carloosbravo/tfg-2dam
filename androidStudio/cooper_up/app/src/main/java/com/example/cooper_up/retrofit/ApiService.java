@@ -83,6 +83,9 @@ public interface ApiService {
     @POST("empresa/register-update")
     Call<EmpresaModelo> register(@Body EmpresaModelo empresa);
 
+    @POST("practica/publicarPractica")
+    Call<PracticaModel> publicar(@Body PracticaModel practica);
+
 
 
 }
