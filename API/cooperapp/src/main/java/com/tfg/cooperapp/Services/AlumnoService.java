@@ -24,4 +24,8 @@ public class AlumnoService {
     public Alumno register(Alumno alumno){ return alumnoRepository.save(alumno);}
 
     public List<Alumno> getAlumnoCentro(Integer id_centro) { return alumnoRepository.obtenerAlumnoCentro(id_centro);}
+
+    public List<Alumno> getAlumnosByPracticaId(Integer practicaId) {
+        return alumnoRepository.findAlumnosByPracticaId(practicaId);
+    }
 }

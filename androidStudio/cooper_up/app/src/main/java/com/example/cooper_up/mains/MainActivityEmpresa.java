@@ -25,13 +25,11 @@ public class MainActivityEmpresa extends AppCompatActivity implements BottomNavi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_empresa);
 
-        // Recuperar el objeto EmpresaModelo pasado desde LoginEmpresa
         empresa = (EmpresaModelo) getIntent().getSerializableExtra("empresa");
 
         navigation = findViewById(R.id.bottomNavViewCentro);
         navigation.setOnNavigationItemSelectedListener(this);
 
-        // Cargar el fragmento inicial
         loadFragment(new HomeEmpresaFragment());
     }
 
@@ -57,12 +55,10 @@ public class MainActivityEmpresa extends AppCompatActivity implements BottomNavi
     }
 
     private void loadFragment(Fragment fragment) {
-        // Pasar el objeto EmpresaModelo al fragmento si es necesario
         Bundle bundle = new Bundle();
         bundle.putSerializable("empresa", empresa);
         fragment.setArguments(bundle);
 
-        // Cambiar el fragmento
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frameLayoutCentro, fragment);
         transaction.commit();

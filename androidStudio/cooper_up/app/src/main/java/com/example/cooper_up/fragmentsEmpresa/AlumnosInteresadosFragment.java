@@ -40,7 +40,6 @@ public class AlumnosInteresadosFragment extends Fragment {
     private ArrayList<PracticaModel> itemList = new ArrayList<>();
     private RVpracticasEmpresa adapter;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,18 +49,13 @@ public class AlumnosInteresadosFragment extends Fragment {
 
         if (getArguments() != null) {
             empresa = (EmpresaModelo) getArguments().getSerializable("empresa");
-        }
-
-        if (empresa == null) {
-            // Manejar el caso en que empresa es nulo
+        }else{
             Log.e("Error", "El objeto empresa es nulo");
-            return view;
         }
-
 
         recyclerView = view.findViewById(R.id.recyclerViewEmpresaPracticas);
         itemList = new ArrayList<>();
-        adapter = new RVpracticasEmpresa(getContext(), itemList);
+        adapter = new RVpracticasEmpresa(getContext(), itemList,empresa);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -89,7 +83,6 @@ public class AlumnosInteresadosFragment extends Fragment {
 
             }
         });
-
 
         // Configurar el TextView y el click listener
         TextView eliminarPracticaTV = view.findViewById(R.id.eliminarPracticaTV);

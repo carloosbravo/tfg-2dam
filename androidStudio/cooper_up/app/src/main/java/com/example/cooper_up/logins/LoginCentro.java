@@ -11,8 +11,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cooper_up.Cuenta;
 import com.example.cooper_up.mains.MainActivityCentro;
 import com.example.cooper_up.R;
 import com.example.cooper_up.models.CentroModelo;
@@ -35,6 +37,7 @@ public class LoginCentro extends AppCompatActivity {
         TextInputEditText contra = findViewById(R.id.contratextCentro);
         Button login_btn = findViewById(R.id.loginbtnCentro);
 
+        TextView volverMenu = findViewById(R.id.registrateTVLogin);
         ApiAdapter apiAdapter = ApiAdapter.getInstance();
         ApiService apiService = apiAdapter.getApiService();
 
@@ -81,6 +84,14 @@ public class LoginCentro extends AppCompatActivity {
                         Toast.makeText(LoginCentro.this, "Server error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+
+        volverMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginCentro.this, Cuenta.class);
+                startActivity(intent);
             }
         });
 

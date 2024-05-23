@@ -34,4 +34,9 @@ public class AlumnoController {
     @GetMapping("/alumnoCentro/{centro_id}")
     public List<Alumno> getAlumnosCentro(@PathVariable Integer centro_id){ return alumnoService.getAlumnoCentro(centro_id);}
 
+    @GetMapping("/alumnosPractica/{idPractica}")
+    public List<Alumno> getAlumnosPractica(@PathVariable Integer idPractica){
+        return alumnoService.getAlumnosByPracticaId(idPractica);
+    }
+
 }
