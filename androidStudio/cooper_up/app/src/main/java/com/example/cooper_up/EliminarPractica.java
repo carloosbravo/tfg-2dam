@@ -4,13 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.cooper_up.adapters.RVpracticasEliminar;
 import com.example.cooper_up.adapters.RVpracticasEmpresa;
+import com.example.cooper_up.mains.MainActivityEmpresa;
 import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.models.PracticaModel;
+import com.example.cooper_up.pulsables.AlumnoPulsar;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
 
@@ -38,9 +43,11 @@ public class EliminarPractica extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerViewEliminarPractica);
         itemList = new ArrayList<>();
-        adapter = new RVpracticasEliminar(this, itemList);
+        adapter = new RVpracticasEliminar(this, itemList,empresa);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        ImageButton btnVolver = findViewById(R.id.volverBtn);
 
         ApiAdapter apiAdapter = ApiAdapter.getInstance();
         ApiService apiService = apiAdapter.getApiService();
@@ -61,6 +68,15 @@ public class EliminarPractica extends AppCompatActivity {
             public void onFailure(Call<List<PracticaModel>> call, Throwable t) {
                 Log.e("Error", "Error al obtener las practicas: " + t.getMessage());
 
+            }
+        });
+
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EliminarPractica.this, MainActivityEmpresa.class);
+                intent.putExtra("empresa", empresa);
+                startActivity(intent);
             }
         });
     }

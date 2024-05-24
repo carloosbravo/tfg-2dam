@@ -48,6 +48,7 @@ public class RValumnos extends RecyclerView.Adapter<RValumnos.MyViewHolder>{
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(context, AlumnoPulsar.class);
                 intent.putExtra("alumno", alumno);
                 intent.putExtra("empresa", empresa);

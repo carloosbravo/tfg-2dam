@@ -27,4 +27,8 @@ public class PracticaController {
     public Practica publicarPrcatica(@RequestBody Practica practica){ return practicaService.publicarPrcatica(practica);}
 
 
+    @DeleteMapping("/delete/{id_practica}")
+    public void deletePracticaById(@PathVariable Integer id_practica){
+        practicaService.deletePracticaById(id_practica);
+    }
 }

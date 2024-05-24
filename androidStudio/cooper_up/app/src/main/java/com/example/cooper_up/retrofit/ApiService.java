@@ -88,6 +88,9 @@ public interface ApiService {
 
     @POST("practica/publicarPractica")
     Call<PracticaModel> publicar(@Body PracticaModel practica);
+    
+    @DELETE("practica/delete/{id_practica}")
+    Call<Void> deletePractica(@Path("id_practica")Integer id_practica);
 
 
 

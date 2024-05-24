@@ -6,25 +6,36 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cooper_up.EliminarPractica;
 import com.example.cooper_up.R;
+import com.example.cooper_up.logins.LoginAlumno;
 import com.example.cooper_up.mains.MainActivityEmpresa;
+import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.models.PracticaModel;
+import com.example.cooper_up.retrofit.ApiAdapter;
+import com.example.cooper_up.retrofit.ApiService;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class RVpracticasEliminar extends RecyclerView.Adapter<RVpracticasEliminar.MyViewHolder>{
     Context context;
     ArrayList<PracticaModel> practicas;
+    EmpresaModelo empresa;
 
-    public RVpracticasEliminar(Context context, ArrayList<PracticaModel> practicas) {
+    public RVpracticasEliminar(Context context, ArrayList<PracticaModel> practicas, EmpresaModelo empresa) {
         this.context = context;
         this.practicas = practicas;
+        this.empresa = empresa;
     }
 
     @NonNull
@@ -48,9 +59,29 @@ public class RVpracticasEliminar extends RecyclerView.Adapter<RVpracticasElimina
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context, MainActivityEmpresa.class);
-                intent.putExtra("practica", practica);
-                context.startActivity(intent);
+                ApiAdapter apiAdapter = ApiAdapter.getInstance();
+                ApiService apiService = apiAdapter.getApiService();
+
+                Call<Void> call = apiService.deletePractica(practica.getId());
+
+                call.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        Toast.makeText(context, "practica eliminada", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, MainActivityEmpresa.class);
+                        intent.putExtra("practica", practica);
+                        intent.putExtra("empresa", empresa);
+                        context.startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+
+                        Toast.makeText(context, "error al crear las practicas", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
             }
         });
 
