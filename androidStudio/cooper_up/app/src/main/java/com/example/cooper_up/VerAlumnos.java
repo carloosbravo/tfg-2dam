@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.ImageButton;
 
 import com.example.cooper_up.adapters.RValumnos;
+import com.example.cooper_up.adapters.RValumnosCentro;
 import com.example.cooper_up.adapters.RVpracticas;
 import com.example.cooper_up.mains.MainActivityCentro;
 import com.example.cooper_up.models.AlumnoModel;
@@ -30,10 +31,11 @@ public class VerAlumnos extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<AlumnoModel> itemList = new ArrayList<>();
 
-    RValumnos adapter;
+    RValumnosCentro adapter;
 
     AlumnoModel alumno;
     CentroModelo centro;
+
     EmpresaModelo empresa;
 
     @Override
@@ -41,16 +43,18 @@ public class VerAlumnos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_alumnos);
 
+        centro = (CentroModelo) getIntent().getSerializableExtra("centro");
+
         recyclerView = findViewById(R.id.recyclerAlumno);
-        adapter = new RValumnos(this, itemList,empresa);
+        adapter = new RValumnosCentro(this, itemList,centro);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         ImageButton volverBoton = findViewById(R.id.volverButtonVerAlumnos);
 
-        if (getIntent() != null && getIntent().hasExtra("centro")) {
-            centro = (CentroModelo) getIntent().getSerializableExtra("centro");
-        }
+
+
+
 
         ApiAdapter apiAdapter = ApiAdapter.getInstance();
         ApiService apiService = apiAdapter.getApiService();

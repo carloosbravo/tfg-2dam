@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -12,10 +13,12 @@ import com.example.cooper_up.R;
 import com.example.cooper_up.VerAlumnos;
 import com.example.cooper_up.mains.MainActivityEmpresa;
 import com.example.cooper_up.models.AlumnoModel;
+import com.example.cooper_up.models.CentroModelo;
 
 public class AlumnoPulsarCentro extends AppCompatActivity {
 
     AlumnoModel alumno;
+    CentroModelo centro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +26,12 @@ public class AlumnoPulsarCentro extends AppCompatActivity {
         setContentView(R.layout.activity_alumno_pulsar);
 
         Intent intent = getIntent();
-        if (intent != null && intent.hasExtra("alumno")) {
+
             alumno = (AlumnoModel) intent.getSerializableExtra("alumno");
-        }
+            centro = (CentroModelo) intent.getSerializableExtra("centro");
+
+      //  Log.e("PORQUE COJONES NO VA",centro.getNombre());
+
 
         TextView nombreAlumno = findViewById(R.id.nombreAlumnoPulsarTV);
         TextView correoAlumno = findViewById(R.id.correoAlumnoPulsarTV);
@@ -42,6 +48,7 @@ public class AlumnoPulsarCentro extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AlumnoPulsarCentro.this, VerAlumnos.class);
                 intent.putExtra("alumno",alumno);
+                intent.putExtra("centro",centro);
                 startActivity(intent);
             }
         });

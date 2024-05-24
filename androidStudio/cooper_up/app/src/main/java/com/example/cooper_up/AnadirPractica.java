@@ -3,12 +3,17 @@ package com.example.cooper_up;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.cooper_up.mains.MainActivityCentro;
+import com.example.cooper_up.mains.MainActivityEmpresa;
+import com.example.cooper_up.models.CentroModelo;
 import com.example.cooper_up.models.PracticaModel;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
@@ -26,14 +31,18 @@ public class AnadirPractica extends AppCompatActivity {
 
     Button btnPublicar;
 
+    CentroModelo centro;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anadir_practica);
 
+        centro = (CentroModelo) getIntent().getSerializableExtra("centro");
         titulo = findViewById(R.id.tituloPractica);
         descripcion = findViewById(R.id.descripcionPractica);
         btnPublicar = findViewById(R.id.btnpublicarPractica);
+        ImageButton btnVolver = findViewById(R.id.volverPerfilButton);
 
         SharedPreferences sharedPref = this.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
         int idEmpresa = sharedPref.getInt("idEmpresa", 1);
@@ -56,6 +65,10 @@ public class AnadirPractica extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<PracticaModel> call, Response<PracticaModel> response) {
                         Toast.makeText(AnadirPractica.this, "Práctica publicada con éxito", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(AnadirPractica.this, MainActivityCentro.class);
+                        intent.putExtra("centro",centro);
+                        startActivity(intent);
+
                     }
 
                     @Override
@@ -64,6 +77,14 @@ public class AnadirPractica extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AnadirPractica.this, MainActivityCentro.class);
+                startActivity(intent);
             }
         });
     }

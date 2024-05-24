@@ -22,11 +22,11 @@ public class MainActivityCentro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_centro);
 
-        centro = new CentroModelo();
 
-        if (getIntent() != null && getIntent().hasExtra("centro")) {
-            centro = (CentroModelo) getIntent().getSerializableExtra("centro");
-        }
+
+
+        centro = (CentroModelo) getIntent().getSerializableExtra("centro");
+
 
         TextView nombreCentro = findViewById(R.id.TVnombreEmpresa);
         TextView correoCentro = findViewById(R.id.correoCentro);
