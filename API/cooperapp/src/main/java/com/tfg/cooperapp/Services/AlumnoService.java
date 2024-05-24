@@ -28,4 +28,7 @@ public class AlumnoService {
     public List<Alumno> getAlumnosByPracticaId(Integer practicaId) {
         return alumnoRepository.findAlumnosByPracticaId(practicaId);
     }
+
+    public Alumno getAlumnoDni(String dni){ return alumnoRepository.getAlumnoDni(dni);}
+    public void deleteAlumnoDni(Integer id){ alumnoRepository.deleteById(id);}
 }

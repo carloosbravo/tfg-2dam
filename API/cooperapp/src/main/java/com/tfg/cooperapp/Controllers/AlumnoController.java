@@ -39,4 +39,17 @@ public class AlumnoController {
         return alumnoService.getAlumnosByPracticaId(idPractica);
     }
 
+    @DeleteMapping("/deleteAlumno/{dni}")
+    public Integer deleteAlumnoDni(@PathVariable String dni){
+        Alumno alumno = alumnoService.getAlumnoDni(dni);
+
+        if (alumno != null){
+            alumnoService.deleteAlumnoDni(alumno.getId());
+            return 1;
+
+        }else{
+            return 0;
+        }
+    }
+
 }
