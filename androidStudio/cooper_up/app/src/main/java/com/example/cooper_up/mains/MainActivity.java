@@ -1,4 +1,4 @@
-package com.example.cooper_up;
+package com.example.cooper_up.mains;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import com.example.cooper_up.fragments.PracticasSolicitadasFragment;
-import com.example.cooper_up.fragments.HomeFragment;
-import com.example.cooper_up.fragments.ProfileFragment;
+import com.example.cooper_up.R;
+import com.example.cooper_up.fragmentsAlumno.PracticasSolicitadasFragment;
+import com.example.cooper_up.fragmentsAlumno.HomeFragment;
+import com.example.cooper_up.fragmentsAlumno.ProfileFragment;
+import com.example.cooper_up.models.AlumnoModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -24,10 +26,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private PracticasSolicitadasFragment practicasSolicitadasFragment;
     private ProfileFragment profileFragment;
 
+    // Objeto AlumnoModel
+    private AlumnoModel alumno;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Obtener el objeto AlumnoModel del Intent
+        if (getIntent() != null && getIntent().hasExtra("alumno")) {
+            alumno = (AlumnoModel) getIntent().getSerializableExtra("alumno");
+        }
 
         navigation = findViewById(R.id.bottomNavView);
         frameLayout = findViewById(R.id.frameLayout);
@@ -37,12 +47,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         // Inicializar fragmentos
         homeFragment = new HomeFragment();
         practicasSolicitadasFragment = new PracticasSolicitadasFragment();
-        profileFragment = new ProfileFragment();
+        profileFragment = ProfileFragment.newInstance(alumno); // Pasar el objeto AlumnoModel al crear el ProfileFragment
+        practicasSolicitadasFragment = practicasSolicitadasFragment.newInstance(alumno);
 
         // Establecer el fragmento inicial
         setFragment(homeFragment);
-
-
     }
 
     // Método para cambiar el fragmento
@@ -53,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     @Override
-    public void onPointerCaptureChanged(boolean hasCapture){
+    public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
 
@@ -66,10 +75,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             homeFragment = new HomeFragment();
         }
         if (practicasSolicitadasFragment == null) {
-            practicasSolicitadasFragment = new PracticasSolicitadasFragment();
+            practicasSolicitadasFragment = PracticasSolicitadasFragment.newInstance(alumno);
         }
         if (profileFragment == null) {
-            profileFragment = new ProfileFragment();
+            profileFragment = ProfileFragment.newInstance(alumno); // Pasar el objeto AlumnoModel si el fragmento es nulo
         }
 
         // Realizar transacción de fragmentos
@@ -86,5 +95,4 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             return false;
         }
     }
-
 }

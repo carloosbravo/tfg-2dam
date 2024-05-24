@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditarUsuario"
-    android:background="@drawable/background_editar">
+    android:background="@drawable/background_gradient_white">
 
     <!-- Fondo de pantalla -->
 
@@ -13,15 +13,12 @@
         android:id="@+id/editarUsuarioTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Editar Datos"
-        android:textColor="@color/black"
-        android:textSize="32sp"
-        android:textStyle="bold"
-
-
+        android:text="EDITAR DATOS"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
-        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.695" />
@@ -33,10 +30,10 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="43dp"
         android:layout_marginRight="50dp"
-        android:background="#000000"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintHorizontal_bias="0.322"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editarUsuarioTV"
         app:layout_constraintVertical_bias="0.0" />
@@ -44,7 +41,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usernameTextInput"
         android:layout_width="278dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +49,7 @@
         app:startIconDrawable="@drawable/ic_user">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nombreEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="usuario" />
@@ -60,7 +58,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="278dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
 
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
@@ -71,6 +69,7 @@
         app:startIconDrawable="@drawable/ic_candado">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contrasenaEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="contraseña" />
@@ -91,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="Contraseña"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
@@ -104,13 +103,13 @@
         android:id="@+id/usuarioTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Datos Personales"
-        android:textColor="@color/black"
+        android:text="Nombre"
+        android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline14"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
-        app:layout_constraintHorizontal_bias="0.26"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="@+id/guideline21"
         app:layout_constraintTop_toTopOf="@+id/guideline18"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -164,9 +163,8 @@
         app:layout_constraintGuide_percent="0.8759124" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/repetirContraseñaInput"
         android:layout_width="278dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
@@ -174,15 +172,16 @@
         app:startIconDrawable="@drawable/ic_candado">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/repetirContrasenaEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Repetir contraseña" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+
         android:layout_width="275dp"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline20"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
@@ -190,6 +189,7 @@
         app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="example01@cooperup.com" />
@@ -199,6 +199,7 @@
         android:id="@+id/emailTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Correo Electrónico"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline19"
@@ -213,17 +214,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.51" />
+        app:layout_constraintGuide_percent="0.53" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.62" />
+        app:layout_constraintGuide_percent="0.64" />
 
     <Button
-        android:id="@+id/singUp_btn"
+        android:id="@+id/actualizarUsuarioBoton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Actualizar Datos"
@@ -238,31 +239,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.76" />
+        app:layout_constraintGuide_percent="0.84" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="653dp" />
+        app:layout_constraintGuide_percent="0.8946648" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Telefono"
+        android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline28"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
-        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
-        app:layout_constraintTop_toTopOf="@+id/guideline20"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintTop_toTopOf="@+id/guideline35"
+        app:layout_constraintVertical_bias="0.072" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="275dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline28"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintHorizontal_bias="0.514"
@@ -272,8 +274,9 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/telefonoEditarInput"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:hint="telefono"
 
             />
@@ -284,5 +287,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="494dp" />
+        app:layout_constraintGuide_percent="0.6757866" />
+
+    <ImageButton
+        android:id="@+id/volverPerfilButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/diagonal_gradient"
+        app:layout_constraintBottom_toTopOf="@+id/guideline18"
+        app:layout_constraintEnd_toStartOf="@+id/guideline21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

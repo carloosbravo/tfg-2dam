@@ -18,4 +18,12 @@ public class PracticaService {
     public List<Practica> getPracticasIdEmpresa(Integer id_empresa) {return practicaRepository.getPracticasIdEmpresa(id_empresa);}
 
     public List<Practica> getPracticasEstdiante(Integer id_estudiante) {return practicaRepository.getPracticasEstudiante(id_estudiante);}
+
+    public Practica publicarPrcatica(Practica practica) {return practicaRepository.save(practica);}
+    
+    public void deletePracticaById(Integer id_practica){
+         practicaRepository.deleteById(id_practica);
+    }
+
+
 }

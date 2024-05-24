@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentsAlumno.HomeFragment">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/editarPerfilEmpresaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/baseline_edit_24"
+        app:backgroundTint="@color/white"
+        app:borderWidth="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBOton2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineBoton" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBoton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96107054" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBOton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34610122" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/diagonal_gradient"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:padding="5dp"
+                app:strokeColor="@android:color/darker_gray"
+                app:shapeAppearanceOverlay="@style/circleImageView"
+                android:background="@drawable/profile_pic_user"
+                />
+
+            <TextView
+                android:id="@+id/nombreEmpresaPerfilTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:text="ATOS SERVICES"
+                android:textStyle="bold"
+                android:textSize="25dp"/>
+
+            <TextView
+                android:id="@+id/biografiaEpresaTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Empresa tecnologica Decicata a servicios "
+                android:layout_marginBottom="40dp"
+                android:textColor="@color/white"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/FilaInformacionNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_badget"
+                android:layout_marginRight="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textColor="@color/azulProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NOMBRE EMPRESA"
+
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/nombreEmpresaPerfillTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gonzalo Rojas"
+                    android:textStyle="italic"
+                    android:textColor="@color/azulProfile"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="350sp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/grisMasOscuro"
+            android:layout_marginLeft="32sp"/>
+
+        <LinearLayout
+            android:id="@+id/FilaInformacionTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp" >
+
+            <ImageView
+                android:id="@+id/iconoTelefono"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_phone"
+                android:layout_marginRight="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nº TELEFONO"
+                    android:textColor="@color/azulProfile"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/telefonoEmpresaPerfilTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+34 56374362"
+                    android:textColor="@color/azulProfile"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="350sp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/grisMasOscuro"
+            android:layout_marginLeft="32sp"/>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp" >
+
+            <ImageView
+
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_email_blue"
+                android:layout_marginRight="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CORREO"
+                    android:textStyle="bold"
+                    android:textColor="@color/azulProfile"/>
+
+                <TextView
+                    android:id="@+id/emailEmpresaPerfilTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="eviden@gmail.com"
+                    android:textColor="@color/azulProfile"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="350sp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/grisMasOscuro"
+            android:layout_marginLeft="32sp"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp" >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_map"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Direccion"
+                    android:textColor="@color/azulProfile"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/direccionEmpresaTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="C/Julian Camarillo"
+                    android:textColor="@color/azulProfile"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="350sp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/grisMasOscuro"
+            android:layout_marginLeft="32sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_dialog"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Descripcion"
+                    android:textColor="@color/azulProfile"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/biografiEmpresaTV"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:text="Empresa dedicada a los sreviccios de"
+                    android:textColor="@color/azulProfile"
+
+                    />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

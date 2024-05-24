@@ -1,6 +1,7 @@
 package com.example.cooper_up.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cooper_up.pulsables.PracticaPulsar;
 import com.example.cooper_up.R;
 import com.example.cooper_up.models.PracticaModel;
 
@@ -41,6 +43,16 @@ public class RVpracticas extends RecyclerView.Adapter<RVpracticas.MyViewHolder> 
         holder.descripcionPractica.setText(practica.getDescripcion());
 
         //aqui iria el cambio de intent para cuando pulse en la practica
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, PracticaPulsar.class);
+                intent.putExtra("practica", practica);
+                context.startActivity(intent);
+            }
+        });
+
     }
     public void setFilteredList(ArrayList<PracticaModel> filteredList){
         this.practicas = filteredList;

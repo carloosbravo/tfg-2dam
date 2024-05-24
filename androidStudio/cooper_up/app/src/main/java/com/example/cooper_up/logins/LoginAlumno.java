@@ -1,4 +1,4 @@
-package com.example.cooper_up;
+package com.example.cooper_up.logins;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cooper_up.Cuenta;
+import com.example.cooper_up.EditarUsuario;
+import com.example.cooper_up.mains.MainActivity;
+import com.example.cooper_up.R;
 import com.example.cooper_up.models.AlumnoModel;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
@@ -47,13 +51,16 @@ public class LoginAlumno extends AppCompatActivity {
 
                 String contraIntro = contra.getText().toString();
 
-                Call<AlumnoModel> call= apiService.logIn(correoIntro);
+                Call<AlumnoModel> call= apiService.logInAlumno(correoIntro);
 
                 call.enqueue(new Callback<AlumnoModel>() {
                     @Override
                     public void onResponse(Call<AlumnoModel> call, Response<AlumnoModel> response) {
 
-                        String contraAlumno = response.body().getContra();
+                        //recibe y guarda el objeto alumno en la variable despues de la llamada
+                        AlumnoModel alumno = response.body();
+
+                        String contraAlumno = response.body().getContraseña();
                         Toast.makeText(LoginAlumno.this, contraIntro, Toast.LENGTH_SHORT).show();
                         Toast.makeText(LoginAlumno.this, contraAlumno, Toast.LENGTH_SHORT).show();
 
@@ -64,6 +71,7 @@ public class LoginAlumno extends AppCompatActivity {
                                 editor.putInt("idAlumno", response.body().getId());
                                 editor.commit();
                                 Intent intent = new Intent(LoginAlumno.this, MainActivity.class);
+                                intent.putExtra("alumno", alumno);
                                 startActivity(intent);
                             }else if(!contraAlumno.equals(contraIntro)){
 
@@ -89,7 +97,7 @@ public class LoginAlumno extends AppCompatActivity {
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginAlumno.this, EditarUsuario.class);
+                Intent intent = new Intent(LoginAlumno.this, Cuenta.class);
                 startActivity(intent);
             }
         });

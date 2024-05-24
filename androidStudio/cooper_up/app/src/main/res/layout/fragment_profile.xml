@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.HomeFragment">
+    tools:context=".fragmentsAlumno.HomeFragment">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/editarPerfilButton"
@@ -22,14 +22,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="395dp" />
+        app:layout_constraintGuide_percent="0.96107054" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBOton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="253dp" />
+        app:layout_constraintGuide_percent="0.34610122" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                 android:padding="5dp"
                 app:strokeColor="@android:color/darker_gray"
                 app:shapeAppearanceOverlay="@style/circleImageView"
-                android:background="@drawable/foto_prueba"
+                android:background="@drawable/profile_pic_user"
                 />
 
             <TextView
@@ -70,7 +70,7 @@
                 android:textSize="25dp"/>
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/centroAlumnoTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -219,7 +219,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_marginLeft="30dp" >
+            android:layout_marginLeft="30dp"
+            >
 
             <ImageView
                 android:layout_width="50dp"
@@ -229,21 +230,15 @@
                 android:background="@drawable/ic_cv"
                 />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/cvTV"
+                android:clickable="true"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:text="CURRICULUM"
+                android:textColor="@color/azulProfile"
+                android:textStyle="bold" />
 
-                <TextView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="CV"
-                    android:textColor="@color/azulProfile"
-                    android:textStyle="bold"/>
-
-
-            </LinearLayout>
         </LinearLayout>
 
         <View

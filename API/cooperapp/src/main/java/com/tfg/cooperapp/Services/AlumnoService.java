@@ -22,4 +22,13 @@ public class AlumnoService {
         return alumnoRepository.obtenerAlumnoCorreo(correo);
     }
     public Alumno register(Alumno alumno){ return alumnoRepository.save(alumno);}
+
+    public List<Alumno> getAlumnoCentro(Integer id_centro) { return alumnoRepository.obtenerAlumnoCentro(id_centro);}
+
+    public List<Alumno> getAlumnosByPracticaId(Integer practicaId) {
+        return alumnoRepository.findAlumnosByPracticaId(practicaId);
+    }
+
+    public Alumno getAlumnoDni(String dni){ return alumnoRepository.getAlumnoDni(dni);}
+    public void deleteAlumnoDni(Integer id){ alumnoRepository.deleteById(id);}
 }

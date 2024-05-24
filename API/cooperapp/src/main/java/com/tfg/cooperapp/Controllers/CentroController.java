@@ -21,7 +21,7 @@ public class CentroController {
     }
 
     @GetMapping("/centrosById/{id}")
-    public Centro getAlumnos(@PathVariable Integer id) {
+    public Centro getCentro(@PathVariable Integer id) {
         return centroService.getCentroById(id);
     }
 

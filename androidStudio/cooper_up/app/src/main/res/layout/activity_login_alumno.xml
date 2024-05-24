@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginAlumno"
+    tools:context=".logins.LoginAlumno"
     android:background="@color/white"
     >
     <!-- Fondo de pantalla -->
@@ -90,7 +90,7 @@
             android:id="@+id/userametext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="correo" />
+            android:hint="correo electronico" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -148,7 +148,7 @@
         android:id="@+id/usuarioTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Usuario"
+        android:text="Correo"
         android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/usernameTextInput"
@@ -204,13 +204,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="520dp" />
+        app:layout_constraintGuide_begin="502dp" />
 
     <TextView
         android:id="@+id/NotienesCuentaTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No tienes cuenta?"
+        android:text="No eres un alumno?"
+        android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintHorizontal_bias="0.213"
@@ -229,8 +230,9 @@
         android:id="@+id/registrateTVLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrate ahora"
+        android:text="Volver al menu"
         android:textStyle="bold"
+        android:textSize="18dp"
         android:textColor="@color/azulElectrico"
         android:clickable="true"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
@@ -245,8 +247,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-
         android:text="Iniciar Sesión"
+        android:textSize="18dp"
         android:textColor="@color/black"
         android:textColorHighlight="#FFFFFF"
         android:textColorLink="#FFFFFF"
