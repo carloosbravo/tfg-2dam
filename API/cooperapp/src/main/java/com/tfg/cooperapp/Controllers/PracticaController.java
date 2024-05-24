@@ -24,4 +24,8 @@ public class PracticaController {
     public List<Practica> getByIdEstdudiante(@PathVariable Integer id_estudiante) { return practicaService.getPracticasEstdiante(id_estudiante);}
 
 
+    @DeleteMapping("/delete/{id_practica}")
+    public void deletePracticaById(@PathVariable Integer id_practica){
+        practicaService.deletePracticaById(id_practica);
+    }
 }

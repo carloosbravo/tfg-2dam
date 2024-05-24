@@ -43,7 +43,7 @@ public class EliminarPractica extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerViewEliminarPractica);
         itemList = new ArrayList<>();
-        adapter = new RVpracticasEliminar(this, itemList);
+        adapter = new RVpracticasEliminar(this, itemList,empresa);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

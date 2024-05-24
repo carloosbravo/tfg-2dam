@@ -19,5 +19,9 @@ public class PracticaService {
 
     public List<Practica> getPracticasEstdiante(Integer id_estudiante) {return practicaRepository.getPracticasEstudiante(id_estudiante);}
 
+    public void deletePracticaById(Integer id_practica){
+         practicaRepository.deleteById(id_practica);
+    }
+
 
 }
