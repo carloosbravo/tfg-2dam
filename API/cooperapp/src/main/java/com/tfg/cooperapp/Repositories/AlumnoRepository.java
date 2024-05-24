@@ -20,6 +20,9 @@ public interface AlumnoRepository extends JpaRepository<Alumno, Integer> {
     @Query("SELECT a FROM Alumno a JOIN Oferta o ON a.id = o.id_estudiante JOIN Practica p ON o.id_practica = p.id WHERE p.id = :practicaId")
     List<Alumno> findAlumnosByPracticaId(Integer practicaId);
 
+    @Query("SELECT a FROM Alumno a WHERE a.dni =?1")
+    Alumno getAlumnoDni(String dni);
+
 
 
 }

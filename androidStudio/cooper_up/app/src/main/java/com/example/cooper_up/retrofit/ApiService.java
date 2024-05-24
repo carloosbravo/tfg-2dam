@@ -92,6 +92,9 @@ public interface ApiService {
     @DELETE("practica/delete/{id_practica}")
     Call<Void> deletePractica(@Path("id_practica")Integer id_practica);
 
+    @DELETE("usuarionormal/deleteAlumno/{dni}")
+    Call<Integer> deleteAlumno(@Path("dni") String dni);
+
 
 
 }

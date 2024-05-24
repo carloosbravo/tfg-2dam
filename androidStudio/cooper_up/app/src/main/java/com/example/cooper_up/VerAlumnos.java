@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.cooper_up.adapters.RValumnos;
@@ -16,9 +17,9 @@ import com.example.cooper_up.mains.MainActivityCentro;
 import com.example.cooper_up.models.AlumnoModel;
 import com.example.cooper_up.models.CentroModelo;
 import com.example.cooper_up.models.EmpresaModelo;
-import com.example.cooper_up.models.PracticaModel;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,8 @@ public class VerAlumnos extends AppCompatActivity {
     CentroModelo centro;
 
     EmpresaModelo empresa;
+
+    FloatingActionButton btnBorrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +85,16 @@ public class VerAlumnos extends AppCompatActivity {
             Intent intent = new Intent(VerAlumnos.this, MainActivityCentro.class);
             intent.putExtra("centro", centro); // Pasar el objeto CentroModelo a la actividad MainActivityCentro
             startActivity(intent);
+        });
+
+        btnBorrar = findViewById(R.id.btnBorrarAlumno);
+        btnBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(VerAlumnos.this, BorrarAlumno.class);
+                intent.putExtra("centro", centro);
+                startActivity(intent);
+            }
         });
     }
 }
