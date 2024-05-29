@@ -42,6 +42,8 @@
         android:id="@+id/usernameTextInput"
         android:layout_width="278dp"
         android:layout_height="70dp"
+        app:boxStrokeColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +61,8 @@
         android:id="@+id/textInputLayout"
         android:layout_width="278dp"
         android:layout_height="60dp"
-
+        app:boxStrokeColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintHorizontal_bias="0.545"
@@ -72,6 +75,7 @@
             android:id="@+id/contrasenaEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
             android:hint="contraseña" />
 
         <ImageView
@@ -165,6 +169,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="278dp"
         android:layout_height="60dp"
+        app:boxStrokeColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
@@ -175,6 +181,7 @@
             android:id="@+id/repetirContrasenaEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
             android:hint="Repetir contraseña" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -182,6 +189,8 @@
 
         android:layout_width="275dp"
         android:layout_height="70dp"
+        app:boxStrokeColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline20"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
@@ -192,6 +201,7 @@
             android:id="@+id/emailEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
             android:hint="example01@cooperup.com" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -228,7 +238,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Actualizar Datos"
-        android:backgroundTint="@color/azulFondoCLaro"
+        android:backgroundTint="@color/azulProfile"
         app:layout_constraintBottom_toTopOf="@+id/guideline29"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
@@ -265,6 +275,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="275dp"
         android:layout_height="60dp"
+        app:boxStrokeColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline28"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintHorizontal_bias="0.514"
@@ -277,6 +289,8 @@
             android:id="@+id/telefonoEditarInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textColorHint="@color/white"
+
             android:hint="telefono"
 
             />
