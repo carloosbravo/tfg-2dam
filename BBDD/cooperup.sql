@@ -42,12 +42,7 @@ CREATE TABLE `centro` (
 --
 
 INSERT INTO `centro` (`id`, `nombre`, `email`, `direccion`, `contraseña`, `telefono`) VALUES
-(1, 'Centro1', 'centro1@example.com', 'Dirección Centro 1', 'contrasena1', '123456789'),
-(2, 'Centro2', 'centro2@example.com', 'Dirección Centro 2', 'contrasena2', '987654321'),
-(3, 'Centro3', 'centro3@example.com', 'Dirección Centro 3', 'contrasena3', '111111111'),
-(4, 'Centro4', 'centro4@example.com', 'Dirección Centro 4', 'contrasena4', '222222222'),
-(5, 'Centro5', 'centro5@example.com', 'Dirección Centro 5', 'contrasena5', '333333333'),
-(6, 'IFP', 'ifp@ifp.com', 'Calle Alcalá', 'contrasenaIFP', '111111111');
+(1, 'IFP', 'ifp@example.com', 'Calle Julian Camarillo 3', 'contrasena1', '123456789');
 
 -- --------------------------------------------------------
 
@@ -97,12 +92,10 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id`, `nombre`, `email`, `contraseña`, `direccion`, `telefono`, `biografia`) VALUES
-(1, 'Empresa1', 'empresa1@example.com', 'contrasena1', 'Dirección Empresa 1', '123456789', 'Biografía Empresa 1'),
-(2, 'Empresa2', 'empresa2@example.com', 'contrasena2', 'Dirección Empresa 2', '987654321', 'Biografía Empresa 2'),
-(3, 'Empresa3', 'empresa3@example.com', 'contrasena3', 'Dirección Empresa 3', '555555555', 'Biografía Empresa 3'),
-(4, 'Empresa4', 'empresa4@example.com', 'contrasena4', 'Dirección Empresa 4', '111111111', 'Biografía Empresa 4'),
-(5, 'Empresa5', 'empresa5@example.com', 'contrasena5', 'Dirección Empresa 5', '999999999', 'Biografía Empresa 5'),
-(6, 'EVIDEN', 'eviden@example.com', 'contrasenaEviden', 'Dirección Eviden 4', '989898989898', 'Biografía Eviden 4');
+(1, 'Tech Innovations', 'contact@techinnovations.com', 'tech2024', '123 Tech Lane', '1231231234', 'Leading the future of technology.'),
+(2, 'Green Solutions', 'info@greensolutions.com', 'greenEco123', '456 Green Street', '9879879876', 'Providing sustainable solutions for a better planet.'),
+(3, 'Health Plus', 'support@healthplus.com', 'healthStrong56', '789 Health Avenue', '5556667777', 'Committed to enhancing healthcare through innovation.');
+
 
 -- --------------------------------------------------------
 
@@ -149,8 +142,14 @@ INSERT INTO `practica` (`id`, `descripcion`, `id_empresa`, `titulo`) VALUES
 (1, 'Práctica en desarrollo web', 1, 'Desarrollo Web'),
 (2, 'Práctica en análisis de datos', 1, 'Análisis de Datos'),
 (3, 'Práctica en marketing digital', 3, 'Marketing Digital'),
-(4, 'Práctica en diseño gráfico', 4, 'Diseño Gráfico'),
-(5, 'Práctica en ciberseguridad', 5, 'Ciberseguridad');
+(4, 'Práctica en diseño gráfico', 2, 'Diseño Gráfico'),
+(5, 'Práctica en ciberseguridad', 2, 'Ciberseguridad'),
+(6, 'Práctica en inteligencia artificial', 3, 'Inteligencia Artificial'),
+(7, 'Práctica en gestión de proyectos', 3, 'Gestión de Proyectos'),
+(8, 'Práctica en desarrollo de aplicaciones móviles', 1, 'Desarrollo de Aplicaciones Móviles'),
+(9, 'Práctica en soporte técnico', 2, 'Soporte Técnico'),
+(10, 'Práctica en consultoría empresarial', 2, 'Consultoría Empresarial');
+
 
 -- --------------------------------------------------------
 
@@ -174,11 +173,11 @@ CREATE TABLE `usuarionormal` (
 --
 
 INSERT INTO `usuarionormal` (`id`, `nombre`, `email`, `contraseña`, `dni`, `grado`, `centro_id`, `telefono`) VALUES
-(1, 'Juan Perez', 'u', 'u', '12345678A', 'Desarrollo de Aplicaciones Multiplataforma', 1, 600123456),
-(2, 'Maria Lopez', 'maria.lopez@example.com', 'password456', '87654321B', 'Administración de Sistemas Informáticos en Red', 2, 600654321),
-(3, 'Carlos Garcia', 'carlos.garcia@example.com', 'pass789', '11223344C', 'Desarrollo de Aplicaciones Web', 3, 600789123),
-(4, 'Ana Fernandez', 'ana.fernandez@example.com', 'mypass321', '44332211D', 'Sistemas Microinformáticos y Redes', 4, 600321789),
-(5, 'Luis Martinez', 'luis.martinez@example.com', 'securepass654', '55667788E', 'Ciberseguridad', 5, 600987654);
+(1, 'Juan Perez', 'juan@example.com', 'contrasena1', '12345678A', 'Desarrollo de Aplicaciones Multiplataforma', 1, 600123456),
+(2, 'Maria Lopez', 'maria.lopez@example.com', 'password456', '87654321B', 'Administración de Sistemas Informáticos en Red', 1, 600654321),
+(3, 'Carlos Garcia', 'carlos.garcia@example.com', 'pass789', '11223344C', 'Desarrollo de Aplicaciones Web', 1, 600789123),
+(4, 'Ana Fernandez', 'ana.fernandez@example.com', 'mypass321', '44332211D', 'Sistemas Microinformáticos y Redes', 1, 600321789),
+(5, 'Luis Martinez', 'luis.martinez@example.com', 'securepass654', '55667788E', 'Ciberseguridad', 1, 600987654);
 
 
 --
