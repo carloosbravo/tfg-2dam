@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pulsables.PracticaPulsar"
-    android:background="@drawable/background_editar">
+    android:background="@drawable/background_practica_pulsar">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,9 +35,10 @@
                         android:id="@+id/nombrePracticaPulsarTV"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:background="@color/azulFondoCLaro"
+                        android:background="@color/azulProfile"
                         android:padding="30dp"
                         android:text="NOMBRE PRACTICA"
+                        android:textColor="@color/white"
                         android:textSize="24dp"
                         android:textStyle="bold" />
 
@@ -90,7 +91,7 @@
                     android:layout_gravity="center"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:backgroundTint="@color/azulFondoCLaro"
+                    android:backgroundTint="@color/azulProfile"
                     android:text="Aplicar a la practica" />
 
                 <ImageButton

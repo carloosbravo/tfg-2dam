@@ -7,6 +7,15 @@
     tools:context=".logins.LoginAlumno"
     android:background="@drawable/background_blue_menu"
     >
+    <ImageView
+
+        android:layout_width="43dp"
+        android:layout_height="63dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/buho" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -71,6 +80,8 @@
         android:id="@+id/usernameTextInput"
         android:layout_width="278dp"
         android:layout_height="68dp"
+        app:boxStrokeColor="@color/azulProfile"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +100,8 @@
         android:layout_width="278dp"
         android:layout_height="68dp"
         android:layout_marginTop="44dp"
+        app:boxStrokeColor="@color/azulProfile"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -160,7 +173,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="417dp" />
+        app:layout_constraintGuide_percent="0.57045144" />
 
     <TextView
         android:id="@+id/olvidaste_contraTV"
@@ -195,12 +208,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="482dp" />
+        app:layout_constraintGuide_percent="0.6593707" />
 
     <TextView
         android:id="@+id/NotienesCuentaTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="155dp"
+        android:layout_height="24dp"
         android:text="No eres un Centro?"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
@@ -215,12 +228,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="547dp" />
+        app:layout_constraintGuide_percent="0.74829" />
 
     <TextView
         android:id="@+id/registrateTVLogin"
-        android:layout_width="137dp"
-        android:layout_height="21dp"
+        android:layout_width="136dp"
+        android:layout_height="26dp"
         android:clickable="true"
         android:text="Volver al menu"
         android:textColor="@color/azulElectrico"
@@ -228,10 +241,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toEndOf="@+id/NotienesCuentaTV"
+        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline13"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintVertical_bias="0.555" />
 
     <Button
         android:id="@+id/loginbtnCentro"

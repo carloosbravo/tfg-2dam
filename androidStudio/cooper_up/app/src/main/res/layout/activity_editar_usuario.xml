@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditarUsuario"
-    android:background="@drawable/background_gradient_white">
+    android:background="@drawable/background_blue_menu">
 
     <!-- Fondo de pantalla -->
 
@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="EDITAR DATOS"
-        android:textColor="@color/white"
+        android:textColor="@color/azulProfile"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
@@ -42,6 +42,8 @@
         android:id="@+id/usernameTextInput"
         android:layout_width="278dp"
         android:layout_height="70dp"
+        app:boxStrokeColor="@color/azulProfile"
+        android:textColorHint="@color/azulProfile"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +61,8 @@
         android:id="@+id/textInputLayout"
         android:layout_width="278dp"
         android:layout_height="60dp"
-
+        app:boxStrokeColor="@color/azulProfile"
+        android:textColorHint="@color/azulProfile"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintHorizontal_bias="0.545"
@@ -165,6 +168,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="278dp"
         android:layout_height="60dp"
+        app:boxStrokeColor="@color/azulProfile"
+        android:textColorHint="@color/azulProfile"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
@@ -182,6 +187,8 @@
 
         android:layout_width="275dp"
         android:layout_height="70dp"
+        app:boxStrokeColor="@color/azulProfile"
+        android:textColorHint="@color/azulProfile"
         app:layout_constraintBottom_toTopOf="@+id/guideline20"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
@@ -192,6 +199,7 @@
             android:id="@+id/emailEditarInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:hint="example01@cooperup.com" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -228,7 +236,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Actualizar Datos"
-        android:backgroundTint="@color/azulFondoCLaro"
+        android:backgroundTint="@color/azulProfile"
         app:layout_constraintBottom_toTopOf="@+id/guideline29"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
@@ -265,6 +273,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="275dp"
         android:layout_height="60dp"
+        app:boxStrokeColor="@color/azulProfile"
+        android:textColorHint="@color/azulProfile"
         app:layout_constraintBottom_toTopOf="@+id/guideline28"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintHorizontal_bias="0.514"
@@ -293,11 +303,11 @@
         android:id="@+id/volverPerfilButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/diagonal_gradient"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline21"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back_24" />
+        app:srcCompat="@drawable/ic_back_black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

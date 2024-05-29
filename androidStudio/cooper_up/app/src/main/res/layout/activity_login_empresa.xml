@@ -7,7 +7,15 @@
     tools:context=".logins.LoginAlumno"
     android:background="@drawable/background_blue_menu"
     >
-    <!-- Fondo de pantalla -->
+    <ImageView
+
+        android:layout_width="43dp"
+        android:layout_height="63dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/buho" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -72,6 +80,8 @@
         android:id="@+id/usernameTextInput"
         android:layout_width="278dp"
         android:layout_height="68dp"
+        app:boxStrokeColor="@color/azulProfile"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,6 +100,8 @@
         android:layout_width="278dp"
         android:layout_height="68dp"
         android:layout_marginTop="44dp"
+        app:boxStrokeColor="@color/azulProfile"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -161,7 +173,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="417dp" />
+        app:layout_constraintGuide_percent="0.5718194" />
 
     <TextView
         android:id="@+id/olvidaste_contraTV"
@@ -196,41 +208,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="495dp" />
+        app:layout_constraintGuide_percent="0.66" />
 
     <TextView
         android:id="@+id/NotienesCuentaTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="191dp"
+        android:layout_height="27dp"
         android:text="No eres una empresa?"
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
-        app:layout_constraintHorizontal_bias="0.213"
-        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline13"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintVertical_bias="0.447" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="564dp" />
+        app:layout_constraintGuide_percent="0.75" />
 
     <TextView
         android:id="@+id/registrateTVLogin"
-        android:layout_width="110dp"
-        android:layout_height="20dp"
+        android:layout_width="151dp"
+        android:layout_height="31dp"
         android:clickable="true"
         android:text="Volver al menu"
         android:textColor="@color/azulElectrico"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toEndOf="@+id/NotienesCuentaTV"
-        app:layout_constraintTop_toTopOf="@+id/guideline13"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <Button
         android:id="@+id/loginbtnEmpresa"

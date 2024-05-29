@@ -75,6 +75,7 @@ public class RVpracticas extends RecyclerView.Adapter<RVpracticas.MyViewHolder> 
 
         TextView tituloPractica;
         TextView descripcionPractica;
+        TextView nombreEmpresa;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             this.tituloPractica = itemView.findViewById(R.id.nombrePracticasTV);
