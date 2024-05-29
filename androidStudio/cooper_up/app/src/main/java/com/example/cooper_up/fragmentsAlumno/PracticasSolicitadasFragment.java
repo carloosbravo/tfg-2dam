@@ -57,7 +57,7 @@ public class PracticasSolicitadasFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_practicas_alumno, container, false);
         recyclerView = rootView.findViewById(R.id.recyclerViewPracticasSolicitadas);
         itemList = new ArrayList<>();
-        adapter = new RVpracticas(getContext(), itemList);
+        adapter = new RVpracticas(getContext(), itemList,alumno);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

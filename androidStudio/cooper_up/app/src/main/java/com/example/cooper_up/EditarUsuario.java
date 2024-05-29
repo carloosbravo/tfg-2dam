@@ -61,6 +61,7 @@ public class EditarUsuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(EditarUsuario.this, MainActivity.class); // Reemplaza 'ProfileActivity' con la actividad a la que quieres ir
+                intent.putExtra("alumno",alumno);
                 startActivity(intent);
             }
         });

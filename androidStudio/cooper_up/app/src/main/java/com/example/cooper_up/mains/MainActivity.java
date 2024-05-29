@@ -13,18 +13,14 @@ import com.example.cooper_up.R;
 import com.example.cooper_up.fragmentsAlumno.PracticasSolicitadasFragment;
 import com.example.cooper_up.fragmentsAlumno.HomeFragment;
 import com.example.cooper_up.fragmentsAlumno.ProfileFragment;
+import com.example.cooper_up.fragmentsEmpresa.AlumnosInteresadosFragment;
+import com.example.cooper_up.fragmentsEmpresa.ProfileEmpresaFragment;
 import com.example.cooper_up.models.AlumnoModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView navigation;
-    private FrameLayout frameLayout;
-
-    // Fragmentos
-    private HomeFragment homeFragment;
-    private PracticasSolicitadasFragment practicasSolicitadasFragment;
-    private ProfileFragment profileFragment;
 
     // Objeto AlumnoModel
     private AlumnoModel alumno;
@@ -34,65 +30,42 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Obtener el objeto AlumnoModel del Intent
-        if (getIntent() != null && getIntent().hasExtra("alumno")) {
-            alumno = (AlumnoModel) getIntent().getSerializableExtra("alumno");
-        }
+        alumno = (AlumnoModel) getIntent().getSerializableExtra("alumno");
 
         navigation = findViewById(R.id.bottomNavView);
-        frameLayout = findViewById(R.id.frameLayout);
         navigation.setOnNavigationItemSelectedListener(this);
-        navigation.setSelectedItemId(R.id.navHome);
 
-        // Inicializar fragmentos
-        homeFragment = new HomeFragment();
-        practicasSolicitadasFragment = new PracticasSolicitadasFragment();
-        profileFragment = ProfileFragment.newInstance(alumno); // Pasar el objeto AlumnoModel al crear el ProfileFragment
-        practicasSolicitadasFragment = practicasSolicitadasFragment.newInstance(alumno);
-
-        // Establecer el fragmento inicial
-        setFragment(homeFragment);
+        loadFragment(new HomeFragment());
     }
 
-    // Método para cambiar el fragmento
-    private void setFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit();
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        super.onPointerCaptureChanged(hasCapture);
-    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
         int itemId = item.getItemId();
 
         // Inicializar fragmentos si es necesario
-        if (homeFragment == null) {
-            homeFragment = new HomeFragment();
-        }
-        if (practicasSolicitadasFragment == null) {
-            practicasSolicitadasFragment = PracticasSolicitadasFragment.newInstance(alumno);
-        }
-        if (profileFragment == null) {
-            profileFragment = ProfileFragment.newInstance(alumno); // Pasar el objeto AlumnoModel si el fragmento es nulo
-        }
-
-        // Realizar transacción de fragmentos
-        if (itemId == R.id.navHome) {
-            setFragment(homeFragment);
-            return true;
-        } else if (itemId == R.id.navPracticas) {
-            setFragment(practicasSolicitadasFragment);
-            return true;
+        if (itemId  == R.id.navHome) {
+            fragment = new HomeFragment();
+        }else if (itemId == R.id.navPracticas) {
+            fragment = new PracticasSolicitadasFragment();
         } else if (itemId == R.id.navProfile) {
-            setFragment(profileFragment);
-            return true;
-        } else {
-            return false;
+            fragment = new ProfileFragment();
         }
+        if (fragment != null) {
+            loadFragment(fragment);
+            return true;
+        }
+        return false;
     }
+    private void loadFragment(Fragment fragment){
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("alumno", alumno);
+        fragment.setArguments(bundle);
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameLayout, fragment);
+        transaction.commit();
+    }
+
 }

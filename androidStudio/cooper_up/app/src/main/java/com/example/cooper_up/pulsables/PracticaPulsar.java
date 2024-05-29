@@ -63,6 +63,7 @@ public class PracticaPulsar extends AppCompatActivity {
         // Obtener el objeto PracticaModel del Intent
         if (getIntent() != null && getIntent().hasExtra("practica")) {
             practica = (PracticaModel) getIntent().getSerializableExtra("practica");
+            alumno = (AlumnoModel) getIntent().getSerializableExtra("alumno");
 
             Call<EmpresaModelo> call = apiService.getEmpresaId(practica.getId_empresa());
 
@@ -96,6 +97,7 @@ public class PracticaPulsar extends AppCompatActivity {
         volverHomeButton.setOnClickListener(v -> {
             // Lógica para volver al Home (puede ser finish() para cerrar la actividad actual)
             Intent intent = new Intent(PracticaPulsar.this, MainActivity.class);
+            intent.putExtra("alumno",alumno);
             startActivity(intent);
         });
 

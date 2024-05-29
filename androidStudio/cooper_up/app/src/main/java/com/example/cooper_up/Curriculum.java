@@ -104,6 +104,7 @@ public class Curriculum extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Curriculum.this, MainActivity.class);
+                intent.putExtra("alumno",alumno);
                 startActivity(intent);
             }
         });

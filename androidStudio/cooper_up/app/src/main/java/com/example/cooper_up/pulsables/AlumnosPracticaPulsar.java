@@ -33,6 +33,7 @@ public class AlumnosPracticaPulsar extends AppCompatActivity {
     private ArrayList<AlumnoModel> itemList = new ArrayList<>();
     private RValumnos adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +45,7 @@ public class AlumnosPracticaPulsar extends AppCompatActivity {
         if (getIntent() != null) {
             practica = (PracticaModel) getIntent().getSerializableExtra("practica");
             empresa = (EmpresaModelo) getIntent().getSerializableExtra("empresa");
+
         }
 
         recyclerView = findViewById(R.id.recyclerViewAlumnosPractica);
@@ -60,6 +62,7 @@ public class AlumnosPracticaPulsar extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AlumnosPracticaPulsar.this, MainActivityEmpresa.class);
                 intent.putExtra("empresa", empresa);
+
                 startActivity(intent);
             }
         });
