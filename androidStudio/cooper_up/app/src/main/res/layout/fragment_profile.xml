@@ -236,8 +236,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CURRICULUM"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 android:textColor="@color/azulProfile"
-                android:textStyle="bold" />
+                 />
 
         </LinearLayout>
 

@@ -40,14 +40,15 @@ public class ProfileFragment extends Fragment {
         args.putSerializable("alumno", alumno);
         fragment.setArguments(args);
         return fragment;
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
+
             alumno = (AlumnoModel) getArguments().getSerializable("alumno");
-        }
+
     }
 
     @Override

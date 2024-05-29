@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.cooper_up.R;
 import com.example.cooper_up.mains.MainActivity;
 import com.example.cooper_up.models.AlumnoModel;
+import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.models.OfertaModel;
 import com.example.cooper_up.models.PracticaModel;
 import com.example.cooper_up.retrofit.ApiAdapter;
@@ -62,6 +63,23 @@ public class PracticaPulsar extends AppCompatActivity {
         // Obtener el objeto PracticaModel del Intent
         if (getIntent() != null && getIntent().hasExtra("practica")) {
             practica = (PracticaModel) getIntent().getSerializableExtra("practica");
+            alumno = (AlumnoModel) getIntent().getSerializableExtra("alumno");
+
+            Call<EmpresaModelo> call = apiService.getEmpresaId(practica.getId_empresa());
+
+            call.enqueue(new Callback<EmpresaModelo>() {
+                @Override
+                public void onResponse(Call<EmpresaModelo> call, Response<EmpresaModelo> response) {
+                    EmpresaModelo empresaPractica = response.body();
+                    nombreEmpresaPulsarTV.setText(empresaPractica.getNombre());
+                }
+
+                @Override
+                public void onFailure(Call<EmpresaModelo> call, Throwable t) {
+
+                }
+            });
+
 
             // Usar los valores de PracticaModel para actualizar los TextViews
             if (practica != null) {
@@ -79,6 +97,7 @@ public class PracticaPulsar extends AppCompatActivity {
         volverHomeButton.setOnClickListener(v -> {
             // Lógica para volver al Home (puede ser finish() para cerrar la actividad actual)
             Intent intent = new Intent(PracticaPulsar.this, MainActivity.class);
+            intent.putExtra("alumno",alumno);
             startActivity(intent);
         });
 

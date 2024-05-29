@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = rootView.findViewById(R.id.recyclerView);
         itemList = new ArrayList<>();
-        adapter = new RVpracticas(getContext(), itemList);
+        adapter = new RVpracticas(getContext(), itemList,alumno);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
