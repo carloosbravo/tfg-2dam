@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrarAlumno">
+    tools:context=".RegistrarAlumno"
+    android:background="@drawable/background_editar">
+
+    <ImageButton
+        android:id="@+id/btnAtrasRegistroAlumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_flecha_atras"
+        app:layout_constraintBottom_toTopOf="@+id/guideline30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.07" />
+        app:layout_constraintGuide_percent="0.16" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="350dp"
@@ -45,14 +56,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.28" />
+        app:layout_constraintGuide_percent="0.37" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.04379562" />
+        app:layout_constraintGuide_percent="0.04" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline34"
@@ -66,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.39" />
+        app:layout_constraintGuide_percent="0.46" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="350dp"
@@ -89,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.59" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="350dp"
@@ -113,7 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.17236662" />
+        app:layout_constraintGuide_percent="0.24" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="350dp"
@@ -147,6 +158,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="344dp"
         android:layout_height="73dp"
+        app:startIconDrawable="@drawable/dni"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"
         app:layout_constraintStart_toStartOf="@+id/guideline33"
@@ -165,21 +177,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="457dp" />
+        app:layout_constraintGuide_percent="0.68" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="551dp" />
+        app:layout_constraintGuide_percent="0.83" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="334dp"
         android:layout_height="74dp"
+        app:startIconDrawable="@drawable/grado"
         app:layout_constraintBottom_toTopOf="@+id/guideline23"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"
-
         app:layout_constraintStart_toStartOf="@+id/guideline33"
         app:layout_constraintTop_toTopOf="@+id/guideline39">
 
@@ -187,7 +199,7 @@
             android:id="@+id/et_grado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="grado" />
+            android:hint="Grado cursado" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

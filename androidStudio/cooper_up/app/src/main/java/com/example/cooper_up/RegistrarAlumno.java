@@ -2,8 +2,10 @@ package com.example.cooper_up;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +24,8 @@ public class RegistrarAlumno extends AppCompatActivity {
 
     private EditText etNombre, etContrasena, etTelefono, etEmail, etdni, etGrado;
     private Button buttonRegistrar;
+
+    private ImageButton btnAtras;
     private ApiService apiService;
     private CentroModelo centro;
 
@@ -37,6 +41,8 @@ public class RegistrarAlumno extends AppCompatActivity {
         etdni = findViewById(R.id.et_dni);
         etGrado = findViewById(R.id.et_grado);
         buttonRegistrar = findViewById(R.id.button);
+        btnAtras = findViewById(R.id.btnAtrasRegistroAlumno);
+
 
         apiService = ApiAdapter.getInstance().getApiService();
 
@@ -46,7 +52,30 @@ public class RegistrarAlumno extends AppCompatActivity {
         }
 
         // Acción cuando se presione el botón
-        buttonRegistrar.setOnClickListener(v -> registrarAlumno());
+
+
+        buttonRegistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(etNombre.getText().toString().isEmpty() || etContrasena.getText().toString().isEmpty() ||
+                        etTelefono.getText().toString().isEmpty() || etEmail.getText().toString().isEmpty() ||
+                        etdni.getText().toString().isEmpty() || etGrado.getText().toString().isEmpty()){
+                    Toast.makeText(RegistrarAlumno.this, "Debe rellenar todos los campos", Toast.LENGTH_SHORT).show();
+                }else{
+                    registrarAlumno();
+                }
+
+            }
+        });
+
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegistrarAlumno.this, MainActivityCentro.class);
+                startActivity(intent);
+            }
+        });
+        //buttonRegistrar.setOnClickListener(v -> registrarAlumno());
     }
 
     private void registrarAlumno() {
