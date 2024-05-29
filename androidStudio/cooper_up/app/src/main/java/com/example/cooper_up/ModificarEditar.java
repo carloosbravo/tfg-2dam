@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.cooper_up.mains.MainActivity;
@@ -44,7 +45,7 @@ public class ModificarEditar extends AppCompatActivity {
         emailEditarInput = findViewById(R.id.emailEditarInput);
         telefonoEditarInput = findViewById(R.id.telefonoEditarInput);
         actualizarUsuarioBoton = findViewById(R.id.actualizarUsuarioBoton);
-
+        ImageButton volverBtn = findViewById(R.id.volverPerfilButton);
         SharedPreferences sharedPref = this.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
         int idEmpresa = sharedPref.getInt("idEmpresa", 1);
 
@@ -68,6 +69,14 @@ public class ModificarEditar extends AppCompatActivity {
             }
         });
 
+        volverBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ModificarEditar.this, MainActivityEmpresa.class);
+                intent.putExtra("empresa", empresa);
+                startActivity(intent);
+            }
+        });
 
         actualizarUsuarioBoton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +86,7 @@ public class ModificarEditar extends AppCompatActivity {
                 String nuevoTelefono = telefonoEditarInput.getText().toString();
                 String nuevaContrasena = contrasenaEditarInput.getText().toString();
                 String repetirContrasena = repetirContrasenaEditarInput.getText().toString();
+
 
                 if (nuevaContrasena.equals(repetirContrasena)) {
                     empresa.setNombre(nuevoNombre);
@@ -92,6 +102,7 @@ public class ModificarEditar extends AppCompatActivity {
                                 // Manejar la respuesta de la API
                                 Toast.makeText(ModificarEditar.this, "Datos actualizados exitosamente", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(ModificarEditar.this, MainActivityEmpresa.class);
+                                intent.putExtra("empresa", empresa);
                                 startActivity(intent);
                             } else {
                                 // Manejar error en la respuesta de la API
