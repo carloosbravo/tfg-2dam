@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.cooper_up.R;
 import com.example.cooper_up.adapters.RValumnos;
@@ -47,6 +48,8 @@ public class AlumnosPracticaPulsar extends AppCompatActivity {
             empresa = (EmpresaModelo) getIntent().getSerializableExtra("empresa");
 
         }
+        TextView nombrePractica = findViewById(R.id.nombrePracticaPulsarEmpresaTV);
+        nombrePractica.setText(practica.getTitulo_practica());
 
         recyclerView = findViewById(R.id.recyclerViewAlumnosPractica);
         itemList = new ArrayList<>();
