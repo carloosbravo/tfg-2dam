@@ -72,6 +72,7 @@ public class RegistrarAlumno extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RegistrarAlumno.this, MainActivityCentro.class);
+                intent.putExtra("centro", centro);
                 startActivity(intent);
             }
         });

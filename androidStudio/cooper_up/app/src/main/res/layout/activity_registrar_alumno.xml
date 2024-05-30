@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.16" />
+        app:layout_constraintGuide_percent="0.13" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="350dp"
@@ -77,11 +77,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.46" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline36"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"
         app:layout_constraintStart_toStartOf="@+id/guideline33"
@@ -92,7 +92,8 @@
             android:id="@+id/et_contrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contraseña" />
+            android:hint="Contraseña"
+            android:password="true"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.Guideline
@@ -100,11 +101,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.59" />
+        app:layout_constraintGuide_percent="0.62" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"
         app:layout_constraintStart_toStartOf="@+id/guideline33"
@@ -128,7 +129,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline31"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"
         app:layout_constraintStart_toStartOf="@+id/guideline33"
@@ -146,7 +147,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
-        android:backgroundTint="@color/azulFondoCLaro"
+        android:backgroundTint="@color/azulProfile"
         android:text="Registrar Alumno"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"
@@ -157,7 +158,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="344dp"
-        android:layout_height="73dp"
+        android:layout_height="70dp"
         app:startIconDrawable="@drawable/dni"
         app:layout_constraintBottom_toTopOf="@+id/guideline39"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"
@@ -177,18 +178,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.68" />
+        app:layout_constraintGuide_percent="0.73" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.83" />
+        app:layout_constraintGuide_percent="0.85" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="334dp"
-        android:layout_height="74dp"
+        android:layout_height="70dp"
         app:startIconDrawable="@drawable/grado"
         app:layout_constraintBottom_toTopOf="@+id/guideline23"
         app:layout_constraintEnd_toStartOf="@+id/guideline34"

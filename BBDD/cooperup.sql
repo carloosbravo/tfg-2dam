@@ -92,7 +92,7 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id`, `nombre`, `email`, `contraseña`, `direccion`, `telefono`, `biografia`) VALUES
-(1, 'Tech Innovations', 'contact@techinnovations.com', 'tech2024', '123 Tech Lane', '1231231234', 'Leading the future of technology.'),
+(1, 'Tech Innovations', 'info@techinnovations.com', 'tech2024', '123 Tech Lane', '1231231234', 'Leading the future of technology.'),
 (2, 'Green Solutions', 'info@greensolutions.com', 'greenEco123', '456 Green Street', '9879879876', 'Providing sustainable solutions for a better planet.'),
 (3, 'Health Plus', 'support@healthplus.com', 'healthStrong56', '789 Health Avenue', '5556667777', 'Committed to enhancing healthcare through innovation.');
 
@@ -146,7 +146,7 @@ INSERT INTO `practica` (`id`, `descripcion`, `id_empresa`, `titulo`) VALUES
 (5, 'Práctica en ciberseguridad', 2, 'Ciberseguridad'),
 (6, 'Práctica en inteligencia artificial', 3, 'Inteligencia Artificial'),
 (7, 'Práctica en gestión de proyectos', 3, 'Gestión de Proyectos'),
-(8, 'Práctica en desarrollo de aplicaciones móviles', 1, 'Desarrollo de Aplicaciones Móviles'),
+(8, 'Práctica en desarrollo apps móviles', 1, 'Desarrollo de Aplicaciones Móviles'),
 (9, 'Práctica en soporte técnico', 2, 'Soporte Técnico'),
 (10, 'Práctica en consultoría empresarial', 2, 'Consultoría Empresarial');
 

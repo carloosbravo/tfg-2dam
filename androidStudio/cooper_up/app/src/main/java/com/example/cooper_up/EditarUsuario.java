@@ -82,7 +82,12 @@ public class EditarUsuario extends AppCompatActivity {
                     alumno.setNombre(nuevoNombre);
                     alumno.setEmail(nuevoEmail);
                     alumno.setTelefono(nuevoTelefono);
-                    alumno.setContraseña(nuevaContrasena);
+                    if (repetirContrasena.isEmpty()){
+                        alumno.setContraseña(alumno.getContraseña());
+                    }else {
+                        alumno.setContraseña(nuevaContrasena);
+
+                    }
 
                     Log.d("Alumno",alumno.getId() +"");
 

@@ -60,7 +60,7 @@ public interface ApiService {
     @GET("centro/logIn/{correo}")
     Call<CentroModelo> logInCentro(@Path("correo") String correo);
 
-    @GET("/centrosById/{id}")
+    @GET("centro/centrosById/{id}")
     Call<CentroModelo> getCentroId(@Path("id") Integer id);
 
 

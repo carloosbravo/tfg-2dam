@@ -92,7 +92,7 @@
             android:id="@+id/userametextCentro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="correo" />
+            android:hint="Correo" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -114,7 +114,8 @@
             android:id="@+id/contratextCentro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="contraseña"
+            android:hint="Contraseña"
+            android:password="true"
             />
 
 

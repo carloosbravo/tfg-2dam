@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.cooper_up.Curriculum;
 import com.example.cooper_up.EditarUsuario;
@@ -98,14 +99,15 @@ public class ProfileFragment extends Fragment {
                     @Override
                     public void onResponse(Call<CentroModelo> call, Response<CentroModelo> response) {
                         if (response.isSuccessful()){
-                            nombreCentro.setText(response.body().getNombre());
+                            CentroModelo centro = response.body();
+                            nombreCentro.setText(centro.getNombre());
                         }
 
                     }
 
                     @Override
                     public void onFailure(Call<CentroModelo> call, Throwable t) {
-
+                        Toast.makeText(getActivity(), "error nombre empresa", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

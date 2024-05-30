@@ -10,4 +10,5 @@ public interface CentroRepository extends JpaRepository<Centro, Integer> {
 
     @Query("SELECT a FROM Centro a WHERE a.email =?1")
     Centro obtenerCentroCorreo(String correo);
+    
 }

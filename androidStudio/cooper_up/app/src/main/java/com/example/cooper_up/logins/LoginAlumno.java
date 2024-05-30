@@ -61,8 +61,6 @@ public class LoginAlumno extends AppCompatActivity {
                         AlumnoModel alumno = response.body();
 
                         String contraAlumno = response.body().getContraseña();
-                        Toast.makeText(LoginAlumno.this, contraIntro, Toast.LENGTH_SHORT).show();
-                        Toast.makeText(LoginAlumno.this, contraAlumno, Toast.LENGTH_SHORT).show();
 
                         if(contraAlumno != null) {
                             if(contraAlumno.equals(contraIntro)){
@@ -78,8 +76,6 @@ public class LoginAlumno extends AppCompatActivity {
                                 Toast.makeText(LoginAlumno.this, "CONTRASEÑA INCORRECTA", Toast.LENGTH_SHORT).show();
 
                             }
-                        }else{
-                            Toast.makeText(LoginAlumno.this, "SOY NULL", Toast.LENGTH_SHORT).show();
                         }
 
 

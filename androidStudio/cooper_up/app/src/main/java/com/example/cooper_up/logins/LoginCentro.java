@@ -48,7 +48,7 @@ public class LoginCentro extends AppCompatActivity {
                 String contraIntro = contra.getText().toString();
 
                 if (correoIntro.isEmpty() || contraIntro.isEmpty()) {
-                    Toast.makeText(LoginCentro.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginCentro.this, "Rellene todos los campos", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

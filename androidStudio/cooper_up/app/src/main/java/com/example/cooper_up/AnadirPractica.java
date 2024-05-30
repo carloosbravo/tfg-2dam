@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.cooper_up.mains.MainActivityCentro;
 import com.example.cooper_up.mains.MainActivityEmpresa;
 import com.example.cooper_up.models.CentroModelo;
+import com.example.cooper_up.models.EmpresaModelo;
 import com.example.cooper_up.models.PracticaModel;
 import com.example.cooper_up.retrofit.ApiAdapter;
 import com.example.cooper_up.retrofit.ApiService;
@@ -31,14 +32,14 @@ public class AnadirPractica extends AppCompatActivity {
 
     Button btnPublicar;
 
-    CentroModelo centro;
+    EmpresaModelo empresa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anadir_practica);
 
-        centro = (CentroModelo) getIntent().getSerializableExtra("centro");
+        empresa = (EmpresaModelo) getIntent().getSerializableExtra("empresa");
         titulo = findViewById(R.id.tituloPractica);
         descripcion = findViewById(R.id.descripcionPractica);
         btnPublicar = findViewById(R.id.btnpublicarPractica);
@@ -66,7 +67,7 @@ public class AnadirPractica extends AppCompatActivity {
                     public void onResponse(Call<PracticaModel> call, Response<PracticaModel> response) {
                         Toast.makeText(AnadirPractica.this, "Práctica publicada con éxito", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(AnadirPractica.this, MainActivityCentro.class);
-                        intent.putExtra("centro",centro);
+                        intent.putExtra("empresa",empresa);
                         startActivity(intent);
 
                     }
@@ -83,7 +84,8 @@ public class AnadirPractica extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AnadirPractica.this, MainActivityCentro.class);
+                Intent intent = new Intent(AnadirPractica.this, MainActivityEmpresa.class);
+                intent.putExtra("empresa",empresa);
                 startActivity(intent);
             }
         });

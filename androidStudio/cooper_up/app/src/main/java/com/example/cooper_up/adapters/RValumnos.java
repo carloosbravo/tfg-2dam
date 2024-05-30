@@ -44,6 +44,7 @@ public class RValumnos extends RecyclerView.Adapter<RValumnos.MyViewHolder>{
         holder.nombreAlumno.setText(alumno.getNombre());
         holder.correoAlumno.setText(alumno.getEmail());
         holder.gradoAlumno.setText(alumno.getGrado());
+        holder.telefonoalumno.setText(alumno.getTelefono());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,12 +80,14 @@ public class RValumnos extends RecyclerView.Adapter<RValumnos.MyViewHolder>{
         TextView nombreAlumno;
         TextView gradoAlumno;
         TextView correoAlumno;
+        TextView telefonoalumno;
 
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
             this.nombreAlumno = itemView.findViewById(R.id.nameAlumnoCardTV);
             this.correoAlumno = itemView.findViewById(R.id.correoAlumnoCardTV);
             this.gradoAlumno = itemView.findViewById(R.id.gradoAlumnoCardTV);
+            this.telefonoalumno = itemView.findViewById(R.id.telefonoAlumnoCardTV);
 
         }
     }
